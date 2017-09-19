@@ -1,0 +1,9 @@
+{{ define "main" }} {{ partial "nav.html" . }} {{ .Content }}
+
+<ul class="posts-list">
+  {{ range .Pages }}
+  <li class="post">
+    <a href="{{.RelPermalink}}">{{ .Title }}</a>
+  </li>
+  {{ end }}
+</ul> {{ end }}
