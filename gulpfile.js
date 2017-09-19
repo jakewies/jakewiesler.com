@@ -5,7 +5,9 @@ var sourcemaps = require('gulp-sourcemaps')
 gulp.task('styles', function() {
   return gulp
     .src('src/styles/main.styl')
+    .pipe(sourcemaps.init())
     .pipe(stylus())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('static/css'))
 })
 
