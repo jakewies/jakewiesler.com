@@ -1,0 +1,18 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #00f;
+}
+main {
+  background: #ffa500;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJhc2UvcmVzZXQuc3R5bCIsImJhc2UvdHlwb2dyYXBoeS5zdHlsIiwiYWJvdXQuc3R5bCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtBQUFLO0VBRUgsU0FBUyxFQUFUO0VBQ0EsUUFBUSxFQUFSOztBQ0hGO0FBQUc7QUFDSTtBQUNJO0FBQ0k7QUFDSTtFQUVqQixPQUFPLEtBQVA7O0FDSEY7RUFDRSxZQUFZLFFBQVoiLCJmaWxlIjoiYWJvdXQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaHRtbCxcbmJvZHkgXG4gIHBhZGRpbmc6IDBcbiAgbWFyZ2luOiAwIiwiaDEsXG5oMixcbmgzLFxuaDQsXG5oNSxcbmg2IFxuICBjb2xvcjogYmx1ZSIsIkBpbXBvcnQgJ2Jhc2UvcmVzZXQnXG5AaW1wb3J0ICdiYXNlL3R5cG9ncmFwaHknXG5cbm1haW5cbiAgYmFja2dyb3VuZDogb3JhbmdlIl19 */

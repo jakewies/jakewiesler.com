@@ -4,7 +4,7 @@ var sourcemaps = require('gulp-sourcemaps')
 
 gulp.task('styles', function() {
   return gulp
-    .src('src/styles/main.styl')
+    .src('src/styles/*.styl')
     .pipe(sourcemaps.init())
     .pipe(stylus())
     .pipe(sourcemaps.write())
@@ -15,4 +15,4 @@ gulp.task('watch', function() {
   gulp.watch('src/styles/**/*.styl', ['styles'])
 })
 
-gulp.task('default', ['watch'])
+gulp.task('default', ['styles', 'watch'])
