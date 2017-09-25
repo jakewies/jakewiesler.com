@@ -1,7 +1,78 @@
+$baseFontSize   = 18
+$fontSizeTablet = 16
+$fontSizeMobile = 14
+$baseLineHeight = 1.5
+$scale          = 1.414
+$leading        = $baseLineHeight * 1rem
+ 
+html
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,Cantarell, "Helvetica Neue", sans-serif
+  font-size: ($fontSizeMobile / 16) * 100%
+  -webkit-font-smoothing: antialiased
+
+  @media screen and (min-width: $tabletWidth)
+    font-size: ($fontSizeTablet / 16) * 100%
+
+  @media screen and (min-width: $desktopWidth)
+    font-size: ($baseFontSize / 16) * 100%
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 
-  color: blue
+h6
+  margin-top: $leading
+  margin-bottom: 0
+  line-height: $leading
+
+h1
+  font-size: 3 * $scale * 1rem
+  line-height: 3 * $leading
+  margin-top: 2 * $leading
+
+h2
+  font-size: 2 * $scale * 1rem
+  line-height: 2 * $leading
+  margin-top: 2 * $leading
+
+h3
+  font-size: 1 * $scale * 1rem
+
+h4 
+  font-size: $scale / 2 * 1rem
+
+h5
+  font-size: $scale / 3 * 1rem
+
+h6
+  font-size: $scale / 4 * 1rem
+
+p
+  margin-top: $leading
+  margin-bottom: 0
+  line-height: $leading
+
+ul,
+ol
+  margin-top: $leading
+  margin-bottom: $leading
+
+  li
+    line-height: $leading
+
+  ul,
+  ol
+    margin-top: 0
+    margin-bottom: 0
+
+blockquote
+  margin-top: $leading
+  margin-bottom: $leading
+  line-height: $leading
+
+code
+  vertical-align: bottom
+
+.lead
+  font-size: $scale * 1rem

@@ -1,0 +1,64 @@
+@import '_burger'
+
+.nav 
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  background: #fff
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-shrink: 0
+  visibility: hidden
+
+  .mobile-nav-active &
+    visibility: visible
+
+  @media screen and (min-width: $tabletWidth)
+    visibility: visible
+    position: static
+    align-items: flex-start
+    padding-top: 4rem
+
+.nav__list
+  text-align: right
+  list-style: none
+  margin: 0
+  padding: 0
+  width: 50%
+
+  @media screen and (max-width: $tabletWidth - 1px)
+    transform: translateY(-25px)
+    opacity: 0
+    
+    .mobile-nav-active &
+      transform: translateY(0)
+      opacity: 1
+      transition: all 500ms ease
+
+  @media screen and (min-width: $tabletWidth)
+    width: auto
+
+  li
+    margin-bottom: 3rem
+
+    &:last-of-type
+      margin-bottom: 0
+
+    @media screen and (min-width: $tabletWidth)
+      margin-bottom: 1.75rem
+  a
+    color: $grey
+    text-decoration: none
+    font-size: 2rem
+
+    &:hover
+      color: $primary
+
+    @media screen and (min-width: $tabletWidth)
+      font-size: 1.2rem
+
+  a.active
+    color: $primary

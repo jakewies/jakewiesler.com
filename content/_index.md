@@ -1,17 +1,21 @@
 ---
-type: "page"
 title: "about"
 description: "Jake Wiesler - A funky guy"
 menu: "main"
 stylesheet: "about.css"
 ---
 
-<div class="splash">
-  <h1>Hi, I'm Jake.</h1>
-  <div class="splash__skills">
-    <span>Front-end Developer,</span>
-    <span>CSS Tinkerer, and</span>
-    <span>UI Designer</span>
-  </div>
-  <p>I <span>work</span> with and <span>write</span> about a multitue of emerging technologies in the web development space.</p>
+<div class="splash-container">
+  <div class="splash">
+    <div class="splash__header">
+      <h1>Hi, I'm Jake<span class="fancy">.</span></h1>
+      <span class="handle">@jakewies</span>
+    </div>
+    <div class="splash__skills">
+      <span>Front-end Developer,</span>
+      <span>CSS Tinkerer, and</span>
+      <span>UI Designer.</span>
+    </div>
+    <p>I <a href="/work" class="fancy">work</a> with and <a href="/posts" class="fancy">write</a> about a multitude of emerging technologies in the web development space.</p>
+  </div> 
 </div>

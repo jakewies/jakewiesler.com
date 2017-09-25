@@ -1,4 +1,5 @@
 var gulp = require('gulp')
+var babel = require('gulp-babel')
 var stylus = require('gulp-stylus')
 var sourcemaps = require('gulp-sourcemaps')
 var autoprefixer = require('gulp-autoprefixer')
@@ -17,8 +18,16 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('static/css'))
 })
 
-gulp.task('watch', function() {
-  gulp.watch('src/styles/**/*.styl', ['styles'])
+gulp.task('js', function() {
+  return gulp
+    .src('src/js/**/*.js')
+    .pipe(babel())
+    .pipe(gulp.dest('static/js'))
 })
 
-gulp.task('default', ['styles', 'watch'])
+gulp.task('watch', function() {
+  gulp.watch('src/styles/**/*.styl', ['styles'])
+  gulp.watch('src/js/**/*.js', ['js'])
+})
+
+gulp.task('default', ['styles', 'js', 'watch'])

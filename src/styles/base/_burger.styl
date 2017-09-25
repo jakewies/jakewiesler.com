@@ -1,0 +1,41 @@
+$meatWidth = 28px
+$meatHeight = 2px
+
+.burger
+  position: absolute
+  top: 10px
+  left: 10px
+  width: 50px
+  height: 50px
+  cursor: pointer
+
+  @media screen and (min-width: $tabletWidth)
+    display: none
+
+.meat
+  position: absolute
+  width: $meatWidth
+  height: $meatHeight
+  background: $black
+  top: "calc(50% - %s / 2)" % $meatHeight
+  left: "calc(50% - %s / 2)" % $meatWidth
+  transition: all 150ms ease-in
+
+.meat__1 
+  transform: translateY(-10px)
+
+.meat__2
+  width: "calc(%s - 6px)" % $meatWidth
+
+.meat__3
+  transform: translateY(10px)
+
+
+.mobile-nav-active .meat__1
+  transform: rotate(45deg)
+
+.mobile-nav-active .meat__2
+  opacity: 0
+
+.mobile-nav-active .meat__3
+  transform: rotate(-45deg)

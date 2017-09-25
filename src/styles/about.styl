@@ -1,5 +1,48 @@
-@import 'base/_reset'
-@import 'base/_typography'
+@import 'base/_main'
 
-main
-  background: orange
+.splash-container
+  font-size: 1.2rem
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+
+.splash
+  text-align: right
+
+  h1
+    font-size: 4em
+    font-weight: 800
+    letter-spacing: -2px
+
+  p
+    font-weight: 300
+    float: right
+    width: 95%
+
+    @media screen and (min-width: 600px)
+      width: 75%
+
+    @media screen and (min-width: $tabletWidth) 
+      width: 65%
+  
+  a
+    text-decoration: none
+
+.fancy
+  color: $primary
+
+.handle
+  color: $grey
+  letter-spacing: 0.5px
+
+.splash__skills
+  display: flex
+  flex-direction: column
+  margin-top: 1.5rem
+  
+  span 
+    display: inline-block
+    font-weight: 300
+    font-size: 1.414em
+

@@ -1,0 +1,16 @@
+@import '_reset'
+@import '_colors'
+@import '_screenSizes'
+@import '_typography'
+@import '_nav'
+
+.container 
+  display: flex
+  height: 100%
+  padding: 0 1.5rem
+  
+  @media screen and (min-width: $tabletWidth)
+    padding: 0 3rem
+
+main
+  flex-grow: 1
