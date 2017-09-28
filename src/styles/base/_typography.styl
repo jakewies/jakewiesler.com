@@ -1,5 +1,4 @@
-$baseFontSize   = 18
-$fontSizeTablet = 16
+$baseFontSize = 16
 $fontSizeMobile = 14
 $baseLineHeight = 1.5
 $scale          = 1.414
@@ -7,14 +6,14 @@ $leading        = $baseLineHeight * 1rem
  
 html
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,Cantarell, "Helvetica Neue", sans-serif
-  font-size: ($fontSizeMobile / 16) * 100%
+  font-size: ($baseFontSize / 16) * 100%
   -webkit-font-smoothing: antialiased
 
   @media screen and (min-width: $tabletWidth)
-    font-size: ($fontSizeTablet / 16) * 100%
+    font-size: (16 / 16) * 100%
 
-  @media screen and (min-width: $desktopWidth)
-    font-size: ($baseFontSize / 16) * 100%
+  // @media screen and (min-width: $desktopWidth)
+  //   font-size: ($baseFontSize / 16) * 100%
 
 h1,
 h2,
@@ -27,25 +26,20 @@ h6
   line-height: $leading
 
 h1
-  font-size: 3 * $scale * 1rem
-  line-height: 3 * $leading
-  margin-top: 2 * $leading
+  font-size: 1.5 * $scale * 1rem
+  line-height: 1.5 * $leading
+  margin-top: 1.5 * $leading
 
 h2
-  font-size: 2 * $scale * 1rem
-  line-height: 2 * $leading
-  margin-top: 2 * $leading
+  font-size: $scale * 1rem
 
-h3
-  font-size: 1 * $scale * 1rem
-
-h4 
+h3 
   font-size: $scale / 2 * 1rem
 
-h5
+h4
   font-size: $scale / 3 * 1rem
 
-h6
+h5
   font-size: $scale / 4 * 1rem
 
 p
@@ -70,9 +64,17 @@ blockquote
   margin-top: $leading
   margin-bottom: $leading
   line-height: $leading
+  color: $grey
+  font-style: italic
+
+pre
+  margin-top: $leading
 
 code
-  vertical-align: bottom
+  color: $primary
+  font-family: menlo, monospace
+  font-size: 0.9rem
+  vertical-align: middle
 
 .lead
   font-size: $scale * 1rem

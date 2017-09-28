@@ -4,23 +4,25 @@
   position: absolute
   top: 0
   left: 0
-  bottom: 0
-  right: 0
-  background: #fff
+  height: 100%
+  width: 100%
   display: flex
   justify-content: center
   align-items: center
-  flex-shrink: 0
+  background: #fff
   visibility: hidden
-
-  .mobile-nav-active &
-    visibility: visible
+  z-index: 1
 
   @media screen and (min-width: $tabletWidth)
+    display: block
     visibility: visible
-    position: static
-    align-items: flex-start
     padding-top: 4rem
+    width: $navWidth
+
+
+.nav--active
+  visibility: visible
+
 
 .nav__list
   text-align: right
@@ -29,36 +31,40 @@
   padding: 0
   width: 50%
 
+  @media screen and (min-width: $tabletWidth)
+    width: auto
+
+  // Creates a drop-in animation when opening the mobile menu
   @media screen and (max-width: $tabletWidth - 1px)
     transform: translateY(-25px)
     opacity: 0
     
-    .mobile-nav-active &
+    .nav--active &
       transform: translateY(0)
       opacity: 1
       transition: all 500ms ease
 
+
+.nav__list li
+  margin-bottom: 3rem
+
+  &:last-of-type
+    margin-bottom: 0
+
   @media screen and (min-width: $tabletWidth)
-    width: auto
+    margin-bottom: 1.75rem
 
-  li
-    margin-bottom: 3rem
 
-    &:last-of-type
-      margin-bottom: 0
+.nav__list a
+  color: $grey
+  text-decoration: none
+  font-size: 2rem
 
-    @media screen and (min-width: $tabletWidth)
-      margin-bottom: 1.75rem
-  a
-    color: $grey
-    text-decoration: none
-    font-size: 2rem
+  &.active
+    color: $black
+    
+  &:hover
+    color: $black
 
-    &:hover
-      color: $primary
-
-    @media screen and (min-width: $tabletWidth)
-      font-size: 1.2rem
-
-  a.active
-    color: $primary
+  @media screen and (min-width: $tabletWidth)
+    font-size: 1rem

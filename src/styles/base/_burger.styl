@@ -8,11 +8,12 @@ $meatHeight = 2px
   width: 50px
   height: 50px
   cursor: pointer
+  z-index: 2
 
   @media screen and (min-width: $tabletWidth)
     display: none
 
-.meat
+.burger__meat
   position: absolute
   width: $meatWidth
   height: $meatHeight
@@ -21,21 +22,21 @@ $meatHeight = 2px
   left: "calc(50% - %s / 2)" % $meatWidth
   transition: all 150ms ease-in
 
-.meat__1 
+.burger__meat--1 
   transform: translateY(-10px)
 
-.meat__2
+.burger__meat--2
   width: "calc(%s - 6px)" % $meatWidth
 
-.meat__3
+.burger__meat--3
   transform: translateY(10px)
 
 
-.mobile-nav-active .meat__1
+.burger--close .burger__meat--1 
   transform: rotate(45deg)
 
-.mobile-nav-active .meat__2
+.burger--close .burger__meat--2
   opacity: 0
 
-.mobile-nav-active .meat__3
+.burger--close .burger__meat--3
   transform: rotate(-45deg)

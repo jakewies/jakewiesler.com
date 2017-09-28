@@ -3,8 +3,11 @@
  */
 
 function toggleMobileNavState() {
-  var body = document.querySelector('body')
-  body.classList.toggle('mobile-nav-active')
+  var nav = document.querySelector('.nav')
+  nav.classList.toggle('nav--active')
+
+  var burger = document.querySelector('.burger')
+  burger.classList.toggle('burger--close')
 }
 
 /*

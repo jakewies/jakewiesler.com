@@ -1,24 +1,32 @@
 @import 'base/_main'
+@import 'base/_social-icons'
 
 .splash-container
-  font-size: 1.2rem
   height: 100%
   display: flex
   justify-content: center
   align-items: center
+  font-size: 16px
+
+  @media screen and (min-width: $tabletWidth)
+    font-size: 18px
+
+
 
 .splash
   text-align: right
 
   h1
-    font-size: 4em
+    font-size: 3.75em
     font-weight: 800
+    line-height: 1
     letter-spacing: -2px
 
   p
     font-weight: 300
-    float: right
     width: 95%
+    margin-left: auto
+    line-height: 1.3em
 
     @media screen and (min-width: 600px)
       width: 75%
@@ -42,7 +50,6 @@
   margin-top: 1.5rem
   
   span 
-    display: inline-block
     font-weight: 300
     font-size: 1.414em
 

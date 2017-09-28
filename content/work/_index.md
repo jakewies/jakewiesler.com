@@ -5,4 +5,7 @@ menu: "main"
 stylesheet: "work.css"
 ---
 
-Work Page
+<div class="portfolio-container">
+  <span class="emoji">👨🏼‍💻</span>
+  <span>coming soon.</span>
+</div>

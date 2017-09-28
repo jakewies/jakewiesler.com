@@ -1,9 +1,17 @@
 {{ define "main" }} {{ .Content }}
 
-<ul class="posts-list">
-  {{ range .Pages }}
-  <li class="post">
-    <a href="{{.RelPermalink}}">{{ .Title }}</a>
-  </li>
-  {{ end }}
-</ul> {{ end }}
+<div class="post-list-container">
+  <ul class="post-list">
+    {{ range (.Paginator 2).Pages }}
+    <li class="post">
+      <div class="post__header">
+        <h2 class="post__title"><a href="{{.RelPermalink}}">{{ .Title }}</a></h2>
+        <time class="post__date" datetime="{{ .Date }}">{{ .Date.Format "Jan 2 2006" }}</time>
+      </div>
+    </li>
+    {{ end }}
+  </ul>
+  {{ partial "pagination.html" . }}
+</div>
+
+{{ end }}

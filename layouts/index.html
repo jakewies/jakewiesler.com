@@ -1,1 +1,10 @@
-{{ define "main" }} {{ .Content }} {{ end }}
+{{ define "main" }}
+
+
+<div class="splash-container">
+  <div class="splash">
+    {{ .Content }} {{ partial "social-icons.html" .}}
+  </div>
+</div>
+
+{{ end }}
