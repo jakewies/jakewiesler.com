@@ -2,7 +2,7 @@
 
 <div class="post-list-container">
   <ul class="post-list">
-    {{ range (.Paginator 2).Pages }}
+    {{ range (.Paginator 5).Pages }}
     <li class="post">
       <div class="post__header">
         <h2 class="post__title"><a href="{{.RelPermalink}}">{{ .Title }}</a></h2>

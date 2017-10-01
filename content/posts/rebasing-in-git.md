@@ -5,7 +5,7 @@ draft: false
 stylesheet: "post.css"
 ---
 
-Sometimes a feature branch contains a bunch of random commits, with random commit messages. In order to make things clearer in the git history and aid others in deciphering what the feature branch is really doing, it is necessary to “sqaush” these little commit messages into 1 commit with a more succinct description of the branch’s changes.
+Sometimes a feature branch contains a bunch of random commits with even more random commit messages. In order to make things clearer in the git history and aid others in deciphering what the feature branch is really doing, it is necessary to “sqaush” these little commit messages into 1 commit with a more succinct description of the branch’s changes.
 
 > Est veniam incididunt quis ex minim Lorem ea non qui. Velit exercitation sit duis commodo amet nisi enim sunt fugiat est in cillum fugiat fugiat. Enim aliqua amet adipisicing laborum exercitation eu nulla consectetur. Esse ex ad cupidatat non ad labore cillum sint nostrud esse quis esse deserunt. Dolor irure voluptate commodo amet nulla aliqua ullamco ad.
 
