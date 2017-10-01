@@ -1,7 +1,7 @@
 ---
 title: "Rebasing in Git"
 date: 2017-09-27T18:08:15-04:00
-draft: true
+draft: false
 stylesheet: "post.css"
 ---
 

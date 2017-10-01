@@ -1,7 +1,7 @@
 ---
 title: "Alan Watts Wisdom"
 date: 2017-09-21T19:13:15-04:00
-draft: true
+draft: false
 stylesheet: "post.css"
 ---
 
