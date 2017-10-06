@@ -16,4 +16,4 @@ stylesheet: "about.css"
   <span>UI Designer.</span>
 </div>
 
-<p>I <a href="/work" class="fancy">work</a> with and <a href="/posts" class="fancy">write</a> about a multitude of emerging technologies in the web development space.</p>
+<p>I <a href="/work" class="fancy">work</a> with and <a href="/blog" class="fancy">write</a> about a multitude of emerging technologies in the web development space.</p>
