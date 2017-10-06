@@ -2,12 +2,17 @@
 <html lang="{{ .Site.LanguageCode }}">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <title>{{ .Page.Title }}</title>
+  <meta name="description" content="{{ if .IsHome}}{{ .Site.Params.Description }}{{ else }}{{.Page.Params.Description}}{{ end }}">
+  <meta name="keywords" content="{{ delimit .Keywords ", " }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="google-site-verification" content="8cyiY374WL2LGr87fBghcdJCRx6BaPNBvLjeZlk6tyc" />
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
   <link rel="stylesheet" href="/css/{{ printf .Params.stylesheet }}" />
-  <title>{{ .Site.Title }}</title>
 </head>
 
 <body>

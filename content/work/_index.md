@@ -1,6 +1,8 @@
 ---
-title: "work"
-description: "Jake Wiesler - funky work"
+title: "Jake Wiesler | Work"
+linktitle: "work"
+description: "A public portfolio of my work."
+keywords: ["portfolio", "JavaScript", "CSS3", "HTML5"]
 menu: "main"
 stylesheet: "work.css"
 ---

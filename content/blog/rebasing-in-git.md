@@ -1,6 +1,9 @@
 ---
 title: "Rebasing in Git"
 date: 2017-09-27T18:08:15-04:00
+slug: "rebasing-in-git"
+description: "Using the rebase command in git can be a difficult concept to understand. This post aims to make it clearer for beginners."
+keywords: ["git", "rebase"]
 draft: false
 stylesheet: "post.css"
 ---
