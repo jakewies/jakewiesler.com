@@ -18,7 +18,7 @@
   "scripts": {
     "dev": "hugo server -D",
     "gulp": "gulp --env=dev",
-    "build": "gulp build"
+    "build:assets": "gulp build"
   },
   "keywords": [],
   "author": "",

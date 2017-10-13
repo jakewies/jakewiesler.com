@@ -3,7 +3,7 @@
     {{ $currentPage := . }} 
     {{ range .Site.Menus.main }}
       <li>
-        <a {{if or ($currentPage.IsMenuCurrent "main" .) (and (eq .Name "blog") (eq $currentPage.Section "posts")) }} class="active"
+        <a {{if or ($currentPage.IsMenuCurrent "main" .) (and (eq .Name "blog") (eq $currentPage.Section "blog")) }} class="active"
           {{end}} href="{{ .URL }}">{{ .Name }}</a>
       </li>
     {{ end }}

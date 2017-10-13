@@ -9,7 +9,7 @@ var gutil = require('gulp-util')
 
 gulp.task('styles', function() {
   return gulp
-    .src('src/styles/*.styl')
+    .src('src/styles/pages/*.styl')
     .pipe( gulpIf(isDev(), sourcemaps.init()) )
       .pipe(stylus({
         compress: true
@@ -28,13 +28,6 @@ gulp.task('js', function() {
     .src('src/js/**/*.js')
     .pipe(babel())
     .pipe(gulp.dest('static/js'))
-})
-
-gulp.task('svg', function() {
-  return gulp
-    .src('static/icons/*.svg')
-    .pipe(svgmin())
-    .pipe(gulp.dest('static/icons'))
 })
 
 gulp.task('watch', function() {
