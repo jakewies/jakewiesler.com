@@ -10,11 +10,15 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-babel": "^7.0.0",
+    "gulp-if": "^2.0.2",
     "gulp-sourcemaps": "^2.6.1",
-    "gulp-stylus": "^2.6.0"
+    "gulp-stylus": "^2.6.0",
+    "gulp-util": "^3.0.8"
   },
   "scripts": {
-    "gulp": "gulp"
+    "dev": "hugo server -D",
+    "gulp": "gulp --env=dev",
+    "build": "gulp build"
   },
   "keywords": [],
   "author": "",
