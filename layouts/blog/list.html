@@ -7,8 +7,8 @@
       {{ range (.Paginator 5).Pages }}
         <li class="post">
           <div class="post__header">
-            <h2 class="post__title"><a href="{{.RelPermalink}}">{{ .Title }}</a></h2>
             <time class="post__date" datetime="{{ .Date }}">{{ .Date.Format "Jan 2 2006" }}</time>
+            <h2 class="post__title"><a href="{{.RelPermalink}}">{{ .Title }}</a></h2>
           </div>
         </li>
       {{ end }}
