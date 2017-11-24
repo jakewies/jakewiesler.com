@@ -1,16 +1,19 @@
 @import '../_main'
 
-.post-list-container
+.post-list__container
   height: 100%
   display: flex
-  flex-direction: column
   justify-content: center
   align-items: center
+
+.post-list__inner
+  position: relative
 
 .post-list
   list-style: none
   margin: 0
   max-width: 500px
+  padding: 0
 
 .post
   margin-bottom: 1.5rem
@@ -27,7 +30,9 @@
   font-size: 0.8rem
 
 .paginator-container
-  margin-top: 3rem
+  position: absolute
+  width: 100%
+  text-align: center
 
 .paginator
   display: inline-block
