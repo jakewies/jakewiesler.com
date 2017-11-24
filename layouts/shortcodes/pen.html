@@ -1,0 +1,51 @@
+{{/*
+
+    Credit for this shortcode goes to: 
+      @jorinvo
+      https://github.com/jorinvo/hugo-shortcodes/blob/master/shortcodes/pen.html
+
+
+    Embed a pen from codepen.io
+
+
+    The only required parameter is `id`.
+    It's the slug-hash of the pen. Get it from the url.
+    For other parameters and their default see below.
+    Overwrite them to your needs.
+
+    Examples:
+
+    - Simple:
+
+        {{% pen id="Gflmy" %}}
+
+
+    - Show pen in js tab:
+
+        {{% pen id="Gflmy" tab="js" %}}
+
+*/}}
+
+
+{{/* DEFAULTS */}}
+{{ $user    := "jakewies" }}
+{{ $height  := 450 }}
+{{ $tab     := "result" }}{{/* html|css|js|result */}}
+{{ $theme   := "dark" }}
+{{ $version := "2" }}
+{{ $preview := "true" }}
+
+<script
+    data-slug-hash="{{ .Get "id" }}"
+    data-user="{{ or (.Get "user") $user }}"
+    data-height="{{ or (.Get "height") $height }}"
+    data-default-tab="{{ or (.Get "tab") $tab }}"
+    data-theme-id="{{ or (.Get "theme") $theme }}"
+    data-embed-version="{{ or (.Get "version") $version }}"
+    data-preview="{{ or (.Get "preview") $preview }}"
+    data-pen-title="{{ .Get "title" }}"
+    class='codepen'
+    async
+    src="https://production-assets.codepen.io/assets/embed/ei.js"
+></script>
+<span class="codepen__caption">{{ .Get "caption" }}</span>
