@@ -88,7 +88,7 @@ I love flexbox. It's the most used CSS property in my toolbag. The `.filter` ele
   // define structure
 
   height: calc(100% - 10px);
-  width: calc(33.33$ - 10px);
+  width: calc(33.33% - 10px);
   border-radius: 100px;
   background: #5a6be8;
 
@@ -151,13 +151,13 @@ We need a click event on each filter item to let us know where to move the switc
 document.querySelector('.filter').addEventListener('click', e => {
   e.stopPropagation()
 
-  if (e.target.classList.contains('filter__item) && !e.target.classList.contains('filter__item--active)) {
+  if (e.target.classList.contains('filter__item') && !e.target.classList.contains('filter__item--active')) {
     // do something...
   }
 })
 ```
 
-Event delegation usually requires the `stopPropagation()` method of the event to prevent the event from bubbling up the DOM. When the event is fired we can check if the element that triggered it was a filter item but not one that was already active.
+Event delegation usually requires the `stopPropagation()` method of the event to prevent it from bubbling up the DOM. When the event is fired we can check if the element that triggered it was a filter item but not one that was already active.
 
 The next step is to identify the position of the filter item that was clicked. This is possible using a method named `getBoundingClientRect()`. This method can be called on any element in the DOM and will return some dimensions and positional data about it.
 
@@ -167,7 +167,7 @@ document.querySelector('.filter').addEventListener('click', e => {
 
   const el = e.target
 
-  if (el.classList.contains('filter__item) && !el.classList.contains('filter__item--active)) {
+  if (el.classList.contains('filter__item') && !el.classList.contains('filter__item--active')) {
     const filterItemData = el.getBoundingClientRect()
     const switchData = document.querySelector('.filter__switch').getBoundingClientRect()
   }
@@ -184,7 +184,7 @@ At the heart of this animation is a mathematical formula that calculates the new
 
 The `filterItemData` variable includes an `x` coordinate and a `width` property. The `x` coordinate signifies where the element _starts_ on the x axis. If we cut the `width` in half and add it to `x` we'll get a new value representing the _mid point_. 
 
-Notice that I'm not calling it the mid point of the filter item. Technically it is exactly that, but it's also the _new_ mid point of the switch. If they are going to sit perfectly on top of each other in the DOM then they must share mid points.
+Notice that I'm not calling it the mid point of the filter item. Technically it is, but it's also the _new_ mid point of the switch. If they are going to sit perfectly on top of each other in the DOM then they must share mid points.
 
 #### Finding the new x coordinate of the switch
 
@@ -200,7 +200,7 @@ document.querySelector('.filter').addEventListener('click', e => {
 
   const el = e.target
 
-  if (el.classList.contains('filter__item) && !el.classList.contains('filter__item--active)) {
+  if (el.classList.contains('filter__item') && !el.classList.contains('filter__item--active')) {
     const filterItemData = el.getBoundingClientRect()
     const switchData = document.querySelector('.filter__switch').getBoundingClientRect()
 
@@ -236,7 +236,7 @@ document.querySelector('.filter').addEventListener('click', e => {
 
   const el = e.target
 
-  if (el.classList.contains('filter__item) && !el.classList.contains('filter__item--active)) {
+  if (el.classList.contains('filter__item') && !el.classList.contains('filter__item--active')) {
     const filterItemData = el.getBoundingClientRect()
     const switchData = document.querySelector('.filter__switch').getBoundingClientRect()
 
@@ -244,16 +244,16 @@ document.querySelector('.filter').addEventListener('click', e => {
     const newSwitchX = midPoint - (switchData.width / 2)
 
     const keyframes = [
-      { transform: `translateX${switchCoords.x}px`}
-      { transform: `translateX${newSwitchX}px`}
+      { transform: `translateX(${switchData.x}px)`},
+      { transform: `translateX(${newSwitchX}px)`}
     ]
   }
 })
 ```
 
-There is one hiccup to the keyframes defined above? Can you spot it? I'll give you a hint: It has to do with the nature of the CSS `translate` function. 
+There is one hiccup to the keyframes defined above? Can you spot it? I'll give you a hint: It has to do with the nature of the CSS `translateX` function. 
 
-The problem is that the `translate` function moves the element `x` pixels away from the _origin_ of the element on the screen. It doesn't move the element to the exact value specified. 
+The problem is that the `translateX` function moves the element `x` pixels away from the _origin_ of the element on the screen. It doesn't move the element to the exact value specified. 
 
 If we calculated that the future `x` coordinate of the switch is `452`, and we pass that value in a keyframe object as `translateX(452px)`, the switch would move 452px forward from its current position on the x axis. That's clearly not what we want.
 
@@ -279,17 +279,17 @@ document.querySelector('.filter').addEventListener('click', e => {
 
   const el = e.target
 
-  if (el.classList.contains('filter__item) && !el.classList.contains('filter__item--active)) {
+  if (el.classList.contains('filter__item') && !el.classList.contains('filter__item--active')) {
     const filterItemData = el.getBoundingClientRect()
     const switchData = document.querySelector('.filter__switch').getBoundingClientRect()
-    const origin = document.querySelector('.filter__item).getBoundingClientRect().x + 5
+    const origin = document.querySelector('.filter__item').getBoundingClientRect().x + 5
 
     const midPoint = filterItemData.x + (filterItemData.width / 2)
     const newSwitchX = midPoint - (switchData.width / 2)
 
     const keyframes = [
-      { transform: `translateX${switchCoords.x - origin}px`}
-      { transform: `translateX${newSwitchX - origin}px`}
+      { transform: `translateX(${switchData.x - origin}px)`},
+      { transform: `translateX(${newSwitchX - origin}px)`}
     ]
   }
 })
@@ -313,17 +313,17 @@ document.querySelector('.filter').addEventListener('click', e => {
 
   const el = e.target
 
-  if (el.classList.contains('filter__item) && !el.classList.contains('filter__item--active)) {
+  if (el.classList.contains('filter__item') && !el.classList.contains('filter__item--active')) {
     const filterItemData = el.getBoundingClientRect()
-    const switchData = document.querySelector('.filter__switch').getBoundingClientRect()
-    const origin = document.querySelector('.filter__item).getBoundingClientRect().x + 5
+    const switchData = filterSwitch.getBoundingClientRect()
+    const origin = document.querySelector('.filter__item').getBoundingClientRect().x + 5
 
     const midPoint = filterItemData.x + (filterItemData.width / 2)
     const newSwitchX = midPoint - (switchData.width / 2)
 
     const keyframes = [
-      { transform: `translateX${switchCoords.x - origin}px`}
-      { transform: `translateX${newSwitchX - origin}px`}
+      { transform: `translateX(${switchData.x - origin}px)`},
+      { transform: `translateX(${newSwitchX - origin}px)`}
     ]
 
     const options = {
