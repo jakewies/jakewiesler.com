@@ -2,9 +2,9 @@
 title: "2017 In Review"
 date: 2018-01-10T21:08:02-05:00
 slug: ""
-description: ""
-keywords: []
-draft: true
+description: "Now that 2018 is upon us, it's a great time to reflect on 2017."
+keywords: ["2017", "Review", "JavaScript"]
+draft: false
 stylesheet: "post.css"
 ---
  
