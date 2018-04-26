@@ -64,8 +64,7 @@ Staying true to the Solved By Flexbox implementation:
 - `Cell` components default to the same width, but can be adjusted individually
 - You are able to adjust the alignment of `Cell` components as a group or individually
 - Responsive, mobile-first with media query support
-- `Grid` components are nestable
-- You can explicitly set the direction of each `Grid` using the `direction` prop
+- `Grid` components are nest-able
 
 ## Looking ahead
 
