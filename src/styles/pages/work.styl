@@ -1,14 +1,40 @@
 @import '../_main'
 
-.portfolio-container
+.work__container 
   height: 100%
   display: flex
-  flex-direction: column
-  align-items: center
   justify-content: center
+  align-items: center
 
-.emoji
+.work__container-inner
+  max-width: 34rem
+
+.work__section
+  margin-bottom: 4rem
+
+.work__section-header 
+  margin-top: 0
+  border-bottom: 1px solid $black
+  padding-bottom: 1rem
+
+.work__items 
+  list-style: none
+  padding-left: 0
+  margin-bottom: 0
+
+.work__item
+  margin-bottom: 1rem
+
+.work__item-link
   display: block
-  text-align: center
-  font-size: 2rem
-  margin-bottom: 0.5rem
+  text-decoration: none
+
+.work__item-title 
+  margin-top: 0
+  margin-bottom: 0.2rem
+  color: $black
+
+.work__item-description,
+.work__item-date
+  color: $darkGrey
+  margin: 0 0 0.2rem
