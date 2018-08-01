@@ -1,17 +1,22 @@
-$meatWidth = 28px
-$meatHeight = 2px
-
-.burger
-  position: relative
-  top: 10px
-  left: 10px
-  width: 50px
-  height: 50px
-  cursor: pointer
+.burger__container
+  height: $burgerContainerHeight
+  display: flex
+  align-items: center
+  padding: 0 1.5rem
+  position: fixed
+  width: 100%
+  background: #fff
   z-index: 2
 
   @media screen and (min-width: $tabletWidth)
     display: none
+
+
+.burger
+  position: relative
+  width: $meatWidth
+  height: $meatWidth
+  cursor: pointer
 
 .burger__meat
   position: absolute
