@@ -27,7 +27,7 @@
     />
     <meta name="twitter:site" content="{{ .Site.Params.twitter }}" />
     <meta name="twitter:creator" content="{{ .Site.Params.twitter }}" />
-    <meta name="twitter:image" content="/img/thumbnail.jpeg" />
+    <meta name="twitter:image" content={{ printf `%simg/thumbnail.jpeg` .Site.BaseURL}} />
 
     <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
     <link rel="stylesheet" href="/css/{{ printf .Params.stylesheet }}" /> 
