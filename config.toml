@@ -3,4 +3,6 @@ languageCode = "en-us"
 title = "Jake Wiesler"
 
 [params]
+  author = "Jake Wiesler"
   description = "Front-end Developer, CSS Tinkerer, and UI Designer."
+  twitter = "@jakewies"
