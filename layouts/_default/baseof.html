@@ -20,7 +20,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="google-site-verification" content="8cyiY374WL2LGr87fBghcdJCRx6BaPNBvLjeZlk6tyc" />
   <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
-  <link rel="stylesheet" href="/css/{{ printf .Params.stylesheet }}" />
+  <link rel="stylesheet" href="/css/{{ printf .Params.stylesheet }}" /> {{ range .AlternativeOutputFormats -}} {{ printf `
+  <link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }} {{ end -}}
 </head>
 
 <body>
