@@ -6,7 +6,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88270202-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'UA-88270202-1');
   </script>
@@ -14,7 +14,7 @@
   <meta name="language" content="en">
   <title>{{ .Page.Title }}</title>
   <meta name="description" content="{{ if .IsHome}}{{ .Site.Params.Description }}{{ else }}{{.Page.Params.Description}}{{ end }}">
-  <meta name="keywords" content="{{ delimit .Keywords ", " }}">
+  <meta name="keywords" content="{{ delimit .Keywords " , " }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,13 +25,13 @@
 
 <body>
   <div class="container">
-    {{ partial "nav.html" .}}
+
+    {{ partial "burger.html" .}} {{ partial "nav.html" .}}
 
     <main>
       {{ block "main" . }} {{ end }}
     </main>
 
-    {{ partial "burger.html" .}}
   </div>
 
   <script src="/js/index.js"></script>

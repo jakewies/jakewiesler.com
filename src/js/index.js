@@ -1,13 +1,10 @@
 /*
- * Updates nav with active class
+ * Handles mobile nav
  */
 
 function toggleMobileNavState() {
-  var nav = document.querySelector('.nav')
-  nav.classList.toggle('nav--active')
-
-  var burger = document.querySelector('.burger')
-  burger.classList.toggle('burger--close')
+  const container = document.querySelector('.container')
+  container.classList.toggle('nav--active')
 }
 
 /*

@@ -6,9 +6,11 @@
 .container 
   height: 100%
 
+.container.nav--active
+  overflow: hidden
+
 main
-  height: 100%
-  padding: 0 1.5rem
+  padding: 3rem 1.5rem
 
   // compensates for the nav sidebar on tablet and desktop
   @media screen and (min-width: $tabletWidth)
