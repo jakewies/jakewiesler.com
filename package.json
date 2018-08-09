@@ -7,8 +7,8 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
     "gulp-babel": "^7.0.0",
     "gulp-if": "^2.0.2",
     "gulp-sourcemaps": "^2.6.1",
