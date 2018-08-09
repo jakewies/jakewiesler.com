@@ -12,7 +12,7 @@
     "gulp-babel": "^7.0.0",
     "gulp-if": "^2.0.2",
     "gulp-sourcemaps": "^2.6.1",
-    "gulp-stylus": "^2.6.0",
+    "gulp-stylus": "^2.7.0",
     "gulp-util": "^3.0.8"
   },
   "scripts": {
