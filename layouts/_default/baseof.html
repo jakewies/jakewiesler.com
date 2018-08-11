@@ -1,57 +1,53 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88270202-1"></script>
-    <script>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88270202-1"></script>
+  <script>
+    if (window.location.hostname === 'www.jakewiesler.com') {
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', 'UA-88270202-1');
-    </script>
+    }
+  </script>
 
-    <title>{{ .Page.Title }}</title>
+  <title>{{ .Page.Title }}</title>
 
-    <meta charset="UTF-8">
-    <meta name="language" content="en">
-    <meta name="description" content="{{ if .IsHome}}{{ .Site.Params.Description }}{{ else }}{{.Page.Params.Description}}{{ end }}">
-    <meta name="keywords" content="{{ delimit .Keywords ", " }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="8cyiY374WL2LGr87fBghcdJCRx6BaPNBvLjeZlk6tyc" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="{{ .Title }}" />
-    <meta name="twitter:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}"
-    />
-    <meta name="twitter:site" content="{{ .Site.Params.twitter }}" />
-    <meta name="twitter:creator" content="{{ .Site.Params.twitter }}" />
-    <meta name="twitter:image" content={{ printf `%simg/thumbnail.jpeg` .Site.BaseURL}} />
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="{{ if .IsHome}}{{ .Site.Params.Description }}{{ else }}{{.Page.Params.Description}}{{ end }}">
+  <meta name="keywords" content="{{ delimit .Keywords " , " }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="google-site-verification" content="8cyiY374WL2LGr87fBghcdJCRx6BaPNBvLjeZlk6tyc" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="{{ .Title }}" />
+  <meta name="twitter:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}"
+  />
+  <meta name="twitter:site" content="{{ .Site.Params.twitter }}" />
+  <meta name="twitter:creator" content="{{ .Site.Params.twitter }}" />
+  <meta name="twitter:image" content={{ printf `%simg/thumbnail.jpeg` .Site.BaseURL}} />
 
-    <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
-    <link rel="stylesheet" href="/css/{{ printf .Params.stylesheet }}" /> 
-    {{ range .AlternativeOutputFormats }} 
-      {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }} 
-    {{ end }} 
-    
-    {{ partial "seo_schema.html" .}}
-  </head>
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/{{ printf .Params.stylesheet }}" /> {{ range .AlternativeOutputFormats }} {{ printf `
+  <link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }} {{ end }} {{ partial "seo_schema.html" .}}
+</head>
 
-  <body>
-    <div class="container">
+<body>
+  <div class="container">
 
-      {{ partial "burger.html" .}} 
-      
-      {{ partial "nav.html" .}}
+    {{ partial "burger.html" .}} {{ partial "nav.html" .}}
 
-      <main>
-        {{ block "main" . }} {{ end }}
-      </main>
+    <main>
+      {{ block "main" . }} {{ end }}
+    </main>
 
-    </div>
+  </div>
 
-    <script src="/js/index.js"></script>
-  </body>
+  <script src="/js/index.js"></script>
+</body>
 
 </html>
