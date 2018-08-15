@@ -1,23 +1,20 @@
-{{ define "main" }} 
+{{ define "main" }} {{ .Content }}
 
-  {{ .Content }}
-
-  <div class="post-list__container">
-    <div class="post-list__inner">
-      <ul class="post-list">
-        {{ range .Pages }}
-        <li class="post">
-          <div class="post__header">
-            <time class="post__date" datetime="{{ .Date }}">{{ .Date.Format "Jan 2 2006" }}</time>
-            <h2 class="post__title">
-              <a href="{{.RelPermalink}}">{{ .Title }}</a>
-            </h2>
-          </div>
-        </li>
-        {{ end }}
-      </ul>
-      {{ partial "pagination.html" . }}
-    </div>
+<div class="post-list__container">
+  <div class="post-list__inner">
+    <ul class="post-list">
+      {{ range .Pages }}
+      <li class="post">
+        <div class="post__header">
+          <time class="post__date" datetime="{{ .Date }}">{{ .Date.Format "Jan 2 2006" }}</time>
+          <h2 class="post__title">
+            <a href="{{.RelPermalink}}">{{ .Title }}</a>
+          </h2>
+        </div>
+      </li>
+      {{ end }}
+    </ul>
   </div>
+</div>
 
 {{ end }}
