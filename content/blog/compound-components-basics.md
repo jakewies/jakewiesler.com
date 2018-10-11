@@ -56,17 +56,19 @@ Still reading? Cool. Let's write some code.
 
 Normally I would create an example project on GitHub, but with the advent of [CodeSandbox](https://codesandbox.io/) that just seems silly now-a-days. If you're not familiar with CodeSandbox, are you alive friend? _Are you living?_ Jokes aside, it's a browser-based development environment with a host of other cool features. 
 
-We're going to be building a simple chat application that manages a few different pieces of state such as the current message value and the entire list of messages sent. The goal is to have all of these pieces working together fluidly behind the scenes, while still providing flexibilty for the users of the component.
+We're going to be building a simple chat application that manages a few different pieces of state such as the current message value and the entire list of messages sent. The goal is to have all of these pieces working together fluidly behind the scenes, while still providing flexibilty for the user of the component.
 
-I've created the initial project structure using CodeSandbox's `creact-react-app` template [here](https://codesandbox.io/s/j7930yx04w). After you sign in you can fork the template to your own sandbox.
+I've created the initial project structure using CodeSandbox's `creact-react-app` template [here](https://codesandbox.io/s/ykxo1n7nwx). After you sign in you can fork the template to your own sandbox.
 
-When you open up the template you should see a `/components` directory with three components:
+When you open up the template you should see a `src/components` directory with four components:
 
-- `Chat`
-- `Input`
-- `Messages`
+1. `Chat` - the _parent_ component that manages the entire state of the chat app.
 
-These are the three components we will be working with. There's nothing too special going on right now. The `Chat` component is the _parent_, and it manages the state of the messages. The `Messages` component receives that state and renders them in a list, and the `Input` component can add a new message.
+2. `Messages` - renders a list of all messages that have been sent.
+
+3. `Input` - allows a user to enter a new message.
+
+4. `Button` - sends a message.
 
 ### Isn't this sufficient?
 
@@ -88,7 +90,7 @@ _Note: If you are following along with another project that isn't bootstrapped w
 
 ### Adding static properties
 
-Let's take the first step towards a more flexible `Chat` component by adding two `static` properties called `Messages` and `Input`, with their values equal to the corresponding components:
+Let's take the first step towards a more flexible `Chat` component by adding three `static` properties called `Messages`, `Input` and `Button`, with their values equal to the corresponding components:
 
 ```
 // src/components/Chat.js
@@ -96,10 +98,12 @@ Let's take the first step towards a more flexible `Chat` component by adding two
 import React, { Component } from 'react'
 import Messages from './Messages'
 import Input from './Input'
+import Button from './Button'
 
 class Chat extends Component {
   static Messages = Messages
   static Input = Input
+  static Button = Button
 
   // ...
 
@@ -118,20 +122,25 @@ class Chat extends Component {
   // ...
 
   render() {
-    const { messages } = this.state;
+    const { currentMessage, messages } = this.state;
+    const { updateCurrentMessage, add } = this
 
     return (
       <div>
         <h1>Chatroom</h1>
-        <Messages items={messages} />
-        <Input onSubmit={this.add} />
+        <Messages messages={messages} />
+        <Input 
+          value={currentMessage} 
+          onChange={updateCurrentMessage} 
+        />
+        <Button onClick={add} />
       </div>
     )
   }
 }
 ```
 
-The layout is still hardcoded, going against our flexible philosophy. What we desire is to have the user of the component determine how things render. In order to do this, we first need to remove the `Messages` and `Input` components from the `render` method completely. Let's also remove the `messages` property from the state since we aren't using it at the moment:
+The layout is still hardcoded, going against our flexible philosophy. What we desire is to have the user of the component determine how things render. In order to do this, we first need to remove the `Messages`, `Input` and `Button` components from the `render` method completely. Let's also remove the variables defined at the beginning of `render` since we aren't using them at the moment:
 
 ```
 // src/components/Chat.js
@@ -150,7 +159,7 @@ class Chat extends Component {
 }
 ```
 
-We're no longer hardcoding `Messages` and `Input`, so users of `Chat` can explicitly declare them in their own code using the dot-notation syntax. Update the `App` component in `src/index.js` with the following:
+We're no longer hardcoding the layout, so users of `Chat` can explicitly declare it in their own code using the dot-notation syntax. Let's simulate this by updating the `App` component in `src/index.js` with the following:
 
 ```
 // src/index.js
@@ -161,6 +170,7 @@ function App() {
       <Chat>
         <Chat.Messages />
         <Chat.Input />
+        <Chat.Button />
       </Chat>
     </div>
   );
@@ -190,7 +200,7 @@ class Chat extends Component {
 }
 ```
 
-However, now we get an error. The error stems from the fact that `Chat.Messages` is not getting an `items` prop the way it did when we were hardcoding the `render` method. This would also mean that `Chat.Input` isn't getting its `onSubmit` prop either. 
+However, now we get an error. The error stems from the fact that `Chat.Messages` is not getting a `messages` prop the way it did when we were hardcoding the layout in the `render` method. This also means that the other two components, `Chat.Input` and `Chat.Button`, are not getting their props either.
 
 We can't put the onus on the user to pass those props around. They don't even have access to them. They're tucked away in a black box. So now the question becomes, _how do we keep this flexible component syntax while also passing data?_ 
 
@@ -206,7 +216,7 @@ React.Children.map(this.props.children, child => {
 })
 ```
 
-Why is this important to us? We can use the utility to access any direct children of the `Chat` component, in this case `Chat.Messages` and `Chat.Input`. Let's update the render method of `Chat`, using `React.Children.map` to return each child:
+Let's update the render method of `Chat`, using `React.Children.map` to return each child:
 
 ```
 // src/components/Chat.js
@@ -226,17 +236,7 @@ render() {
   }
 ```
 
-After you save, you'll notice that the error is still there. That's because we're still not passing any props to the children. The code above is the same as rendering `this.props.children` like we did before. The final output would end up looking like this:
-
-```
-  <div>
-    <h1>Chatroom</h1>
-    <Chat.Messages />
-    <Chat.Input />
-  </div>
-```
-
-See? Still no props being passed. Luckily, React gives us another utility to make this happen.
+After you save, you'll notice that the error is still there. That's because we're still not passing any props to the children. Luckily, React gives us another utility to make this happen.
 
 ## `React.cloneElement`
 
@@ -250,22 +250,22 @@ That's useful. Not only do we have the ability to map over `this.props.children`
 
 So, `React.cloneElement` provides a transformation window in which you can replace an existing element with a copy of itself. This copy, or _clone_, can accept additional props you explicitly define during the cloning process. 
 
-It's important to note that React performs a "shallow merge" with these additional props and any props that existed on the element before it was cloned. Therefore, if the cloned element previously had a prop named `foo`, and you decide to add an additional prop _also_ named `foo` during the cloning process, your prop will overwrite the old one.
+It's important to note that React performs a "shallow merge" with these additional props and any props that existed on the element **before** it was cloned. Therefore, if the cloned element previously had a prop named `foo`, and you decide to add an additional prop that is _also_ named `foo` during the cloning process, your prop will overwrite the old one.
 
-With this information, along with `React.Children.map`, we have everything we need to access the sub-components of `Chat` and pass them the data they need. However, in order to do this _you_ need a mechanism for identifying specific children. This is important, else you wouldn't be able to pass the right prop to the right child.
+With this information, along with `React.Children.map`, we have everything we need to access the sub-components of `Chat` and pass them the data they need. However, in order to do this you need a mechanism for identifying _specific_ children. This is important, else you wouldn't be able to pass the right prop to the right child.
 
 Furthermore, it's not enough to just clone each child _willy-nilly_, because there will undoubtedly be children that should be left alone. You have to think about these use cases when building compound components that will be used by other developers.
 
 ### Identifying children
 
-There are a few ways to do this, and they're all relatively similar. I'll show you the way that my team and I identify specific children as it has worked well for us. We use a property on React components called `displayName`. The `displayName` property, according to the [docs](https://reactjs.org/docs/react-component.html#displayname), is primarily used for debugging purposes, however I find it useful here. 
+There are a few ways to do this, and they're all relatively similar. I'll show you the way that my team and I identify specific children as it has worked well for us. We use a property on components called `displayName`. According to the [docs](https://reactjs.org/docs/react-component.html#displayname), the `displayName` property is primarily used for debugging purposes, however I find it useful here. 
 
-You can explicitly add a `displayName` to any component, class or functional. It's the same as adding `propTypes` or `defaultProps`. Let's add a `displayName` to both the `Messages` and `Input` components:
+You can explicitly add a `displayName` to any class or functional component. It's the same as adding `propTypes` or `defaultProps`:
 
 ```
 // src/components/Messages.js
 
-const Messages = ({ items }) => (
+const Messages = ({ messages }) => (
   
   // ...
 
@@ -277,28 +277,28 @@ Messages.displayName = "Messages"
 ```
 // src/components/Input.js
 
-class Input extends Component {
-  static displayName = "Input"
-
+const Input = ({ value, onChange }) => (
+  
   // ...
 
-}
+)
+
+Input.displayName = "Input"
 ```
 
-Now we can use this property as our mechanism for identifying specific children. In `Chat.js` we're currently mapping through `this.props.children` and returning each. Before returning the child, try logging its `displayName` to the console.
-
 ```
-// src/components/Chat.js
+// src/components/Button.js
 
-// ...
+const Button = ({ onClick }) => (
+  
+  // ...
 
-{React.Children.map(children, child => {
-  console.log(child.type.displayName)
-  return child;
-})}
+)
+
+Button.displayName = "Button"
 ```
 
-If you open the console you should see `"Messages"` and `"Input"` have been logged! Awesome, now that we can distinguish between children, let's use `React.cloneElement` to pass the right props to the right children:
+This value is now accessible on each child inside of the `React.Children.map` via `child.type.displayName`:
 
 ```
 // src/components/Chat.js
@@ -306,22 +306,28 @@ If you open the console you should see `"Messages"` and `"Input"` have been logg
 // ...
 
 render() {
-  const { messages } = this.state
+  const { messages, currentMessage } = this.state
   const { children } = this.props
+  const { updateCurrentMessage, add } = this
 
   return (
     <div>
       <h1>Chatroom</h1>
       {React.Children.map(children, child => {
         if (child.type.displayName === 'Messages') {
-          return React.cloneElement(child, {
-            items: messages
-          })
+          return React.cloneElement(child, { messages })
         }
 
         if (child.type.displayName === 'Input') {
           return React.cloneElement(child, {
-            onSubmit: this.add
+            value: currentMessage,
+            onChange: updateCurrentMessage
+          })
+        }
+
+        if (child.type.displayName === 'Button') {
+          return React.cloneElement(child, {
+            onClick: add
           })
         }
 
@@ -332,28 +338,19 @@ render() {
 }
 ```
 
-Now the error messages should disappear and everything should be working like normal! You just wrote your first compound component, albeit a pretty basic one. It's definitely more flexible and user-friendly than before, but not by much. 
+With the code above we are now identifying specific children of the `Chat` component using their set `displayName`, cloning them, and passing each custom props.
 
-To showcase this, you can try a few things:
-
-- Re-arrange the render order of the sub-components in `src/index.js`. You should be able to move `Chat.Input` above `Chat.Messages` and everything will still work correctly. 
-- Add another element inside of `Chat`, like an `<h2>Hello World</h2>`
+The lingering error message should now be gone and everything should be working properly! You just wrote your first compound component, albeit a pretty basic one. It's definitely more flexible and user-friendly than before, but not by much. 
 
 ## Drawbacks
 
 We now have a group of components that manage themselves internally and allow the user to manipulate their layout order. This is nice, however there are a few "holes" in our component's design. 
 
-What would happen if you wanted to wrap any of the sub-components in another component, or even a simple `div`? This seems like a logical choice a developer would make. Give it a shot. Wrap `Chat.Input` in a `div`. What happens?
+What would happen if you wanted to wrap any of the sub-components in another component, or even a simple `div`? This seems like a logical choice a developer would make. Give it a shot. Wrap `Chat.Button` in a `div`. What happens?
 
-The component still renders, however if you try to submit something you'll get an error: 
+The component still renders, however if you try to send a message nothing happens. But why? We cloned `Chat.Button` and passed it the `onClick` prop, did we not? 
 
-```
-`onSubmit` is not a function. 
-```
-
-But why? We cloned `Chat.Input` and passed it the `onSubmit` prop, did we not? 
-
-No, in this scenario we didn't, because `Chat.Input` is no longer a _direct_ child of `Chat`. That seat is now held by the innocent looking `div`. This is where the limitations of `React.Children.map` begin to show. If you _really_ want to craft a flexible compound component, you'll have to take things a step further (more below).
+No, in this scenario we didn't, because `Chat.Button` is no longer a _direct_ child of `Chat`. That seat is now held by the innocent looking `div` element. This is where the limitations of `React.Children.map` begin to show. If you _really_ want to craft a flexible compound component, you'll have to take things a step further (more below).
 
 ## Conclusion
 
@@ -362,10 +359,9 @@ Let's take a step back and review:
 - We learned about `static` properties and how they allow us to use the dot-notation syntax with sub-components. 
 - We learned about certain utilities the React API provides like `React.Children.map` and `React.cloneElement`. 
 - We learned how to identify specific children using the `displayName` property. 
+- We used all of this information to craft a flexible compound component that manages its own state and inverts layout control to the user.
 
-And we used all of this information to craft a flexible compound component that manages its own state and inverts layout control to the user.
-
-In the next post of this series we will address the drawbacks of `React.Children.map` by refactoring `Chat` to use the [Context API](https://reactjs.org/docs/context.html), giving us the ability to pass data to any child, no matter their level in the component tree. 
+In the next post of this series we will address the drawbacks of `React.Children.map` by refactoring `Chat` to use the [Context API](https://reactjs.org/docs/context.html), giving us the ability to pass data to any child no matter their level in the component tree. 
 
 
 
