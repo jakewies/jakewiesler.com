@@ -8,6 +8,8 @@ draft: false
 stylesheet: "post.css"
 ---
 
+> This post is meant to guide the reader through a working example on [CodeSandbox](https://codesandbox.io/s/ykxo1n7nwx). I recommend following along on a desktop. 👾
+
 At the end of 2017 [Kent C. Dodds](https://twitter.com/kentcdodds) released a fantastic set of videos called _Advanced React Component Patterns_ on [egghead.io](https://egghead.io/courses/advanced-react-component-patterns). In them he spent some time discussing an idea termed **compound components**.
 
 I had gone into those videos with a focus on learning more about [render props](https://reactjs.org/docs/render-props.html) and [context](https://reactjs.org/docs/context.html), so it's funny to look back over a half-year later and realize that out of everything in the series (which I highly recommend), compound components have slowly progressed from being an overlooked technique to one of my favorite ways of composing UI.
@@ -361,7 +363,7 @@ Let's take a step back and review:
 - We learned how to identify specific children using the `displayName` property. 
 - We used all of this information to craft a flexible compound component that manages its own state and inverts layout control to the user.
 
-In the next post of this series we will address the drawbacks of `React.Children.map` by refactoring `Chat` to use the [Context API](https://reactjs.org/docs/context.html), giving us the ability to pass data to any child no matter their level in the component tree. 
+In the [next post](https://www.jakewiesler.com/blog/compound-components-and-the-context-api/) we will address the drawbacks of `React.Children.map` by refactoring `Chat` to use the [Context API](https://reactjs.org/docs/context.html), giving us the ability to pass data to any child no matter their level in the component tree. 
 
 
 
