@@ -8,7 +8,7 @@ draft: false
 stylesheet: "post.css"
 ---
 
-> This post is meant to guide the reader through a working example on [CodeSandbox](https://codesandbox.io/s/ykxo1n7nwx). I recommend following along on a desktop. 👾
+> This post is meant to guide you through a working example on [CodeSandbox](https://codesandbox.io/s/ykxo1n7nwx). I recommend following along on a desktop. 👾
 
 At the end of 2017 [Kent C. Dodds](https://twitter.com/kentcdodds) released a fantastic set of videos called _Advanced React Component Patterns_ on [egghead.io](https://egghead.io/courses/advanced-react-component-patterns). In them he spent some time discussing an idea termed **compound components**.
 
@@ -365,7 +365,7 @@ Let's take a step back and review:
 
 In the [next post](https://www.jakewiesler.com/blog/compound-components-and-the-context-api/) we will address the drawbacks of `React.Children.map` by refactoring `Chat` to use the [Context API](https://reactjs.org/docs/context.html), giving us the ability to pass data to any child no matter their level in the component tree. 
 
-
+👾
 
 
 
