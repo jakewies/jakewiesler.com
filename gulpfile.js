@@ -6,6 +6,8 @@ var autoprefixer = require('gulp-autoprefixer')
 var gulpIf = require('gulp-if')
 var gutil = require('gulp-util')
 
+const isDev = () => gutil.env.env === 'dev'
+
 gulp.task('styles', function() {
   return gulp
     .src('src/styles/pages/*.styl')
@@ -38,7 +40,3 @@ gulp.task('watch', function() {
 
 gulp.task('default', gulp.series(gulp.parallel('styles', 'js'), 'watch'))
 gulp.task('build', gulp.parallel('styles', 'js'))
-
-function isDev() {
-  return gutil.env.env === 'dev'
-}
