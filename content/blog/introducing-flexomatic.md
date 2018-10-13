@@ -32,12 +32,12 @@ The quote above perfectly describes what `flexomatic` aims to achieve. Not too m
 
 ## Getting started
 
-```javascript
-yarn add flexomatic
+```shell
+$ yarn add flexomatic
 
-// or
+# or
 
-npm install flexomatic
+$ npm install flexomatic
 ```
 
 **Note**: `flexomatic` has a `peerDependency` on `styled-components`. In order to use it you must have `styled-components` already installed in your project.

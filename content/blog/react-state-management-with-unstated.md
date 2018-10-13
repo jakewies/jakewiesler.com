@@ -40,7 +40,7 @@ This is what eventually led me to try `unstated`.
 
 You can install `unstated` with yarn via `yarn add unstated`. From there, integrating it into your React application is a breeze. Like I mentioned before, the API is very small, exposing only 3 components:
 
-```
+```javascript
 import { Provider, Subscribe, Container } from 'unstated' 
 ```
 
@@ -48,7 +48,7 @@ import { Provider, Subscribe, Container } from 'unstated'
 
 The `Provider` is very similar to the other `Provider` types existing in libraries like Redux. You use it at the highest level of your application necessary to provide state to specific components:
 
-```
+```javascript
 <Provider>
   <App />
 </Provider>
@@ -58,7 +58,7 @@ The `Provider` is very similar to the other `Provider` types existing in librari
 
 The `Container` is used when creating a "slice" of state. You use it in a similar way you would use `React.Component`:
 
-```
+```javascript
 class StateContainer extends Container {
 
   state = {}
@@ -78,7 +78,7 @@ Notice the use of `setState` here in the handler methods. According to the offic
 
 This means that calling `setState` inside the `Container` will cause subscribed components to re-render! You can even use `setState` as a function:
 
-```
+```javascript
 this.setState(prevState => ({}))
 ```
 
@@ -86,7 +86,7 @@ this.setState(prevState => ({}))
 
 Now that you know how to create state, how do you pass it to your components? This is where `Subscribe` comes in. It uses a [render prop](https://reactjs.org/docs/render-props.html) to pass state and methods into your components:
 
-```
+```javascript
 <Subscribe to={[StateContainer]}>
   {container => (
     /* access container.state */
@@ -98,7 +98,7 @@ Now that you know how to create state, how do you pass it to your components? Th
 
 One interesting point to make about `Subscribe` is that the `to` prop takes an array. This gives you the ability to pass multiple state container instances into your components:
 
-```
+```javascript
 <Subscribe to={[StateContainer, OtherStateContainer]}>
 {(container, otherContainer) => /* */}
 </Subscribe>
@@ -112,7 +112,7 @@ Now that we've gone over the entire API (yes, that's essentially the entire API 
 
 Inside `src/containers/ColorContainer.js` you'll see encapsulated logic to manage the current state of colors:
 
-```
+```javascript
 import { Container } from 'unstated'
 import rcolor from 'rcolor'
 
@@ -139,7 +139,7 @@ Everything inside of `ColorContainer` is only concerned with the state object. N
 
 In `src/components/App.js` you'll find the application itself:
 
-```
+```javascript
 import React from 'react'
 import { Subscribe } from 'unstated'
 import ColorContainer from '../containers/ColorContainer'
@@ -170,7 +170,7 @@ When a user clicks on the rendered button, the `make` method updates the state o
 
 And finally, `src/index.js` imports the `Provider` component from `unstated` and wraps the entire app inside of it, allowing any child components beneath to access container instances:
 
-```
+```javascript
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'unstated'

@@ -210,7 +210,7 @@ So the tag function expects an array of string values as its first argument, and
 
 In the pattern above, which I will give the name _"The Empty Array Pattern"_, the arguments are:
 
-```
+```javascript
 // -> []
 // -> 'background: palevioletred'
 // -> 'color: #fff'
@@ -224,7 +224,7 @@ The first argument is an array, and satisfies rule number one. Yes, there's no s
 
 At the end of the day, both patterns produce the same value. What I'm finding difficult to discover is why you would want to use one over the other. I guess I could see a situation where, using tagged template literals, you had multiple interpolations, and for code readability you could choose the Empty Array Pattern instead:
 
-```
+```javascript
 // as tagged template literal
 
 const Button = styled.button`

@@ -16,31 +16,31 @@ In order to do this you can perform an `interactive rebase`.
 
 Command:
 
-```
-git rebase -i Head~n testsetsetsetsetsetsetsetsetsetsetsetsetset
+```shell
+$ git rebase -i Head~n
 ```
 
 The command above lets you rebase `n` commits on your branch. If you want to squash all the commits from the `merge-base` or the commit where it branched off of `master`, or whatever parent branch your branch came from, you can use this command:
 
-```
-git merge-base <name of branch> <name of parent branch>
+```shell
+$ git merge-base name_of_branch name_of_parent_branch
 ```
 
 This should spit out a giant hash like: 
 
-```
+```shell
 1881e40a619f809d8eaf475dc52769fb9901366d
 ```
 
 Using this hash, you can then rebase ALL commits on your feature branch using:
 
-```
-git rebase -i <hash>
+```shell
+$ git rebase -i 1881e40a619f809d8eaf475dc52769fb9901366d
 ```
 
 This will bring up a text editor in your terminal with all the commits on the branch:
 
-```
+```shell
 pick 1fc6c95 do something
 pick 6b2481b do something else
 pick dd1475d changed some things
@@ -49,7 +49,7 @@ pick c619268 fixing typos
 
 These commits are ordered from oldest to newest (newest on the bottom). You can use a number of commands in place of the `pick` command. To squash a commit and meld it into the previous one (the one on top of it), just replace `pick` with `squash` or `s` for short.
 
-```
+```shell
 pick 1fc6c95 do something
 s 6b2481b do something else
 s dd1475d changed some things

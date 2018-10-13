@@ -1,3 +1,7 @@
+{{ define "links" }}
+<link rel="stylesheet" href="/vendor/css/github-gist.css">
+{{ end }}
+
 {{ define "progress" }}
 <div class="progress"></div>
 {{ end }}
@@ -17,5 +21,7 @@
 {{ end }}
 
 {{ define "scripts" }}
+<script src="/vendor/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script src="/js/progress.js"></script>
 {{ end }}

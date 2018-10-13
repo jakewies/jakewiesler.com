@@ -32,7 +32,7 @@ There are some solutions to this issue. GitHub repos such as [web-animations-js]
 
 If you view the Codepen embed, or "pen" from this point on, you will see that the HTML making up the filter is _very_ simple. I'm a fan of [pug templates](https://pugjs.org/api/getting-started.html) when working in Codepen but I will outline the structure in pure HTML just for reference:
 
-```
+```html
 <div class="filter">
   <div class="filter__item filter__item--active">week</div>
   <div class="filter__item">month</div>
@@ -47,10 +47,10 @@ The `.filter` container holds the structure of the component. The 3 `.filter__it
 
 I love flexbox. It's the most used CSS property in my toolbag. The `.filter` element is a flex container holding three `.filter__item` elements that are flex children, each one taking up the same width as the others. Let's take a look at the styles that make this work:
 
-```
+```css
 .filter {
 
-  // define structure
+  /* define structure */
 
   width: 500px;
   height: 200px;
@@ -59,14 +59,14 @@ I love flexbox. It's the most used CSS property in my toolbag. The `.filter` ele
 
 
 
-  // allows for absolute positioning of 
-  // the .filter__switch element
+  /* allows for absolute positioning of 
+     the .filter__switch element */
 
   position: relative;
 
 
 
-  // flex styles to align .filter__item elements
+  /* flex styles to align .filter__item elements */
 
   display: flex;
   justify-content: space-between;
@@ -85,7 +85,7 @@ I love flexbox. It's the most used CSS property in my toolbag. The `.filter` ele
 
 .filter__switch {
 
-  // define structure
+  /* define structure */
 
   height: calc(100% - 10px);
   width: calc(33.33% - 10px);
@@ -94,9 +94,9 @@ I love flexbox. It's the most used CSS property in my toolbag. The `.filter` ele
 
   
 
-  // absolute positioning provides
-  // the ability to place the switch wherever
-  // we want it
+  /* absolute positioning provides
+     the ability to place the switch wherever
+     we want it */
 
   position: absolute;
   top: 5px;
@@ -147,7 +147,7 @@ Moving on.
 We need a click event on each filter item to let us know where to move the switch. The best way to handle this is to add the event listener to the filter and only perform an action if a filter item triggered the event. This is called **event delegation**.
 
 
-```
+```javascript
 document.querySelector('.filter').addEventListener('click', e => {
   e.stopPropagation()
 
@@ -161,7 +161,7 @@ Event delegation usually requires the `stopPropagation()` method of the event to
 
 The next step is to identify the position of the filter item that was clicked. This is possible using a method named `getBoundingClientRect()`. This method can be called on any element in the DOM and will return some dimensions and positional data about it.
 
-```
+```javascript
 document.querySelector('.filter').addEventListener('click', e => {
   e.stopPropagation()
 
@@ -194,7 +194,7 @@ We've found the mid point but we still need to find the new `x` coordinate of th
 
 We knew the `x` coordinate and the `width` of the filter item. By adding half of the `width` to `x` we calculated the mid point. This time the situation is reversed. We have the mid point and the switch's `width`. All that needs to be done is to _subtract_ half of the switch's `width` from the mid point!
 
-```
+```javascript
 document.querySelector('.filter').addEventListener('click', e => {
   e.stopPropagation()
 
@@ -220,7 +220,7 @@ You may say to yourself, "Can't I just keep doing this in CSS?". Sure you can, b
 
 In CSS animations there is this concept of **@keyframes**, or sequential steps defined by the developer that control the animation of an element on the page. The WAAPI allows for defining keyframes in JavaScript using an array of keyframe objects.
 
-```
+```javascript
 const keyframes = [
   { keyframe 1 }
   { keyframe 2 }
@@ -230,7 +230,7 @@ const keyframes = [
 
 Let's update the event listener with an array of keyframes that defines the switch's animation from its current position to its new position.. We'll do this using CSS transforms:
 
-```
+```javascript
 document.querySelector('.filter').addEventListener('click', e => {
   e.stopPropagation()
 
@@ -273,7 +273,7 @@ However, there is an elegant solution to these two problems. Instead of calculat
 Let's update the code to reflect this:
 
 
-```
+```javascript
 document.querySelector('.filter').addEventListener('click', e => {
   e.stopPropagation()
 
@@ -305,7 +305,7 @@ The WAAPI requires that we define some timing properties to be used in conjuncti
 
 We want the switch to retain its position once it's been moved, therefore we'll pass a value of `forwards` to the `fill` property, which tells the element to stay where it is after its done animating.
 
-```
+```javascript
 const filterSwitch = document.querySelector('.filter__switch')
 
 document.querySelector('.filter').addEventListener('click', e => {

@@ -33,10 +33,16 @@ gulp.task('js', function() {
     .pipe(gulp.dest('static/js'))
 })
 
+gulp.task('vendor', function() {
+  return gulp
+    .src('src/vendor/**/**')
+    .pipe(gulp.dest('static/vendor'))
+})
+
 gulp.task('watch', function() {
   gulp.watch('src/styles/**/*.styl', gulp.series('styles'))
   gulp.watch('src/js/**/*.js', gulp.series('js'))
 })
 
 gulp.task('default', gulp.series(gulp.parallel('styles', 'js'), 'watch'))
-gulp.task('build', gulp.parallel('styles', 'js'))
+gulp.task('build', gulp.parallel('styles', 'js', 'vendor'))

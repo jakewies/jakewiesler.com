@@ -18,7 +18,7 @@ I had gone into those videos with a focus on learning more about [render props](
 
 Take a second to look at the documentation for [semantic-ui-react](https://react.semantic-ui.com/), notably their [Form](https://react.semantic-ui.com/collections/form/) component. It shouldn't take long before you notice something _different_ about the way this component is being declared. 
 
-```
+```javascript
 import { Form } from 'semantic-ui-react'
 
 const Usage = () => (
@@ -94,7 +94,7 @@ _Note: If you are following along with another project that isn't bootstrapped w
 
 Let's take the first step towards a more flexible `Chat` component by adding three `static` properties called `Messages`, `Input` and `Button`, with their values equal to the corresponding components:
 
-```
+```javascript
 // src/components/Chat.js
 
 import React, { Component } from 'react'
@@ -116,7 +116,7 @@ I'm going to refer to these `static` properties as "sub-components" from this po
 
 Take a look at the `Chat` component's render method: 
 
-```
+```javascript
 // src/components/Chat.js
 
 class Chat extends Component {
@@ -144,7 +144,7 @@ class Chat extends Component {
 
 The layout is still hardcoded, going against our flexible philosophy. What we desire is to have the user of the component determine how things render. In order to do this, we first need to remove the `Messages`, `Input` and `Button` components from the `render` method completely. Let's also remove the variables defined at the beginning of `render` since we aren't using them at the moment:
 
-```
+```javascript
 // src/components/Chat.js
 
 class Chat extends Component {
@@ -163,7 +163,7 @@ class Chat extends Component {
 
 We're no longer hardcoding the layout, so users of `Chat` can explicitly declare it in their own code using the dot-notation syntax. Let's simulate this by updating the `App` component in `src/index.js` with the following:
 
-```
+```javascript
 // src/index.js
 
 function App() {
@@ -182,7 +182,7 @@ function App() {
 
 Things are slowly starting to take shape, but now the app is broken. All that's rendering is `<h1>Chatroom</h1>`. At first glance, you might think the solution would be to render `this.props.children` underneath it:
 
-```
+```javascript
 // src/components/Chat.js
 
 class Chat extends Component {
@@ -212,7 +212,7 @@ This is where the next two items on our list of things to discuss, `React.Childr
 
 According to the [React docs](https://reactjs.org/docs/react-api.html#reactchildren), `React.Children` is a top-level API that "provides utilities" for dealing with `this.props.children`. One of those utilities is `React.Children.map`. It behaves similarly to the native `Array.map` method in JavaScript. It iterates through a component's _direct_ children, allowing you to manipulate each child in any way you see fit:
 
-```
+```javascript
 React.Children.map(this.props.children, child => {
   /* do stuff */
 })
@@ -220,7 +220,7 @@ React.Children.map(this.props.children, child => {
 
 Let's update the render method of `Chat`, using `React.Children.map` to return each child:
 
-```
+```javascript
 // src/components/Chat.js
 
 // ...
@@ -264,7 +264,7 @@ There are a few ways to do this, and they're all relatively similar. I'll show y
 
 You can explicitly add a `displayName` to any class or functional component. It's the same as adding `propTypes` or `defaultProps`:
 
-```
+```javascript
 // src/components/Messages.js
 
 const Messages = ({ messages }) => (
@@ -276,7 +276,7 @@ const Messages = ({ messages }) => (
 Messages.displayName = "Messages"
 ```
 
-```
+```javascript
 // src/components/Input.js
 
 const Input = ({ value, onChange }) => (
@@ -288,7 +288,7 @@ const Input = ({ value, onChange }) => (
 Input.displayName = "Input"
 ```
 
-```
+```javascript
 // src/components/Button.js
 
 const Button = ({ onClick }) => (
@@ -302,7 +302,7 @@ Button.displayName = "Button"
 
 This value is now accessible on each child inside of the `React.Children.map` via `child.type.displayName`:
 
-```
+```javascript
 // src/components/Chat.js
 
 // ...

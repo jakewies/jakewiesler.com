@@ -12,7 +12,7 @@ When I first started working with Hugo I had some difficulty grasping the relati
 
 It took some time, but I can definitely say that the architectural decisions made by the Hugo team feel so intuitive. The default directory structure is light, containing only a few folders at the project's root along with a config file holding some meta information. When you start a new project it will look like this:
 
-```
+```markdown
 archetypes/
 content/
 data/
@@ -61,7 +61,7 @@ So, if you were tasked to create a simple website containing this structure:
 
 Your `content/` directory would potentially look like this:
 
-```
+```markdown
 content/
     about.md
     blog/
@@ -94,7 +94,7 @@ Another concept to understand about the markdown files that exist in the `conten
 
 You now know that the blog section must be defined as a subdirectory of `content/`. It will contain individual blog posts written as `.md` files:
 
-```
+```markdown
 content/
     blog/
         a-blog-post.md
@@ -122,7 +122,7 @@ To understand the `layouts/` directory you must understand how Hugo resolves whi
 
 In theory, your project could run on only two templates: a single and a list template. This is sufficient enough to handle all the content on your site. Your `layouts/` directory would then look like this:
 
-```
+```markdown
 layouts/
     _default/
         single.html
@@ -139,7 +139,7 @@ This may not seem like an issue until you want to structure your `content/blog/_
 
 Since Hugo gives you a number of ways to create "different" pieces of content, it must also give you a way to uniquely template them. Take a step back and think about how the `content/` directory was structured:
 
-```
+```markdown
 content/
     about.md
     blog/
@@ -150,7 +150,7 @@ content/
 
 Remember content types? This is where they start to come in handy. If you want to use unique templates for specific content types, you can create subdirectories inside `layouts/` for each type. For example, if you wanted the blog list page and all the blog single pages to use a separate set of templates from the rest of your site, you could define those templates in a `layouts/blog/` directory:
 
-```
+```markdown
 layouts/
     _default/
         single.html
@@ -164,7 +164,7 @@ During the lookup order Hugo will resolve to use `layouts/blog/list.html` templa
 
 Let's assume that you want to extend this template specificity for every content type on your site. Your `layouts/` directory would continue to "mirror" your `content/` directory by accepting subdirectories named after each content type.
 
-```
+```markdown
 layouts/
     _default
         single.html
@@ -190,7 +190,7 @@ Well, the about page and contact page aren't in a subdirectory of `content/`, so
 
 As I said before, this post doesn't cover front matter in depth, but this occasion requires a slight detour. For content pages that live at the root of `content/`, I like to explicitly define the `type` variable inside their front matter with a value of `static`.
 
-```
+```markdown
 // content/about.md & content/contact.md
 
 ---
@@ -202,7 +202,7 @@ I got this idea while reading one of Sara Soueidan's [blog posts about migrating
 
 Once we define the `type` variable inside a file's front matter we can create a subdirectory inside `layouts/` in order to template those files directly:
 
-```
+```markdown
 layouts/
     _default
         single.html
@@ -224,7 +224,7 @@ This paradigm is really powerful and makes working with Hugo an absolute breeze.
 
 There's another page inside of `content/` that we haven't discussed: The homepage. Just like the homepage gets its own markdown file inside of `content/`, it too can have its own template file: `layouts/index.html`:
 
-```
+```markdown
 layouts/
     _default
         single.html
@@ -265,7 +265,7 @@ Inside these "archetypes" are default parameters defined via front matter that e
 
 You can generate new content files using the `hugo new` command:
 
-```
+```shell
 hugo new <content_type>/<file_name>
 ```
 
@@ -273,7 +273,7 @@ Hugo will traverse the `archetypes/` directory to see if any archetypes match th
 
 If you wanted to have all of your blog posts contain specific front matter separate from other content types, and assuming your blog posts live at `content/blog/`, you would define a `blog.md` archetype with the desired front matter defined. Then create a new blog post from the command line:
 
-```
+```shell
 hugo new blog/a-new-post.md
 ```
 
@@ -287,7 +287,7 @@ Maybe your blog posts have a `description` parameter and a `keywords` parameter 
 
 The `static/` directory is pretty straightforward. All assets are placed here and can then be used throughout the project. 
 
-```
+```markdown
 static/
     css/
         styles.css

@@ -31,7 +31,7 @@ Even though we accomplished what we set out to do in that first post, the soluti
 
 In my opinion, the biggest drawback surrounds `React.Children.map`. Not only does it bloat the `render` method, but it also has the limitation of **only** giving you access to the _direct_ children of the component you're rendering.
 
-```
+```javascript
 {React.Children.map(this.props.children, child => {
   /* only direct children */
 
@@ -68,7 +68,7 @@ I've created a [starter template](https://codesandbox.io/s/zz95n04wx4) on CodeSa
 
 In `src/index.js` the `Chat` component is being rendered with three children components. Together they make up a single compound component.
 
-```
+```javascript
 // src/index.js
 
 <Chat>
@@ -85,7 +85,7 @@ Because of the nature of this example, these components don't come with a bundle
 
 To start, open up `src/components/Chat.js` and edit the file so that you are importing the `createContext` method from the `react` library. Call the method near the top of the file and set the result equal to a new variable named `ChatContext`.
 
-```
+```javascript
 // src/components/Chat.js
 
 import React, { Component, createContext } from 'react'
@@ -99,7 +99,7 @@ The `createContext` method returns an object containing a `Provider` and `Consum
 
 The `Chat` component will need to be refactored so that it renders the `Provider`. This means that the unsightly `React.Children.map` method can finally take hike:
 
-```
+```javascript
 // src/components/Chat.js
 
 ...
@@ -138,10 +138,10 @@ The values of these props all exist somewhere in the `Chat` component, either in
 
 The first way is to simply create a new object, we'll call it `context`, at the top of the `render` method with all the necessary data inside of it. Then we can pass that object to `ChatContext.Provider`:
 
-```
+```javascript
 // src/components/Chat.js
 
-...
+// ...
 
 render() {
   const { children } = this.props;
@@ -167,11 +167,11 @@ Although this works, there is a significant downside. The `context` object must 
 
 The second and more performant way to handle this would be to _add_ the methods to the `state` object of `Chat`, and pass the `state` directly to `ChatContext.Provider`:
 
-```
+```javascript
 // src/components/Chat.js
 
 class Chat extends Component {
-  ...
+  // ...
 
   updateCurrentMessage = event => {/* */};
 
@@ -200,17 +200,17 @@ The first time I saw this my left eye started to twitch. It's weird. I get it. B
 
 The last step in this refactor is to update the sub-components of `Chat` so that they consume the context created earlier instead of relying on props. In order for this to happen we'll first need to export `ChatContext.Consumer` out of `Chat.js`.
 
-```
+```javascript
 // src/components/Chat.js
 
-...
+// ...
 
 export const ChatConsumer = ChatContext.Consumer
 ```
 
 In each sub-component you can now import `ChatConsumer` and render it as the root element of each.
 
-```
+```javascript
 // src/components/Messages.js
 
 import React from 'react'
@@ -224,7 +224,7 @@ const Messages = () => (
 
 ```
 
-```
+```javascript
 // src/components/Input.js
 
 import React from 'react'
@@ -238,7 +238,7 @@ const Input = () => (
 
 ```
 
-```
+```javascript
 // src/components/Button.js
 
 import React from 'react'
@@ -256,7 +256,7 @@ Before this refactor, the sub-components of `Chat` relied on props passed in dur
 
 For instance, `Button` used to expect an `onClick` prop, which was a reference to the `add` method on the `Chat` component. Now it gets direct access to `add` via Context:
 
-```
+```javascript
 // Before
 
 const Button = ({ onClick }) => (
@@ -277,7 +277,7 @@ const Button = () = (
 
 The `Input` component also has a few name changes you'll need to address. Originally it expected a `value` and an `onChange` prop. These were just mappings to `this.state.currentMessage` and the `updateCurrentMessage` method on the `Chat` component respectively:
 
-```
+```javascript
 // Before
 
 const Input = ({ value, onChange }) => (
@@ -312,7 +312,7 @@ That wasn't too much work. I've definitely had tougher refactors. But, was it wo
 
 Let's hop into `src/index.js` and see what happens when we apply the same test as the previous post, wrapping `Chat.Button` in a `div` element.
 
-```
+```javascript
 // src/index.js
 
 <Chat>
@@ -332,7 +332,7 @@ This provides loads of flexiblity to the end user. There is only a single constr
 
 Which leads me to my final point of this post. What were to happen if you decided **not** to render a sub-component, say `Chat.Button`, underneath `Chat`?
 
-```
+```javascript
 // Here there be errors, arrrgh!
 
 const App = () => (
@@ -354,13 +354,13 @@ This is a nifty trick I picked up from the [Advanced React Patterns](https://egg
 
 Let's talk about the `createContext` method real quick. `createContext` can take an optional argument, `defaultValue`:
 
-```
+```javascript
 const Context = createContext(defaultValue)
 ```
 
 `defaultValue` comes in to play when a `Consumer` is rendered _outside_ of a matching `Provider`. 
 
-```
+```javascript
 // a quick example
 
 const { Provider, Consumer } = createContext('red')
@@ -380,7 +380,7 @@ This is great and all, but a default value is not very helpful in the case of co
 
 One way to prevent users of `Chat` from rendering sub-components in the wrong place is to **warn** them when they're doing so. This can be done by updating the `ChatConsumer` to throw an error if no context is found.
 
-```
+```javascript
 // src/components/Chat.js
 
 export const ChatConsumer = ({ children }) => (
