@@ -37,6 +37,7 @@
 </head>
 
 <body>
+  {{ block "progress" . }} {{ end }}
   <div class="container">
 
     {{ partial "burger.html" .}} {{ partial "nav.html" .}}
@@ -48,6 +49,7 @@
   </div>
 
   <script src="/js/index.js"></script>
+  {{ block "scripts" . }} {{ end }}
 </body>
 
 </html>
