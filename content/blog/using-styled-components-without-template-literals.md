@@ -239,7 +239,6 @@ const Button = styed.button([], props => ({
   background: props.background,
   color: props.color
 }))
-
 ```
 
 I'd love to hear insights from others who have experience with these patterns, and what the pros and cons are of each. Reach out to me on [Twitter](https://twitter.com/jakewies) so we can discuss!

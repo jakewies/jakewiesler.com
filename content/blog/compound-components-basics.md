@@ -177,7 +177,6 @@ function App() {
     </div>
   );
 }
-
 ```
 
 Things are slowly starting to take shape, but now the app is broken. All that's rendering is `<h1>Chatroom</h1>`. At first glance, you might think the solution would be to render `this.props.children` underneath it:

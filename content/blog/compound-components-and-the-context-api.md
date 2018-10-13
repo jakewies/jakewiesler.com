@@ -90,7 +90,7 @@ To start, open up `src/components/Chat.js` and edit the file so that you are imp
 
 import React, { Component, createContext } from 'react'
 
-...
+// ...
 
 const ChatContext = createContext()
 ```
@@ -102,7 +102,7 @@ The `Chat` component will need to be refactored so that it renders the `Provider
 ```javascript
 // src/components/Chat.js
 
-...
+// ...
 
 render() {
   const { children } = this.props
@@ -122,7 +122,7 @@ The change above will cause the app to error, but don't sweat it. The fix will b
 
 The `ChatContext.Provider` requires a single prop named `value`. This prop can be thought of simply as the _actual context_ being provided, and any underlying `Consumer`s will have access to it. 
 
-```
+```javascript
 <Provider value={context}>
   /* consumers can access context here */
 </Provider>
@@ -171,6 +171,7 @@ The second and more performant way to handle this would be to _add_ the methods 
 // src/components/Chat.js
 
 class Chat extends Component {
+
   // ...
 
   updateCurrentMessage = event => {/* */};
@@ -221,7 +222,6 @@ const Messages = () => (
     {({ messages }) => (/* render Messages */)}
   </ChatConsumer>
 )
-
 ```
 
 ```javascript
@@ -235,7 +235,6 @@ const Input = () => (
     {({ currentMessage, updateCurrentMessage }) => (/* render Input */)}
   </ChatConsumer>
 )
-
 ```
 
 ```javascript
@@ -249,7 +248,6 @@ const Button = () => (
     {({ add }) => (/* render Button */)}
   </ChatConsumer>
 )
-
 ```
 
 Before this refactor, the sub-components of `Chat` relied on props passed in during the `React.cloneElement` process. Now, instead of mapping through each child and cloning them, they can each explicitly declare what data they need from the `Provider` above. This data is a drop-in replacement for the props that were being used before, albeit with a few name changes.
