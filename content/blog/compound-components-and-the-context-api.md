@@ -397,12 +397,12 @@ export const ChatConsumer = ({ children }) => (
 )
 ```
 
-`ChatConsumer` can continue to be used like normal, except now it will throw if its rendered out of place. Much more helpful to our users don't you think? To be even more helpful you may want to craft a more appropriate error message. Something like, _Compound components of Chat should render beneath `Chat`._
+`ChatConsumer` can continue to be used like normal, except now it will throw if it's rendered out of place. Much more helpful to our users don't you think? To be even more helpful you may want to craft a more appropriate error message. Something like, _Compound components of Chat should render beneath `Chat`._
 
 ## Conclusion
 
 Hopefully this example has given you a better understanding of how compound components can work with the Context API. _Possibilities abound!_
 
-Reach out to me on [Twitter](https://twitter.com/jakewies) if you have any questions related to this post, or if you just want to talk shop! I would also love to know your thoughts on this walkthrough-style approach with a corresponding example on CodeSandbox. Happy coding! 
+Reach out to me on [Twitter](https://twitter.com/jakewies) if you have any questions related to this post, or if you just want to talk shop! I would also love to know your thoughts on these walkthrough-style blog posts. Happy coding! 
 
 👾
