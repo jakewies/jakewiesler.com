@@ -6,20 +6,21 @@ var autoprefixer = require('gulp-autoprefixer')
 var gulpIf = require('gulp-if')
 var gutil = require('gulp-util')
 
-
 gulp.task('styles', function() {
   return gulp
     .src('src/styles/pages/*.styl')
-    .pipe( gulpIf(isDev(), sourcemaps.init()) )
-      .pipe(stylus({
+    .pipe(gulpIf(isDev(), sourcemaps.init()))
+    .pipe(
+      stylus({
         compress: true
-      }))
-      .pipe(
-        autoprefixer({
-          browsers: ['last 2 versions']
-        })
-      )
-    .pipe( gulpIf(isDev(), sourcemaps.write()) )
+      })
+    )
+    .pipe(
+      autoprefixer({
+        browsers: ['last 2 versions']
+      })
+    )
+    .pipe(gulpIf(isDev(), sourcemaps.write()))
     .pipe(gulp.dest('static/css'))
 })
 
@@ -31,14 +32,12 @@ gulp.task('js', function() {
 })
 
 gulp.task('watch', function() {
-  gulp.watch('src/styles/**/*.styl', ['styles'])
-  gulp.watch('src/js/**/*.js', ['js'])
+  gulp.watch('src/styles/**/*.styl', gulp.series('styles'))
+  gulp.watch('src/js/**/*.js', gulp.series('js'))
 })
 
-
-gulp.task('default', ['styles', 'js', 'watch'])
-gulp.task('build', ['styles', 'js'])
-
+gulp.task('default', gulp.series(gulp.parallel('styles', 'js'), 'watch'))
+gulp.task('build', gulp.parallel('styles', 'js'))
 
 function isDev() {
   return gutil.env.env === 'dev'
