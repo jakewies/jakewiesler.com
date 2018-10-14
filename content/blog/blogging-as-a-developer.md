@@ -20,3 +20,5 @@ Sometimes I feel that my words are not backed with the experience to teach anyon
 
 So, if you read this and feel the way I feel, understand that although you may think you're behind the rest of the pack, you still have something to share with others who are racing to catch up with you.
 
+👾
+

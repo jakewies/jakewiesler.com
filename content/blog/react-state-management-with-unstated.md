@@ -18,7 +18,7 @@ The React community has seen a number of different state management patterns eme
 
 After a few hours of working with it I realized just _how_ simple it is. The API is relatively small, and you can get up and running with it in a matter of minutes. This is a huge positive in a world where third-party state management solutions usually take considerable time to learn.
 
-## State management primer
+{{< h2 >}}State management primer{{</ h2 >}}
 
 Before getting started, let's discuss why we're _really_ here in the first place. If you're reading this post then chances are you're either not happy with the existing solutions out there or you're looking to try something different. The former makes for much more interesting banter, so let's explore it. 
 
@@ -36,7 +36,7 @@ The code is verbose. The amount of files (depending on project structure) you ne
 
 This is what eventually led me to try `unstated`.
 
-## Getting started 
+{{< h2 >}}Getting started{{</ h2 >}}
 
 You can install `unstated` with yarn via `yarn add unstated`. From there, integrating it into your React application is a breeze. Like I mentioned before, the API is very small, exposing only 3 components:
 
@@ -104,11 +104,11 @@ One interesting point to make about `Subscribe` is that the `to` prop takes an a
 </Subscribe>
 ```
 
-## An example
+{{< h2 >}}An example{{</ h2 >}}
 
 Now that we've gone over the entire API (yes, that's essentially the entire API in a nutshell), let's walk through an example together, shall we? I've gone ahead and created a sample project [here](https://github.com/jakewies/unstated-color-switcher). The project uses [create-react-app](https://github.com/facebook/create-react-app), [styled-components](https://www.styled-components.com/) 💅🏻 and [rcolor](https://github.com/sterlingwes/RandomColor) to generate new background colors out of random hexadecimal values.
 
-### The Container
+### The container
 
 Inside `src/containers/ColorContainer.js` you'll see encapsulated logic to manage the current state of colors:
 
@@ -135,7 +135,7 @@ export default ColorContainer
 
 Everything inside of `ColorContainer` is only concerned with the state object. Nothing more, nothing less. Now, any component in the application can "subscribe" to this container, rendering based on the current state or updating that state based on user interaction.
 
-### The Subscriber
+### The subscriber
 
 In `src/components/App.js` you'll find the application itself:
 
@@ -166,7 +166,7 @@ export default App
 
 When a user clicks on the rendered button, the `make` method updates the state of `ColorContainer` with a new hexadecimal value. This causes any subscribed components to re-render, in this case the `App` component. `App` will fetch the new value using the `active` method defined on `ColorContainer` and pass it to `Outer`, a styled component that styles its `background` property using the `bg` prop.
 
-### The Provider
+### The provider
 
 And finally, `src/index.js` imports the `Provider` component from `unstated` and wraps the entire app inside of it, allowing any child components beneath to access container instances:
 
@@ -184,9 +184,10 @@ render(
 )
 ```
 
-
-## Conclusion
+{{< h2 >}}Conclusion{{</ h2 >}}
 
 In my opinion, the secret sauce behind `unstated` is how integrated it feels with React itself. It feels like this is how we were _meant_ to manage state in React. Not only that, but it's footprint is so small that you can sprinkle it in here or there. You don't need to think about structuring your application to fit this massive paradigm. 
 
 I think `unstated` fits really well in the React ecosystem, sitting nicely between `setState` and other libraries like Redux and MobX. Consider giving it a try on your next project. You will find that it is a joy to use!
+
+👾

@@ -10,7 +10,7 @@ stylesheet: "post.css"
 
 Sometimes a feature branch contains a bunch of random commits with even more random commit messages. In order to make things clearer in the git history and aid others in deciphering what the feature branch is really doing, it is necessary to “sqaush” these little commit messages into 1 commit with a more succinct description of the branch’s changes.
 
-## Squashing a commit
+{{< h2 >}}Squashing a commit{{</ h2 >}}
 
 In order to do this you can perform an `interactive rebase`.
 
@@ -58,8 +58,10 @@ s c619268 fixing typos
 
 This will squash the 3 newest commits into the 1st and original commit. Saving the file will then bring up a new editor Allowing you to reword a commit message that will be used for the squashed commit. This is cool because you can work on a branch and commit whenever it pleases you, making random commit messages. At the end you can squash them all together into a clean and understandable commit message that others will be able to interpret without pulling their hairs out.
 
-### Resources
+{{< h2 >}}Resources{{</ h2 >}}
 
 [How to Rebase a Pull Request · edx/edx-platform Wiki · GitHub](https://github.com/edx/edx-platform/wiki/How-to-Rebase-a-Pull-Request)
 
 [Git Interactive Rebase, Squash, Amend and Other Ways of Rewriting History](https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history)
+
+👾

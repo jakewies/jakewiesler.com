@@ -22,13 +22,13 @@ Here's the end result:
 
 I didn't dive too far into the WAAPI, but what I learned definitely warrants a small post about it. So let's jump in!
 
-## Browser compatibility
+{{< h2 >}}Browser compatibility{{</ h2 >}}
 
 Before we begin, it's important to note that the WAAPI is still very new. So much so that most browsers don't even support it. As of writing this, [CanIUse](https://caniuse.com/#search=web%20animations) shows that Firefox v52+ and Chrome v49+ have partial support, but all other major browsers such as IE, Edge, and Safari lack any support at all 😢.
 
 There are some solutions to this issue. GitHub repos such as [web-animations-js](https://github.com/web-animations/web-animations-js) exist to provide polyfills that bring WAAPI features to browsers that don't support them natively.
 
-## HTML structure
+{{< h2 >}}HTML structure{{</ h2 >}}
 
 If you view the Codepen embed, or "pen" from this point on, you will see that the HTML making up the filter is _very_ simple. I'm a fan of [pug templates](https://pugjs.org/api/getting-started.html) when working in Codepen but I will outline the structure in pure HTML just for reference:
 
@@ -43,7 +43,7 @@ If you view the Codepen embed, or "pen" from this point on, you will see that th
 
 The `.filter` container holds the structure of the component. The 3 `.filter__item` elements represent each time frame. And finally the `.filter__switch` element will be an absolutely positioned "switch".
 
-## CSS
+{{< h2 >}}CSS{{</ h2 >}}
 
 I love flexbox. It's the most used CSS property in my toolbag. The `.filter` element is a flex container holding three `.filter__item` elements that are flex children, each one taking up the same width as the others. Let's take a look at the styles that make this work:
 
@@ -105,15 +105,15 @@ I love flexbox. It's the most used CSS property in my toolbag. The `.filter` ele
 }
 ```
 
-#### .filter
+### .filter
 
 The `.filter` element defines the entire structure using hardcoded values for its dimensions. All children elements will use percentage values for `width` based on the explicit `width` set here. It is also a flex container, spreading its `.filter__item` children evenly within. 
 
-#### .filter__item
+### .filter__item
 
 The `.filter__item` element receives a percentage width of one third that of its parent's. When it is active, the `z-index` property allows it to appear over the `.filter__switch`. Without it, the `.filter__switch` would be absolutely positioned _over_ the active `.filter__item` text, and we don't want that.
 
-#### .filter__switch
+### .filter__switch
 
 The `.filter__switch` dimensions are calculated based on the dimensions of its parent container, namely `.filter`. It's important to note that the subtraction of 10px is to provide what I refer to as _absolute padding_. 
 
@@ -125,7 +125,7 @@ The final piece to the puzzle is the directional properties `top` and `left`. By
 
 If you're wondering how we got 5px, just think about it like this. We have 10px of empty space. To center the switch we put 5px on top and 5px on the left. 5 + 5 = 10. Maths.
 
-## JS: The meat and potatoes
+{{< h2 >}}JS: The meat and potatoes{{</ h2 >}}
 
 We now have a structurally and stylistically complete filter, but we're still missing the functionality. This is the most important part of the component _and_ this post. Let's get right to it.
 
@@ -176,17 +176,17 @@ document.querySelector('.filter').addEventListener('click', e => {
 
 The `filterItemData` variable contains information regarding the clicked filter item's whereabouts in the DOM. We'll also do the same for the switch, storing its data in the aptly named variable `switchData`.
 
-### The maths
+{{< h2 >}}The maths{{</ h2 >}}
 
 At the heart of this animation is a mathematical formula that calculates the new `x` coordinate for the switch. The goal is to move the switch directly behind the filter item so that the text of the filter item sits in the middle of the switch. If we can calculate the `x` coordinate that lies directly in the middle of the filter item, then we can use it to determine where to move the switch such that the two elements will line up perfectly.
 
-#### Finding the mid point
+### Finding the mid point
 
 The `filterItemData` variable includes an `x` coordinate and a `width` property. The `x` coordinate signifies where the element _starts_ on the x axis. If we cut the `width` in half and add it to `x` we'll get a new value representing the _mid point_. 
 
 Notice that I'm not calling it the mid point of the filter item. Technically it is, but it's also the _new_ mid point of the switch. If they are going to sit perfectly on top of each other in the DOM then they must share mid points.
 
-#### Finding the new x coordinate of the switch
+### Finding the new x coordinate of the switch
 
 We've found the mid point but we still need to find the new `x` coordinate of the switch. How can this be done? 
 
@@ -259,7 +259,7 @@ If we calculated that the future `x` coordinate of the switch is `452`, and we p
 
 Instead, we should be passing the difference in pixels between the switch's origin and its current and future `x` coordinates. Make sense? In order to accomplish this we'll need to define the origin of the switch and keep a reference to that throughout the life of the filter.
 
-#### Defining the switch origin
+### Defining the switch origin
 
 At first glance this seems like a pretty simple task. Let's just reach for that handy `getBoundingClientRect()` method and call it on the switch, grab its initial `x` coordinate and call it a day, right? Well not exactly. There are two caveats to defining the origin. 
 
@@ -342,6 +342,6 @@ document.querySelector('.filter').addEventListener('click', e => {
 
 There it is. We've detected a click event on a filter item, determined the new position of the switch relative to the clicked item, and animated it accordingly. The switch is also responsive to dynamic changes in browser window width.
 
-It was a fun component to work on and adds some nice UI/UX touches to an otherwise boring part of a larger app. You can check out the [final version here](https://codepen.io/jakewies/pen/gXvqMo/), fork and play around with it. If you have any questions regarding the Web Animations API or the code above please feel free to reach out on [Twitter](https://twitter.com/jakewies).
+It was a fun component to work on and adds some nice UI/UX touches to an otherwise boring part of a larger app. You can check out the [final version here](https://codepen.io/jakewies/pen/gXvqMo/), fork and play around with it. If you have any questions regarding the Web Animations API or the code above please feel free to reach out on [Twitter](https://twitter.com/jakewies). Thanks for reading!
 
-Thanks for reading!
+👾

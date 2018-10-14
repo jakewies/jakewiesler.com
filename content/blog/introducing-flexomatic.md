@@ -12,7 +12,7 @@ I'm really excited to announce my first open source library, [flexomatic](https:
 
 _UPDATE: As of writing this Version 1.1.0 has been released along with a [shiny documentation site](https://flexomatic.netlify.com/)_!
 
-## Backstory
+{{< h2 >}}Backstory{{</ h2 >}}
 
 I had been working on a small side-project when I ran into a situation where I wanted to have a grid system. I mulled over a few existing implementations before deciding to roll my own. There were two main reasons for this:
 
@@ -30,7 +30,7 @@ But I really enjoyed the implementation Philip Walton proposed. It's minimal and
 
 The quote above perfectly describes what `flexomatic` aims to achieve. Not too much. Not too little. Just right.
 
-## Getting started
+{{< h2 >}}Getting started{{</ h2 >}}
 
 ```shell
 $ yarn add flexomatic
@@ -42,7 +42,7 @@ $ npm install flexomatic
 
 **Note**: `flexomatic` has a `peerDependency` on `styled-components`. In order to use it you must have `styled-components` already installed in your project.
 
-## Features
+{{< h2 >}}Features{{</ h2 >}}
 
 `flexomatic` exposes two components, a `Grid` and a `Cell`.
 
@@ -66,7 +66,7 @@ Staying true to the Solved By Flexbox implementation:
 - Responsive, mobile-first with media query support
 - `Grid` components are nest-able
 
-## Looking ahead
+{{< h2 >}}Looking ahead{{</ h2 >}}
 
 I will continue to improve upon `flexomatic` and hopefully be able to learn more about open source through my efforts. 
 
