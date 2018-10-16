@@ -84,7 +84,7 @@ In order to achieve this we'll need to discuss three things:
 
 The items above are what enable compound components using the dot-notation syntax that `semantic-ui-react` utilizes so heavily. We'll be using them to refactor the existing project. If you can understand these three things then you're on your way to crafting some truly awesome components.
 
-{{< h2 >}}Static properties{{</ h2 >}} 
+{{% h2 %}}`static` properties{{% /h2 %}} 
 
 The `static` keyword was introducted in ES6 as a way to define static methods on a javascript class. In order to use them you'll need to configure your project to support [Class Fields & Static Properties](https://github.com/tc39/proposal-class-fields), a Stage-3 TC39 proposal. Luckily, `create-react-app` [supports this _out-of-the-box_](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-language-features-and-polyfills). Yay facebook, _amirite?_
 
@@ -205,7 +205,7 @@ We can't put the onus on the user to pass those props around. They don't even ha
 
 This is where the next two items on our list of things to discuss, `React.Children.map` and `React.cloneElement`, come in to play.
 
-{{< h2 >}}React.Children.map{{</ h2 >}} 
+{{% h2 %}}`React.Children.map`{{% /h2 %}} 
 
 According to the [React docs](https://reactjs.org/docs/react-api.html#reactchildren), `React.Children` is a top-level API that "provides utilities" for dealing with `this.props.children`. One of those utilities is `React.Children.map`. It behaves similarly to the native `Array.map` method in JavaScript. It iterates through a component's _direct_ children, allowing you to manipulate each child in any way you see fit:
 
@@ -237,7 +237,7 @@ render() {
 
 After you save, you'll notice that the error is still there. That's because we're still not passing any props to the children. Luckily, React gives us another utility to make this happen.
 
-{{< h2 >}}React.cloneElement{{</ h2 >}} 
+{{% h2 %}}`React.cloneElement`{{% /h2 %}} 
 
 The last item to discuss is `React.cloneElement`, another method offered by the React API. According to the [docs](https://reactjs.org/docs/react-api.html#cloneelement), `React.cloneElement` will:
 

@@ -105,15 +105,15 @@ I love flexbox. It's the most used CSS property in my toolbag. The `.filter` ele
 }
 ```
 
-### .filter
+### `.filter`
 
 The `.filter` element defines the entire structure using hardcoded values for its dimensions. All children elements will use percentage values for `width` based on the explicit `width` set here. It is also a flex container, spreading its `.filter__item` children evenly within. 
 
-### .filter__item
+### `.filter__item`
 
 The `.filter__item` element receives a percentage width of one third that of its parent's. When it is active, the `z-index` property allows it to appear over the `.filter__switch`. Without it, the `.filter__switch` would be absolutely positioned _over_ the active `.filter__item` text, and we don't want that.
 
-### .filter__switch
+### `.filter__switch`
 
 The `.filter__switch` dimensions are calculated based on the dimensions of its parent container, namely `.filter`. It's important to note that the subtraction of 10px is to provide what I refer to as _absolute padding_. 
 

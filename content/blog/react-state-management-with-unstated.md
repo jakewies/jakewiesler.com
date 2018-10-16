@@ -44,7 +44,7 @@ You can install `unstated` with yarn via `yarn add unstated`. From there, integr
 import { Provider, Subscribe, Container } from 'unstated' 
 ```
 
-### Provider
+### `Provider`
 
 The `Provider` is very similar to the other `Provider` types existing in libraries like Redux. You use it at the highest level of your application necessary to provide state to specific components:
 
@@ -54,7 +54,7 @@ The `Provider` is very similar to the other `Provider` types existing in librari
 </Provider>
 ```
 
-### Container
+### `Container`
 
 The `Container` is used when creating a "slice" of state. You use it in a similar way you would use `React.Component`:
 
@@ -82,7 +82,7 @@ This means that calling `setState` inside the `Container` will cause subscribed 
 this.setState(prevState => ({}))
 ```
 
-### Subscribe
+### `Subscribe`
 
 Now that you know how to create state, how do you pass it to your components? This is where `Subscribe` comes in. It uses a [render prop](https://reactjs.org/docs/render-props.html) to pass state and methods into your components:
 
