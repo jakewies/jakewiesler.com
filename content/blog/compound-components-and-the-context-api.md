@@ -372,7 +372,7 @@ This is great and all, but a default value is not very helpful in the case of co
 
 One way to prevent users of `Chat` from rendering sub-components in the wrong place is to **warn** them when they're doing so. This can be done by updating the `ChatConsumer` to throw an error if no context is found.
 
-```javascript
+```jsx
 // src/components/Chat.js
 
 export const ChatConsumer = ({ children }) => (
@@ -398,3 +398,11 @@ Hopefully this example has given you a better understanding of how compound comp
 Reach out to me on [Twitter](https://twitter.com/jakewies) if you have any questions related to this post, or if you just want to talk shop! I would also love to know your thoughts on these walkthrough-style blog posts. Happy coding! 
 
 👾
+
+```javascript
+
+function testFunc(arg1, arg2) {
+  console.log('hello world')
+  return true
+}
+```

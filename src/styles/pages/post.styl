@@ -1,40 +1,6 @@
 @import '../_main'
 @import '../partials/_social-icons'
-
-.post__container
-  width: 34rem
-  max-width: 100%
-  margin: 0 auto
-  padding-bottom: 4rem
-
-.post__title 
-  margin-top: 0
-  margin-bottom: 0.5rem
-
-.post__date
-  color: $grey
-  font-size: 0.8rem
-
-p code
-  display: inline-block 
-
-  &:before,
-  &:after
-    content: '`'
-
-pre
-  border: 1px solid #e7e7e7
-  border-radius: 2px
-  margin: 1.5rem auto 0
-  padding: 1rem
-  overflow-x: auto
-  white-space: pre
-
-  code
-    font-size: 12px
-
-    @media screen and (min-width: $tabletWidth)
-      font-size: 13px
+@import '../partials/_github-syntax-theme'
 
 blockquote
   width: 95%
@@ -50,6 +16,20 @@ img
   max-width: 500px
   margin: 0 auto
   display: block
+
+.post__container
+  width: 34rem
+  max-width: 100%
+  margin: 0 auto
+  padding-bottom: 4rem
+
+.post__title 
+  margin-top: 0
+  margin-bottom: 0.5rem
+
+.post__date
+  color: $grey
+  font-size: 0.8rem
 
 .cp_embed_wrapper 
   margin-top: 1.5rem
@@ -97,6 +77,11 @@ img
   code 
     font-size: 12px
     color: $darkGrey
+    background-color: transparent;
+
+    &:before,
+    &:after
+      content: '`'
 
   a
     color: $darkGrey
@@ -105,7 +90,6 @@ img
     color: $darkGrey
 
 /* overrides */
-
 .social-icons
   justify-content: center
   padding: 0 0 4rem

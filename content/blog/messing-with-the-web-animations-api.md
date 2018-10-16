@@ -55,7 +55,7 @@ I love flexbox. It's the most used CSS property in my toolbag. The `.filter` ele
   width: 500px;
   height: 200px;
   border-radius: 100px;
-  background: #373b56
+  background: #373b56;
 
 
 
