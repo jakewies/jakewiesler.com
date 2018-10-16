@@ -95,7 +95,7 @@ The `createContext` method returns an object containing a `Provider` and `Consum
 
 The `Chat` component will need to be refactored so that it renders the `Provider`. This means that the unsightly `React.Children.map` method can finally take hike:
 
-```javascript
+```jsx
 // src/components/Chat.js
 
 // ...
@@ -118,7 +118,7 @@ The change above will cause the app to error, but don't sweat it. The fix will b
 
 The `ChatContext.Provider` requires a single prop named `value`. This prop can be thought of simply as the _actual context_ being provided, and any underlying `Consumer`s will have access to it. 
 
-```javascript
+```jsx
 <Provider value={context}>
   /* consumers can access context here */
 </Provider>
@@ -134,7 +134,7 @@ The values of these props all exist somewhere in the `Chat` component, either in
 
 The first way is to simply create a new object, we'll call it `context`, at the top of the `render` method with all the necessary data inside of it. Then we can pass that object to `ChatContext.Provider`:
 
-```javascript
+```jsx
 // src/components/Chat.js
 
 // ...
@@ -163,7 +163,7 @@ Although this works, there is a significant downside. The `context` object must 
 
 The second and more performant way to handle this would be to _add_ the methods to the `state` object of `Chat`, and pass the `state` directly to `ChatContext.Provider`:
 
-```javascript
+```jsx
 // src/components/Chat.js
 
 class Chat extends Component {
@@ -207,7 +207,7 @@ export const ChatConsumer = ChatContext.Consumer
 
 In each sub-component you can now import `ChatConsumer` and render it as the root element of each.
 
-```javascript
+```jsx
 // src/components/Messages.js
 
 import React from 'react'
@@ -220,7 +220,7 @@ const Messages = () => (
 )
 ```
 
-```javascript
+```jsx
 // src/components/Input.js
 
 import React from 'react'
@@ -233,7 +233,7 @@ const Input = () => (
 )
 ```
 
-```javascript
+```jsx
 // src/components/Button.js
 
 import React from 'react'
@@ -252,7 +252,7 @@ Before this refactor, the sub-components of `Chat` relied on props passed in dur
 
 For instance, `Button` used to expect an `onClick` prop, which was a reference to the `add` method on the `Chat` component. Now it gets direct access to `add` via Context:
 
-```javascript
+```jsx
 // Before
 
 const Button = ({ onClick }) => (
@@ -273,7 +273,7 @@ const Button = () = (
 
 The `Input` component also has a few name changes you'll need to address. Originally it expected a `value` and an `onChange` prop. These were just mappings to `this.state.currentMessage` and the `updateCurrentMessage` method on the `Chat` component respectively:
 
-```javascript
+```jsx
 // Before
 
 const Input = ({ value, onChange }) => (
@@ -352,13 +352,13 @@ const Context = createContext(defaultValue)
 
 `defaultValue` comes in to play when a `Consumer` is rendered _outside_ of a matching `Provider`. 
 
-```javascript
+```jsx
 // a quick example
 
 const { Provider, Consumer } = createContext('red')
 
 const Blue = () => (
-  <Provider value={'blue'}>
+  <Provider value='blue'>
     <Consumer>{color => <h1>{color}</h1>}</Consumer>
   </Provider>
 )
@@ -398,11 +398,3 @@ Hopefully this example has given you a better understanding of how compound comp
 Reach out to me on [Twitter](https://twitter.com/jakewies) if you have any questions related to this post, or if you just want to talk shop! I would also love to know your thoughts on these walkthrough-style blog posts. Happy coding! 
 
 👾
-
-```javascript
-
-function testFunc(arg1, arg2) {
-  console.log('hello world')
-  return true
-}
-```

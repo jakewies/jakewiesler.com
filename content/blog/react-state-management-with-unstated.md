@@ -48,7 +48,7 @@ import { Provider, Subscribe, Container } from 'unstated'
 
 The `Provider` is very similar to the other `Provider` types existing in libraries like Redux. You use it at the highest level of your application necessary to provide state to specific components:
 
-```javascript
+```jsx
 <Provider>
   <App />
 </Provider>
@@ -86,7 +86,7 @@ this.setState(prevState => ({}))
 
 Now that you know how to create state, how do you pass it to your components? This is where `Subscribe` comes in. It uses a [render prop](https://reactjs.org/docs/render-props.html) to pass state and methods into your components:
 
-```javascript
+```jsx
 <Subscribe to={[StateContainer]}>
   {container => (
     /* access container.state */
@@ -98,7 +98,7 @@ Now that you know how to create state, how do you pass it to your components? Th
 
 One interesting point to make about `Subscribe` is that the `to` prop takes an array. This gives you the ability to pass multiple state container instances into your components:
 
-```javascript
+```jsx
 <Subscribe to={[StateContainer, OtherStateContainer]}>
 {(container, otherContainer) => /* */}
 </Subscribe>
@@ -139,7 +139,7 @@ Everything inside of `ColorContainer` is only concerned with the state object. N
 
 In `src/components/App.js` you'll find the application itself:
 
-```javascript
+```jsx
 import React from 'react'
 import { Subscribe } from 'unstated'
 import ColorContainer from '../containers/ColorContainer'
@@ -170,7 +170,7 @@ When a user clicks on the rendered button, the `make` method updates the state o
 
 And finally, `src/index.js` imports the `Provider` component from `unstated` and wraps the entire app inside of it, allowing any child components beneath to access container instances:
 
-```javascript
+```jsx
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'unstated'

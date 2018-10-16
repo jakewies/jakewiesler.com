@@ -114,7 +114,7 @@ I'm going to refer to these `static` properties as "sub-components" from this po
 
 Take a look at the `Chat` component's render method: 
 
-```javascript
+```jsx
 // src/components/Chat.js
 
 class Chat extends Component {
@@ -142,7 +142,7 @@ class Chat extends Component {
 
 The layout is still hardcoded, going against our flexible philosophy. What we desire is to have the user of the component determine how things render. In order to do this, we first need to remove the `Messages`, `Input` and `Button` components from the `render` method completely. Let's also remove the variables defined at the beginning of `render` since we aren't using them at the moment:
 
-```javascript
+```jsx
 // src/components/Chat.js
 
 class Chat extends Component {
@@ -161,7 +161,7 @@ class Chat extends Component {
 
 We're no longer hardcoding the layout, so users of `Chat` can explicitly declare it in their own code using the dot-notation syntax. Let's simulate this by updating the `App` component in `src/index.js` with the following:
 
-```javascript
+```jsx
 // src/index.js
 
 function App() {
@@ -179,7 +179,7 @@ function App() {
 
 Things are slowly starting to take shape, but now the app is broken. All that's rendering is `<h1>Chatroom</h1>`. At first glance, you might think the solution would be to render `this.props.children` underneath it:
 
-```javascript
+```jsx
 // src/components/Chat.js
 
 class Chat extends Component {
@@ -217,7 +217,7 @@ React.Children.map(this.props.children, child => {
 
 Let's update the render method of `Chat`, using `React.Children.map` to return each child:
 
-```javascript
+```jsx
 // src/components/Chat.js
 
 // ...
@@ -299,7 +299,7 @@ Button.displayName = "Button"
 
 This value is now accessible on each child inside of the `React.Children.map` via `child.type.displayName`:
 
-```javascript
+```jsx
 // src/components/Chat.js
 
 // ...

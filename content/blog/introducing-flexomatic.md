@@ -46,7 +46,7 @@ $ npm install flexomatic
 
 `flexomatic` exposes two components, a `Grid` and a `Cell`.
 
-```javascript
+```jsx
 import React from 'react'
 import { Grid, Cell } from 'flexomatic'
 

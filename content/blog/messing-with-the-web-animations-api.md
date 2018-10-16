@@ -222,9 +222,9 @@ In CSS animations there is this concept of **@keyframes**, or sequential steps d
 
 ```javascript
 const keyframes = [
-  { keyframe 1 }
-  { keyframe 2 }
-  { keyframe 3 }
+  { keyframeOne }
+  { keyframeTwo }
+  { keyframeThree }
 ]
 ```
 
