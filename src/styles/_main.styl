@@ -13,8 +13,8 @@ main
   padding: 3rem 1.5rem
 
   // compensates for the nav sidebar on tablet and desktop
-  @media screen and (min-width: $tabletWidth)
+  @media screen and (min-width: $medium)
     padding-left: "calc(1.5rem + %s)" % $navWidth
 
-  @media screen and (max-width: $tabletWidth - 1)
+  @media screen and (max-width: $medium - 1)
     padding-top: "calc(3rem + %s)" % $burgerContainerHeight

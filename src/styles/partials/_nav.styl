@@ -14,7 +14,7 @@
   visibility: hidden
   z-index: 1
 
-  @media screen and (min-width: $tabletWidth)
+  @media screen and (min-width: $medium)
     display: block
     visibility: visible
     padding-top: 3em
@@ -32,11 +32,11 @@
   padding: 0
   width: 50%
 
-  @media screen and (min-width: $tabletWidth)
+  @media screen and (min-width: $medium)
     width: auto
 
   // Creates a drop-in animation when opening the mobile menu
-  @media screen and (max-width: $tabletWidth - 1px)
+  @media screen and (max-width: $medium - 1)
     transform: translateY(-25px)
     opacity: 0
     
@@ -53,7 +53,7 @@
   &:last-of-type
     margin-bottom: 0
 
-  @media screen and (min-width: $tabletWidth)
+  @media screen and (min-width: $medium)
     margin-bottom: 1.75em
 
 
@@ -68,5 +68,5 @@
   &:hover
     color: $black
 
-  @media screen and (min-width: $tabletWidth)
+  @media screen and (min-width: $medium)
     font-size: 1em
