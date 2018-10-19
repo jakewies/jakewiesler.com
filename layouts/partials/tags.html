@@ -1,14 +1,12 @@
-<div class="tags__container">
-  {{ $taxo := "tags" }}
-  {{ with .Param $taxo }}
-  <ul class="tags__list">
-      {{ range $index, $tag := . }}
-      {{ with $.Site.GetPage (printf "/%s/%s" $taxo $tag) -}}
-      <li class="tag__item">
-          <a class="tag__link" href="{{ .Permalink }}">{{ $tag }}</a>
-      </li>
-      {{- end -}}
+{{ $taxo := "tags" }}
+{{ with .Param $taxo }}
+<ul class="tags__list">
+    {{ range $index, $tag := . }}
+    {{ with $.Site.GetPage (printf "/%s/%s" $taxo $tag) -}}
+    <li class="tag__item">
+        <a class="tag__link" href="{{ .Permalink }}">{{ $tag }}</a>
+    </li>
     {{- end -}}
-  </ul>
-  {{ end }}
-</div>
+  {{- end -}}
+</ul>
+{{ end }}
