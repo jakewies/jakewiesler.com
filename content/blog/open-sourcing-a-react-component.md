@@ -4,6 +4,7 @@ date: 2018-02-26T15:01:28-05:00
 slug: "lessons-learned-from-publishing-a-react-component-to-npm"
 description: "I've been working on my true open source project, one that is ready for use in production. It's a grid system built with React components based on flexbox. Here's what I've learned."
 keywords: ["React", "npm", "Component", "Open Source", "JavaScript"]
+tags: ["React", "Open source"]
 draft: false
 stylesheet: "post.css"
 ---
@@ -72,5 +73,3 @@ I think that's the saying, isn't it? There is so much information out there. So 
 {{< h2 >}}Wrapping up{{</ h2 >}}
 
 I hope this post has been useful to you if you're planning on jumping into the open source arena soon. I had a blast working on this project, and learned a ton from it. You can check it out [here](https://github.com/jakewies/flexomatic), and feel free to reach out to me via [Twitter](https://twitter.com/jakewies) if you have any questions. Goodluck!
-
-👾

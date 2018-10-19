@@ -4,6 +4,7 @@ date: 2017-09-27T18:08:15-04:00
 slug: "rebasing-in-git"
 description: "Using the rebase command in git can be a difficult concept to understand. This post aims to make it clearer for beginners."
 keywords: ["git", "rebase"]
+tags: ["Git"]
 draft: false
 stylesheet: "post.css"
 ---
@@ -63,5 +64,3 @@ This will squash the 3 newest commits into the 1st and original commit. Saving t
 [How to Rebase a Pull Request · edx/edx-platform Wiki · GitHub](https://github.com/edx/edx-platform/wiki/How-to-Rebase-a-Pull-Request)
 
 [Git Interactive Rebase, Squash, Amend and Other Ways of Rewriting History](https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history)
-
-👾

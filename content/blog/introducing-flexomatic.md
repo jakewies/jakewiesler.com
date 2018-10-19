@@ -4,6 +4,7 @@ date: 2018-04-26T11:10:00-05:00
 slug: "introducing-flexomatic"
 description: "I've been working hard on my first open source React component library. After a few weeks I just released the first version of flexomatic. Let me tell you all about it."
 keywords: ["javascript", "react", "components", "styled-components"]
+tags: ["React", "Open source"]
 draft: false
 stylesheet: "post.css"
 ---
@@ -73,8 +74,6 @@ I will continue to improve upon `flexomatic` and hopefully be able to learn more
 You can check out the [docs](https://flexomatic.netlify.com) for examples and usage. Built with [NextJS](https://github.com/zeit/next.js/)!
 
 If you have any questions feel free to reach out on [Twitter](https://twitter.com/jakewies) or file an issue on [GitHub](https://github.com/jakewies/flexomatic). Contributions are always welcome!
-
-👾
 
 
 

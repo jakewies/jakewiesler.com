@@ -3,17 +3,15 @@
 {{ end }}
 
 {{ define "main" }}
-
 <article class="post__container">
   <header class="post__header">
     <h1 class="post__title">{{.Title}}</h1>
     <time datetime="{{ .Date }}" class="post__date">{{ .Date.Format "Jan 2 2006" }}</time>
   </header>
   {{ .Content }}
+  {{ partial "tags.html" .}}
 </article>
-
 {{ partial "social-icons.html" .}}
-
 {{ end }}
 
 {{ define "scripts" }}

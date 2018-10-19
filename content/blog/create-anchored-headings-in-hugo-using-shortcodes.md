@@ -4,6 +4,7 @@ date: 2018-10-15T09:38:01-04:00
 slug: "anchored-headings-in-hugo"
 description: "Anchored headings are a useful feature in a blog that allows readers to jump to specific sections of the article or share that section with a friend. Unfortunately, this feature cannot be implemented in markdown without the use of Hugo's custom shortcodes."
 keywords: ["hugo", "shortcodes", "content", "markdown"]
+tags: ["Hugo"]
 draft: false
 stylesheet: "post.css"
 ---
@@ -179,8 +180,6 @@ Currently I just have a separate shortcode for each heading type, so an `h2.html
 {{% h2 %}}Wrapping up{{% /h2 %}}
 
 That's pretty much all there is to it. By now you should have a pretty solid understanding of how shortcodes work in Hugo, and how to create an anchored heading using shortcodes and the `anchorize` function. If you have any questions, reach out to me on [Twitter](https://twitter.com/jakewies). Happy coding!
-
-👾
 
 
 

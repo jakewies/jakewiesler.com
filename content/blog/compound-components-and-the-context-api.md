@@ -4,6 +4,7 @@ date: 2018-10-10T19:50:06-04:00
 slug: ""
 description: "In the first post of this series we discussed the basics of compound components in React. They are a group of components that work in tandem to produce some functionality. Unfortunately, there are some constraints when authoring components in this way. In this post we'll combine the flexibilty of compound components with the powerful React Context Api."
 keywords: ["React", "Component", "Compound Components", "Context", "JavaScript"]
+tags: ["React"]
 draft: false
 stylesheet: "post.css"
 ---
@@ -395,6 +396,4 @@ export const ChatConsumer = ({ children }) => (
 
 Hopefully this example has given you a better understanding of how compound components can work with the Context API. _Possibilities abound!_
 
-Reach out to me on [Twitter](https://twitter.com/jakewies) if you have any questions related to this post, or if you just want to talk shop! I would also love to know your thoughts on these walkthrough-style blog posts. Happy coding! 
-
-👾
+Reach out to me on [Twitter](https://twitter.com/jakewies) if you have any questions related to this post, or if you just want to talk shop! I would also love to know your thoughts on these walkthrough-style blog posts. Happy coding!

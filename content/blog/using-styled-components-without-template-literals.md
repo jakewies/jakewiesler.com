@@ -4,6 +4,7 @@ date: 2018-03-01T08:33:35-05:00
 slug: "using-styled-components-without-template-literals"
 description: "I've noticed a pattern emerge from a few different libraries that use styled-components internally when declaring a component using the styled API. What's interesting about this pattern is I haven't seen it documented much and nobody has shed light on it. In this post I will explain what it is, how it works, and why it's useful."
 keywords: ["javascript", "styled-components", "tagged template literals", "React"]
+tags: ["React"]
 draft: false
 stylesheet: "post.css"
 ---
@@ -239,5 +240,3 @@ const Button = styed.button([], props => ({
 ```
 
 I'd love to hear insights from others who have experience with these patterns, and what the pros and cons are of each. Reach out to me on [Twitter](https://twitter.com/jakewies) so we can discuss!
-
-👾

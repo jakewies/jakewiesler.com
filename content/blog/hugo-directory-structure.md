@@ -4,6 +4,7 @@ date: 2017-10-17T09:54:15-04:00
 slug: "hugo-directory-structure"
 description: "Hugo is a static site generator written in Go, and is incredibly fast. This article will introduce you to the core principles of its directory structure and will help you get started building websites quickly."
 keywords: ["hugo", "directory"]
+tags: ["Hugo"]
 draft: false
 stylesheet: "post.css"
 ---
@@ -310,5 +311,3 @@ I hope this post has proved useful to you on your quest to master Hugo. It is st
 You can do some pretty awesome things once you understand how these core directories are working with each other. There are projects that exist such as [Victor Hugo](https://github.com/netlify/victor-hugo) that take Hugo's architecture to the next level. This is a project you'll definitely want to check out if you are interested in an advanced workflow.
 
 I'll continue to post regularly about some tips and tricks I learn along the way. If you have any questions or want to correct a mistake in this post, or even if you just want to talk shop, feel free to reach out to me via [Twitter](https://twitter.com/jakewies)!
-
-👾

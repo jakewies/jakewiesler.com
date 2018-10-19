@@ -5,5 +5,5 @@ slug: ""
 description: ""
 keywords: []
 draft: true
-stylesheet: "post.css"
+tags: []
 ---

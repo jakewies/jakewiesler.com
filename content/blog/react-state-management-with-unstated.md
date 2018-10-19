@@ -4,6 +4,7 @@ date: 2018-05-12T10:06:30-04:00
 slug: "react-state-management-with-unstated"
 description: "Unstated is a new react state management library from @jamiebuilds. It leverages the power of React's Context API to keep state management simple. This post will dive into how to get started with the library and why it's a good choice for most projects."
 keywords: ['React', 'JavaScript', 'React State', 'unstated']
+tags: ["React"]
 draft: false
 stylesheet: "post.css"
 ---
@@ -189,5 +190,3 @@ render(
 In my opinion, the secret sauce behind `unstated` is how integrated it feels with React itself. It feels like this is how we were _meant_ to manage state in React. Not only that, but it's footprint is so small that you can sprinkle it in here or there. You don't need to think about structuring your application to fit this massive paradigm. 
 
 I think `unstated` fits really well in the React ecosystem, sitting nicely between `setState` and other libraries like Redux and MobX. Consider giving it a try on your next project. You will find that it is a joy to use!
-
-👾

@@ -4,6 +4,7 @@ date: 2017-11-21T20:24:37-05:00
 slug: "messing-with-the-web-animations-api"
 description: "The Web Animations API is an experimental technology that allows developers to take advantage of the browser animation engine. This post walks through a real world example of the Web Animations API in action."
 keywords: ["Web Animations API", "keyframes"]
+tags: ["Animation"]
 draft: false
 stylesheet: "post.css"
 ---
@@ -343,5 +344,3 @@ document.querySelector('.filter').addEventListener('click', e => {
 There it is. We've detected a click event on a filter item, determined the new position of the switch relative to the clicked item, and animated it accordingly. The switch is also responsive to dynamic changes in browser window width.
 
 It was a fun component to work on and adds some nice UI/UX touches to an otherwise boring part of a larger app. You can check out the [final version here](https://codepen.io/jakewies/pen/gXvqMo/), fork and play around with it. If you have any questions regarding the Web Animations API or the code above please feel free to reach out on [Twitter](https://twitter.com/jakewies). Thanks for reading!
-
-👾

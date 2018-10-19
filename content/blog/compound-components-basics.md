@@ -4,6 +4,7 @@ date: 2018-08-10T10:27:00-04:00
 slug: "compound-component-basics"
 description: "Compound components are a fairly new technique that has become popular in the React community. In this post I will discuss what they are, why they are useful, and how to get started using them in your projects."
 keywords: ["React", "Component", "Compound Components", "UI", "JavaScript"]
+tags: ["React"]
 draft: false
 stylesheet: "post.css"
 ---
@@ -360,9 +361,7 @@ Let's take a step back and review:
 - We learned how to identify specific children using the `displayName` property. 
 - We used all of this information to craft a flexible compound component that manages its own state and inverts layout control to the user.
 
-In the [next post](https://www.jakewiesler.com/blog/compound-components-and-the-context-api/) we will address the drawbacks of `React.Children.map` by refactoring `Chat` to use the [Context API](https://reactjs.org/docs/context.html), giving us the ability to pass data to any child no matter their level in the component tree. 
-
-👾
+In the [next post](https://www.jakewiesler.com/blog/compound-components-and-the-context-api/) we will address the drawbacks of `React.Children.map` by refactoring `Chat` to use the [Context API](https://reactjs.org/docs/context.html), giving us the ability to pass data to any child no matter their level in the component tree.
 
 
 

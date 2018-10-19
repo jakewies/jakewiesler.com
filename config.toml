@@ -1,6 +1,10 @@
 baseURL = "https://www.jakewiesler.com/"
 languageCode = "en-us"
 title = "Jake Wiesler"
+preserveTaxonomyNames = true
+
+[taxonomies]
+  tag = "tags"
 
 [params]
   author = "Jake Wiesler"
