@@ -1,6 +1,7 @@
 @import '_burger'
 
 .nav 
+  font-size: 16px
   position: absolute
   top: 0
   left: 0
@@ -16,7 +17,7 @@
   @media screen and (min-width: $tabletWidth)
     display: block
     visibility: visible
-    padding-top: 3rem
+    padding-top: 3em
     width: $navWidth
     position: fixed
 
@@ -46,19 +47,20 @@
 
 
 .nav__list li
-  margin-bottom: 3rem
+  margin-bottom: 3em
+  line-height: 1.5em
 
   &:last-of-type
     margin-bottom: 0
 
   @media screen and (min-width: $tabletWidth)
-    margin-bottom: 1.75rem
+    margin-bottom: 1.75em
 
 
 .nav__list a
   color: $grey
   text-decoration: none
-  font-size: 2rem
+  font-size: 2em
 
   &.active
     color: $black
@@ -67,4 +69,4 @@
     color: $black
 
   @media screen and (min-width: $tabletWidth)
-    font-size: 1rem
+    font-size: 1em
