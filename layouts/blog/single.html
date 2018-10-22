@@ -3,14 +3,16 @@
 {{ end }}
 
 {{ define "main" }}
-<article class="post__container">
+<div class="post__container">
   <header class="post__header">
     <h1 class="post__title">{{.Title}}</h1>
     <time datetime="{{ .Date }}" class="post__date">{{ .Date.Format "Jan 2 2006" }}</time>
   </header>
-  {{ .Content }}
+  <article class="post__content">
+    {{ .Content }}
+  </article>
   {{ partial "tags.html" .}}
-</article>
+</div>
 {{ partial "social-icons.html" .}}
 {{ end }}
 
