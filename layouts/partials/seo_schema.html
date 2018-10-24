@@ -29,13 +29,13 @@
     { 
       "@context": "http://schema.org", 
       "@type": "WebSite", 
-      "url": "{{ .Site.BaseURL }}",
-      "name": "{{ .Site.Title }}",
+      "url": "{{ .Permalink }}",
+      "name": "{{ .Title }}",
       "author": {
         "@type": "Person",
         "name": "{{ .Site.Params.author }}"
       },
-      "description": "{{ .Site.Params.description }}"
+      "description": "{{ if .IsHome }}{{ htmlEscape .Site.Params.description }}{{ else }}{{ htmlEscape .Description }}{{ end }}"
     }
   {{ end }}
   </script>
