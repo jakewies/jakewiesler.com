@@ -25,7 +25,7 @@
   <meta name="google-site-verification" content="8cyiY374WL2LGr87fBghcdJCRx6BaPNBvLjeZlk6tyc" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="{{ .Title }}" />
-  <meta name="twitter:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}"
+  <meta name="twitter:description" content="{{ if .IsHome }}{{ htmlEscape .Site.Params.description }}{{ else }}{{ htmlEscape .Description }}{{ end }}"
   />
   <meta name="twitter:site" content="{{ .Site.Params.twitter }}" />
   <meta name="twitter:creator" content="{{ .Site.Params.twitter }}" />
