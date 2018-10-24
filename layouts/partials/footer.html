@@ -1,0 +1,5 @@
+{{ if not .IsHome }}
+<footer>
+  <p>{{ replace .Site.Copyright "{year}" now.Year }}</p>
+</footer>
+{{ end }}
