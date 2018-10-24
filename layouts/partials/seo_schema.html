@@ -1,6 +1,31 @@
 <!-- JSON-LD -->
-{{ if .IsHome }}
-  <script type="application/ld+json">
+<script type="application/ld+json">
+  {{ if and (.IsPage) (eq .Section "blog") }}
+    {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ .Site.BaseURL }}"
+      },
+      "articleSection" : "{{ .Section }}",
+      "name" : "{{ .Title }}",
+      "headline" : "{{ .Title }}",
+      "description" : "{{ .Description }}",
+      "inLanguage" : "en-US",
+      "author" : "{{ .Site.Params.author }}",
+      "creator" : "{{ .Site.Params.author }}",
+      "publisher": "{{ .Site.Params.author }}",
+      "accountablePerson" : "{{ .Site.Params.author }}",
+      "copyrightHolder" : "{{ .Site.Params.author }}",
+      "copyrightYear" : "{{ .Date.Format "2006" }}",
+      "datePublished": "{{ .Date }}",
+      "dateModified" : "{{ .Date }}",
+      "url" : "{{ .Permalink }}",
+      "wordCount" : "{{ .WordCount }}",
+      "keywords" : [{{ if isset .Params "keywords" }}{{ range .Params.keywords }}"{{ . }}", {{ end }}{{ end }}"Blog"]
+    }
+  {{ else }}
     { 
       "@context": "http://schema.org", 
       "@type": "WebSite", 
@@ -12,48 +37,5 @@
       },
       "description": "{{ .Site.Params.description }}"
     }
-  </script> 
-{{ end }} 
-
-{{ if .IsPage }}
-  <script type="application/ld+json">
-    {{ if eq .Section "blog" }}
-      {
-        "@context" : "http://schema.org",
-        "@type" : "BlogPosting",
-        "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "{{ .Site.BaseURL }}"
-        },
-        "articleSection" : "{{ .Section }}",
-        "name" : "{{ .Title }}",
-        "headline" : "{{ .Title }}",
-        "description" : "{{ .Description }}",
-        "inLanguage" : "en-US",
-        "author" : "{{ .Site.Params.author }}",
-        "creator" : "{{ .Site.Params.author }}",
-        "publisher": "{{ .Site.Params.author }}",
-        "accountablePerson" : "{{ .Site.Params.author }}",
-        "copyrightHolder" : "{{ .Site.Params.author }}",
-        "copyrightYear" : "{{ .Date.Format "2006" }}",
-        "datePublished": "{{ .Date }}",
-        "dateModified" : "{{ .Date }}",
-        "url" : "{{ .Permalink }}",
-        "wordCount" : "{{ .WordCount }}",
-        "keywords" : [{{ if isset .Params "keywords" }}{{ range .Params.keywords }}"{{ . }}", {{ end }}{{ end }}"Blog"]
-      }
-    {{ else }}
-      { 
-        "@context": "http://schema.org", 
-        "@type": "WebSite", 
-        "url": "{{ .Site.BaseURL }}",
-        "name": "{{ .Site.Title }}",
-        "author": {
-          "@type": "Person",
-          "name": "{{ .Site.Params.author }}"
-        },
-        "description": "{ .Site.Params.description }}"
-      }
-    {{ end }}
-  </script> 
-{{ end }}
+  {{ end }}
+  </script>
