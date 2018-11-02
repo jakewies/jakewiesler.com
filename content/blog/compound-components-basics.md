@@ -87,7 +87,7 @@ The items above are what enable compound components using the dot-notation synta
 
 {{% h2 %}}`static` properties{{% /h2 %}} 
 
-The `static` keyword was introducted in ES6 as a way to define static methods on a javascript class. In order to use them you'll need to configure your project to support [Class Fields & Static Properties](https://github.com/tc39/proposal-class-fields), a Stage-3 TC39 proposal. Luckily, `create-react-app` [supports this _out-of-the-box_](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-language-features-and-polyfills). Yay facebook, _amirite?_
+The `static` keyword was introducted in ES6 as a way to define static methods on a javascript class. In order to use them you'll need to configure your project to support [Class Fields & Static Properties](https://github.com/tc39/proposal-class-fields), a Stage-3 TC39 proposal. Luckily, `create-react-app` [supports this _out-of-the-box_](https://facebook.github.io/create-react-app/docs/supported-browsers-features#supported-language-features). Yay facebook, _amirite?_
 
 _Note: If you are following along with another project that isn't bootstrapped with `create-react-app`, you can enable this feature via [babel-plugin-transform-class-properties](https://babeljs.io/docs/en/babel-plugin-transform-class-properties/)._
 
