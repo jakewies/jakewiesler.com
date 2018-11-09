@@ -2,7 +2,7 @@
 title: "On React Hooks"
 date: 2018-11-08T17:55:30-05:00
 slug: ""
-description: "React hooks are functions that expose certain features previously unavailable to functional components such as state and lifecycle. They were announced at ReactConf 2018 and are an experimental proposal as of writing this. React hooks are slated to become official in the v16.7.0 release. In this post I outline some of my initial thoughts."
+description: "React hooks are functions that expose certain features previously unavailable to function components such as state and lifecycle. They were announced at ReactConf 2018 and are an experimental proposal as of writing this. React hooks are slated to become official in the v16.7.0 release. In this post I outline some of my initial thoughts."
 keywords: ["React", "hooks", "JavaScript"]
 draft: false
 tags: ["React"]
@@ -11,7 +11,7 @@ stylesheet: "post.css"
 
 On the afternoon of October 25th I hastily shuffled my work to the side and fired up YouTube, knowing that the ReactConf 2018 keynote was minutes away from starting. This would be the first conference keynote I watch live, and I wanted no interruptions. As the next two hours began to unfold I realized I was witnessing a significant moment for React. An evolution of the library. 
 
-Coming off the heels of a [strong `v16.6.0` release](/blog/whats-new-in-react-16.6.0/), the React core team announced [hooks](https://reactjs.org/docs/hooks-intro.html), a feature proposal that exposes certain capabilities to functional components such as state and lifecycle. These capabilities were previously limited to class components. 
+Coming off the heels of a [strong `v16.6.0` release](/blog/whats-new-in-react-16.6.0/), the React core team announced [hooks](https://reactjs.org/docs/hooks-intro.html), a feature proposal that exposes certain capabilities to function components such as state and lifecycle. These capabilities were previously limited to class components. 
 
 You can view the entire keynote along with a follow up talk from [Ryan Florence](https://twitter.com/ryanflorence) in this [YouTube video](https://www.youtube.com/watch?v=dpw9EHDh2bM). If you have 90 minutes to kill I encourage you to watch. 👀
 
@@ -23,7 +23,7 @@ Hooks are an **experimental proposal**. Nothing you see or hear on the topic sho
 
 {{% h2 %}}What are hooks?{{%/ h2 %}}
 
-As I stated earlier, **React hooks** are a way for functional components to access certain features previously unavailable to them. The obvious ones being state and lifecycle. They are **not** to be used in class components.
+As I stated earlier, **React hooks** are a way for function components to access certain features previously unavailable to them. The obvious ones being state and lifecycle. They are **not** to be used in class components.
 
 Here's another definition from the [React docs](https://reactjs.org/docs/hooks-overview.html#but-what-is-a-hook):
 
@@ -43,7 +43,7 @@ I've heard that classes in JS are *different* than classes in other languages. T
 
 I've heard that you should avoid classes in JS. In fact, I heard this before I started working with React at all, so you can imagine my confusion when coming to the library and realizing that classes were fundamental. 
 
-The introduction of hooks is an indicator that the core team sees value in functional components over the long term, and there are [clear reasons](https://reactjs.org/docs/hooks-intro.html#classes-confuse-both-people-and-machines) to prefer them over class components. That being said, I don't think we will see class components phased out any time soon, if ever. This would go against React's seemingly backwards compatible mindset. Imagine all of the code that would be affected by such a change!
+The introduction of hooks is an indicator that the core team sees value in function components over the long term, and there are [clear reasons](https://reactjs.org/docs/hooks-intro.html#classes-confuse-both-people-and-machines) to prefer them over class components. That being said, I don't think we will see class components phased out any time soon, if ever. This would go against React's seemingly backwards compatible mindset. Imagine all of the code that would be affected by such a change!
 
 ### Long live the function!
 

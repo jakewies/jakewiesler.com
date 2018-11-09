@@ -260,7 +260,7 @@ Furthermore, it's not enough to just clone each child _willy-nilly_, because the
 
 There are a few ways to do this, and they're all relatively similar. I'll show you the way that my team and I identify specific children as it has worked well for us. We use a property on components called `displayName`. According to the [docs](https://reactjs.org/docs/react-component.html#displayname), the `displayName` property is primarily used for debugging purposes, however I find it useful here. 
 
-You can explicitly add a `displayName` to any class or functional component. It's the same as adding `propTypes` or `defaultProps`:
+You can explicitly add a `displayName` to any class or function component. It's the same as adding `propTypes` or `defaultProps`:
 
 ```javascript
 // src/components/Messages.js

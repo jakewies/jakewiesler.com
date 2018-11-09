@@ -2,14 +2,14 @@
 title: "What's New in React v16.6.0"
 date: 2018-11-01T09:19:29-04:00
 slug: ""
-description: "The React core team recently released v16.6.0 of the library, which includes some long anticipated features such as native support for dynamic imports and memoization for functional components. Let's dive in and talk about these new additions."
+description: "The React core team recently released v16.6.0 of the library, which includes some long anticipated features such as native support for dynamic imports and memoization for function components. Let's dive in and talk about these new additions."
 keywords: ["React", "JavaScript", "Front-end"]
 draft: false
 tags: ["React"]
 stylesheet: "post.css"
 ---
 
-The `v16.6.0` release of React includes some highly anticipated features such as native support for dynamic imports and memoization for functional components. This is a big release for the library and community at large. Some of these features will have a major impact on how we compose UI moving forward. 
+The `v16.6.0` release of React includes some highly anticipated features such as native support for dynamic imports and memoization for function components. This is a big release for the library and community at large. Some of these features will have a major impact on how we compose UI moving forward. 
 
 This post will focus on covering the features I find most intriguing:
 
@@ -109,7 +109,7 @@ According to [wikipedia](https://en.wikipedia.org/wiki/Memoization), **memoizati
 
 My introduction to memoization happened with the Redux library [`reselect`](https://github.com/reduxjs/reselect). In `reselect` there is a `createSelector` function which optimizes expensive calculations that rely on inputs from a Redux store. If you're not familiar with memoization then I encourage you to take a look at the [Motivation for Memoized Selectors](https://github.com/reduxjs/reselect#motivation-for-memoized-selectors) section of the `reselect` docs. Consider it required reading. 📚
 
-So what does this mean in the context of React? Up until this point, functional components in React re-render _every time_ their parent renders, even if their prop values haven't changed. To solve this, React `v16.6` introduces a new higher-order component called `React.memo`. You use it the same way you would use any higher-order component in React, _except_ it is only to be used on functional components.
+So what does this mean in the context of React? Up until this point, function components in React re-render _every time_ their parent renders, even if their prop values haven't changed. To solve this, React `v16.6` introduces a new higher-order component called `React.memo`. You use it the same way you would use any higher-order component in React, _except_ it is only to be used on function components.
 
 ```jsx
 import React, { memo } from 'react'
