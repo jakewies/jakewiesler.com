@@ -62,6 +62,4 @@ I saw a great tweet in [a post](https://medium.com/@dan_abramov/making-sense-of-
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">&quot;You can npm install an even greater percentage of your application code than before&quot; is, I think, going to be a significant selling point for Hooks.</p>&mdash; Laurie Voss voted, did you? (@seldo) <a href="https://twitter.com/seldo/status/1057030727512911874?ref_src=twsrc%5Etfw">October 29, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-
-
 And not only will hooks make our code more reusable, but it will have a dramatic impact on the component tree. Imagine all of those providers, all of those render props and higher-order components slowly washing away. What a beautiful thought.
