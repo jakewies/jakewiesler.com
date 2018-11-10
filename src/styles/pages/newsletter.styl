@@ -1,29 +1,6 @@
 @import '../_main'
 @import '../partials/_social-icons'
-
-$subscribeHeight = 32px
-
-.logo
-  text-align: center
-  padding-top: 3rem
-  margin-bottom: 3rem
-
-  h1
-    font-weight:400
-    font-size: 2.5rem
-    letter-spacing: -2px
-    text-transform: lowercase
-    margin: 0
-    line-height: 1.5
-
-    & span 
-      color: $primary
-
-  > span
-    font-weight: 300
-    font-size: 0.9rem
-    text-transform: lowercase
-    color: $grey
+@import '../partials/_newsletter-signup'
 
 .topics
   display: flex
@@ -34,76 +11,6 @@ $subscribeHeight = 32px
 
   li
     flex-basis: 50%
-
-.subscribe-form
-  position: relative
-  max-width: 450px
-  margin: 0 auto 3rem
-  padding-bottom: 2rem
-  // background: #F6F9FC
-  text-align: center
-
-  .buttondown-link
-    position: absolute
-    left: 0
-    bottom: 8px
-    right: 0
-    font-size: 12px
-    color: $grey
-
-.subscribe-form__inputs
-  margin-bottom: 1.5rem
-  display: flex
-
-
-  @media (max-width: 499px) 
-    flex-direction: column
-
-.subscribe-form__email-input
-  height: $subscribeHeight
-  border: none 
-  background: #eeeeee
-  color: #777
-  border-radius: 24px
-  margin-right: 12px
-  flex-grow: 1
-  padding: 0 20px
-  border: 1px solid transparent
-  font-size: 1rem
-
-  &:focus
-    outline: none 
-    border: 1px solid #777
-    background: #FFF
-  
-
-  @media (max-width: 499px) 
-    margin-right: 0
-    margin-bottom: 1rem
-
-.subscribe-form__submit-button
-  background: $primary
-  color: #ffffff
-  text-shadow: 0 1px 3px rgba(36,180,126,.4)
-  height: $subscribeHeight
-  line-height: $subscribeHeight
-  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08)
-  border: none
-  border-radius: 24px
-  font-size: 14px
-  padding: 0 14px
-  text-transform: uppercase
-  letter-spacing: 0.025rem
-  flex-shrink: 0
-  transition: all 150ms ease
-  
-  &:hover
-    cursor: pointer
-    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08)
-    transform: translateY(-1px)
-
-  &:focus
-    outline: none 
 
 .flex--center
   display: flex
@@ -134,3 +41,6 @@ $subscribeHeight = 32px
         color: $darkGrey
         position: absolute
         margin-left: -15px
+
+.newsletter__learn-more
+  display: none

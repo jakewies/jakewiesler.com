@@ -6,28 +6,7 @@ keywords: ["Newsletter", "JavaScript", "CSS3", "HTML5"]
 stylesheet: "newsletter.css"
 ---
 
-<div class="logo">
-  <h1>Original<span>.</span>Copy</h1>
-  <span>A newsletter on software & other assortments.</span>
-</div>
-
-<div class="subscribe-form">
-  <form
-    action="https://buttondown.email/api/emails/embed-subscribe/jakewiesler"
-    method="post"
-    target="popupwindow"
-    onsubmit="window.open('https://buttondown.email/jakewiesler', 'popupwindow')"
-    class="embeddable-buttondown-form"
-  >
-    <div class="subscribe-form__inputs">
-      <!-- <label for="bd-email">Enter your email</label> -->
-      <input class="subscribe-form__email-input" type="email" name="email" id="bd-email" placeholder="Enter your email">
-      <input type="hidden" value="1" name="embed"/>
-      <input class="subscribe-form__submit-button" type="submit" value="Subscribe" />
-    </div>
-    <a class="buttondown-link" href="https://buttondown.email" target="_blank">Powered by Buttondown</a>
-  </form>
-</div>
+{{< readfile file="/layouts/partials/newsletter-signup.html" >}}
 
 ### I enjoy maintaining this blog.
 
@@ -55,10 +34,3 @@ Every Friday I round up my most important **code-related** learnings into a quic
   <li>Goat parkour</li>
   <li>Neil Degrasse Tyson Tweets</li>
 </ul>
-
-<!-- > Sound like your cup of tea?
-
-<div class="flex--center">
-  <button class="subscribe-form__submit-button">Subscribe</button>
-</div> -->
-
