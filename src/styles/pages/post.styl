@@ -39,7 +39,7 @@ img
   display: block
   width: 75%
   margin: 0.5rem auto 0
-  color: #9b9b9b
+  color: $grey
   font-size: .8rem
   font-weight: 300
   text-align: center
@@ -91,9 +91,11 @@ img
     color: $darkGrey
 
 .tags__list
-  padding: 0
+  padding-right: 1.5rem
   margin: 2rem 0 0
   list-style: none
+  display: flex
+  justify-content: flex-end
 
 .tag__item
   margin-right: 1rem
@@ -107,10 +109,12 @@ img
   text-decoration: none
   padding: .2em .4em
   border-radius: 3px
-  background: rgba(27,31,35,0.05)
+  background: lighten($primary, 90%)
+  color: $primary
+  font-size: 0.8rem
 
   &:hover
-    background: rgba(27,31,35,0.1)
+    background: lighten($primary, 81%)
 
 .gif
   margin-top: 1.5rem
