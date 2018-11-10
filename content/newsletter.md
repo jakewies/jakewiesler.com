@@ -1,7 +1,7 @@
 ---
 title: "Jake Wiesler | Newsletter"
 linktitle: "newsletter"
-description: "Sign up for Original Copy, a bi-monthly newsletter about software and other assortments."
+description: "Sign up for Original Copy, a weekly newsletter about software and other assortments."
 keywords: ["Newsletter", "JavaScript", "CSS3", "HTML5"]
 stylesheet: "newsletter.css"
 ---
