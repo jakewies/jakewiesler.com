@@ -3,26 +3,42 @@
 @import '../partials/_github-syntax-highlighting'
 @import '../partials/_newsletter-signup'
 
-blockquote
-  width: 95%
-  margin: 0 auto
-  font-size: 1rem
-
-p a,
-li a
-  font-weight: 400
-  color: $black
-
-img
-  width: 100%
-  max-width: 500px
-  margin: 0 auto
-  display: block
-
 .post__container
   width: 100%
   max-width: 34rem
   margin: 0 auto
+
+  h2,
+  h3
+    position: relative
+    padding-top: 10px
+
+    .anchor
+      text-decoration: none
+      position: absolute
+      left: -1rem
+      color: $grey
+      font-size: 1.2rem
+      font-weight: 400
+
+    .anchor:hover
+      color: $darkGrey
+      
+  blockquote
+    width: 95%
+    margin: 0 auto
+    font-size: 1rem
+
+  p a,
+  li a
+    font-weight: 400
+    color: $black
+
+  img
+    width: 100%
+    max-width: 500px
+    margin: 0 auto
+    display: block
 
 .post__title 
   margin-top: 0
@@ -51,21 +67,6 @@ img
   width: 100%;
   height: 2px;
   z-index: 3;
-
-.anchorized
-  position: relative
-  padding-top: 10px;
-
-  a 
-    text-decoration: none
-    position: absolute
-    left: -1rem
-    color: $grey
-    font-size: 1.2rem
-    font-weight: 400
-
-  a:hover
-    color: $darkGrey
 
 .note
   width: 90%

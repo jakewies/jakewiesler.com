@@ -21,7 +21,7 @@ Still here?
 
 Hooks are an **experimental proposal**. Nothing you see or hear on the topic should be considered final. There is currently an [open RFC](https://github.com/reactjs/rfcs/pull/68) where you can stay current on the proposal, and even voice your concerns if you have any.
 
-{{% h2 %}}What are hooks?{{%/ h2 %}}
+## What are hooks?
 
 As I stated earlier, **React hooks** are a way for function components to access certain features previously unavailable to them. The obvious ones being state and lifecycle. They are **not** to be used in class components.
 
@@ -31,7 +31,7 @@ Here's another definition from the [React docs](https://reactjs.org/docs/hooks-o
 
 This is a major shift, both technical and conceptual. However, hooks come with no breaking changes. They're backwards compatible and opt-in, meaning you as a developer don't need to use them at all. If that's your prerogative. It's an impressive selling point.
 
-{{% h2 %}}What problems do they solve?{{%/ h2 %}}
+## What problems do they solve?
 
 The [Motivation](https://reactjs.org/docs/hooks-intro.html#motivation) section of the official docs details specific problems that the React core team believes hooks will solve, so I won't regurgitate those here. However, I do want to add my own point-of-view.
 
@@ -53,7 +53,7 @@ I once read (and didn't finish) an oft-cited book in the realm of programming ca
 
 I digress. Where were we? Ah yes, *functions*. Building user interfaces with functions as my building blocks seems to make a whole lot of sense. The composibility is there. The developer experience just feels right. I lose that feeling when I'm trying to refactor some voluminous class in my codebase.
 
-{{< h2 >}}Wrapping up{{</ h2 >}}
+## Wrapping up
 
 The most intriguing part about all of this is that hooks themselves are _just functions_! The [official docs](https://reactjs.org/docs/hooks-intro.html#its-hard-to-reuse-stateful-logic-between-components) state that reusing stateful logic is one of the motiviations of hooks. The ability to wrap up state and all related functionality into bite-sized functions is going to be such a powerful pattern. 
 

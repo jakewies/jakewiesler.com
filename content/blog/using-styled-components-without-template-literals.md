@@ -33,7 +33,7 @@ const Button = styled('button')([],
 
 This is interesting and I'd like to explore it.
 
-{{< h2 >}}Tagged template literals{{</ h2 >}}
+## Tagged template literals
 
 If you read Max Stoiber’s post [The magic behind styled-components](https://mxstbr.blog/2016/11/styled-components-magic-explained/), he goes into some detail about the inner workings of his popular CSS library. The `styled` API of `styled-components` relies on tagged template literals, and this is probably the way you will see most people using it. 
 
@@ -160,7 +160,7 @@ logArgs`Mmmm! That is a tasty ${() => 'burger'}`
 
 The function itself is being included as an argument. This is the essence of `styled-components`. By capturing such a function, the library can execute it and do what it needs to do, mainly merge the resulting value back in to the string values inside the array. 
 
-{{< h2 >}}Tying our new-found knowledge together{{</ h2 >}}
+## Tying our new-found knowledge together
 
 Now that we know how tagged template literals work, let's gain a deeper understanding of the `styled` API:
 
@@ -185,7 +185,7 @@ logArgs`
 
 Are you seeing the power here? It's no wonder why `styled-components` has become so popular as a CSS-in-JS solution. Not only do tagged template literals allow us to write multi-line CSS naturally, but it allows the library to manipulate styles through these interpolated functions, giving our components a dynamic feel.
 
-{{< h2 >}}How does the other pattern work?{{</ h2 >}}
+## How does the other pattern work?
 
 Ah, yes. That's why you're here isn't it. Earlier I showed another way of using the `styled` API that I've been seeing lately:
 
@@ -219,7 +219,7 @@ The first argument is an array, and satisfies rule number one. Yes, there's no s
 
 > We've mimicked the behavior of tagged template literals without actually using them.
 
-{{< h2 >}}Wrapping up{{</ h2 >}}
+## Wrapping up
 
 At the end of the day, both patterns produce the same value. What I'm finding difficult to discover is why you would want to use one over the other. I guess I could see a situation where, using tagged template literals, you had multiple interpolations, and for code readability you could choose the Empty Array Pattern instead:
 

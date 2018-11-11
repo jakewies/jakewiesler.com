@@ -17,7 +17,7 @@ As of writing this, hooks are still an **experimental proposal**. Nothing in thi
 
 Hooks are available in `v16.7.0-alpha` of React. I've set up a [CodeSandbox](https://codesandbox.io/s/1z16jj9y24) that will get you going quickly if you want to follow along with the example in this post.
 
-{{% h2 %}}React state today{{%/ h2 %}}
+## React state today
 
 If you want a stateful component in React, your only option at the moment is to write that component as a class. This has been a source of frustration for me. Often I will find myself spending a good chunk of mental energy contemplating whether or not I want to refactor a _perfectly acceptable_ function component into a class merely to hold some state. 
 
@@ -31,7 +31,7 @@ It sounds excessive, and you're probably right. But it's happened. And if you've
 
 > Adding state to a component should feel natural, but it's hard to feel natural when I'm writing a class.
 
-{{% h2 %}}Enter the `useState` hook{{%/ h2 %}}
+## Enter the `useState` hook
 
 With the `useState` hook, function components can now hold local state. 
 
@@ -56,7 +56,7 @@ Note that, unlink a class component, state in a function component **does not** 
 
 Another important note is that the update function, in this case `setColor`, does not *merge* the new state with the current, but instead _overrides_ it completely. This is different from how `this.setState` works in class components.
 
-{{% h2 %}}Updating state{{%/ h2 %}}
+## Updating state
 
 The value of `color` will be preserved between re-renders (more on this below), *unless* the `setColor` function is called with a new value:
 
@@ -105,7 +105,7 @@ function StreetLight() {
 
 Yes, you can do this to your heart's content.
 
-{{% h2 %}}How does React keep track of the state?{{%/ h2 %}}
+## How does React keep track of the state?
 
 In order for all of this to work, React expects that you follow [a few rules](https://reactjs.org/docs/hooks-rules.html#explanation):
 
@@ -118,7 +118,7 @@ In order to internalize how React manages hooks in your components, I _highly_ r
 
 And here's a [psuedo-implementation](https://gist.github.com/gaearon/62866046e396f4de9b4827eae861ff19) of how React manages hooks, originally posted by [jamiebuilds](https://mobile.twitter.com/jamiebuilds/status/1055538414538223616) on Twitter.
 
-{{% h2 %}}Wrapping up{{%/ h2 %}}
+## Wrapping up
 
 I consider `useState` to be a building block. You can use it _as-is_ to provide state to your function components, or you can use it to abstract stateful logic out into [custom hooks](https://reactjs.org/docs/hooks-custom.html)!
 

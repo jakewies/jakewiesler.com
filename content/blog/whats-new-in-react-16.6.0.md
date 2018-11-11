@@ -20,7 +20,7 @@ This post will focus on covering the features I find most intriguing:
 
 Let's dive in!
 
-{{% h2 %}}`React.lazy`{{%/ h2 %}}
+## `React.lazy`
 
 The term **lazy loading** has been around for a while, and the idea is pretty simple: _to load some slice of code when it's needed._ It is a technique used in **code splitting**, which involves breaking up your app into separate bundles which can be loaded on demand.
 
@@ -60,7 +60,7 @@ Error: An update was suspended, but no placeholder UI was provided.
 
 That happens. Not ideal. Luckily, there is a simple solution in the form of `React.Suspense`.
 
-{{% h2 %}}`React.Suspense`{{%/ h2 %}}
+## `React.Suspense`
 
 To prevent the error above from happening, you can wrap a lazy component in the new `React.Suspense` component, which provides some fallback UI to show while the component loads.
 
@@ -103,7 +103,7 @@ Another cool feature about `React.Suspense` is that it can be used to wrap multi
 
 There is a clear synergy between `React.lazy` and `React.Suspense`. You could have done dynamic importing before with something like `webpack`, but it wasn't baked into React itself. The APIs are super friendly too, and together they should make code splitting more approachable.
 
-{{% h2 %}}`React.memo`{{%/ h2 %}}
+## `React.memo`
 
 According to [wikipedia](https://en.wikipedia.org/wiki/Memoization), **memoization** is an optimization technique that stores the results of expensive function calls and returns the cached result when the same inputs occur again.
 
@@ -125,7 +125,7 @@ If `MemoizeMeCaptain` receives the same values for `prop1` and `prop2`, it will 
 
 Egghead.io has a great [free lesson](https://egghead.io/lessons/react-use-react-memo-with-a-function-component-to-get-purecomponent-behavior) on how to use `React.memo` by [Elijah Manor](https://twitter.com/elijahmanor). It's definitely worth a look! 👀
 
-{{% h2 %}}`static contextType`{{%/ h2 %}}
+## `static contextType`
 
 The last new feature I want to touch on is `static contextType`, which is a new way of subscribing to context in class components. If you're not familiar with context in React, the [official docs](https://reactjs.org/docs/context.html#api) are a great introduction.
 
@@ -172,7 +172,7 @@ class App extends Component {
 
 The only drawback I've found with this feature, and one that is mentioned in the [React docs](https://reactjs.org/docs/context.html#classcontexttype), is that you can only consume _a single_ context. That being said, there are [creative workarounds](https://reactjs.org/docs/context.html#consuming-multiple-contexts) for those who need it.
 
-{{% h3 %}}A quick note on `static` properties{{%/ h3 %}}
+### A quick note on `static` properties
 
 I've touched on `static` properties in [a previous article](https://www.jakewiesler.com/blog/compound-component-basics/#code-static-code-properties). One important takeaway from that article, and one that still holds true, is that you can only use `static` properties in React class components if you're using [`@babel/plugin-proposal-class-properties`](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties). For you `create-react-app` users, this feature is [enabled by default](https://facebook.github.io/create-react-app/docs/supported-browsers-features#supported-language-features). 👍🏻
 
@@ -189,7 +189,7 @@ class App extends Component {
 App.contextType = MyContext
 ```
 
-{{< h2 >}}Final thoughts{{</ h2 >}}
+## Final thoughts
 
 `v16.6.0` of React is packed with some great features. I'm so excited for the future of this library. It's already a joy to use, but the core team continues to pump out great work to make our lives so much easier. And with everything announced at [ReactConf 2018](https://conf.reactjs.org/) last week, this is just the tip of the iceberg. 
 

@@ -23,13 +23,13 @@ Here's the end result:
 
 I didn't dive too far into the WAAPI, but what I learned definitely warrants a small post about it. So let's jump in!
 
-{{< h2 >}}Browser compatibility{{</ h2 >}}
+## Browser compatibility
 
 Before we begin, it's important to note that the WAAPI is still very new. So much so that most browsers don't even support it. As of writing this, [CanIUse](https://caniuse.com/#search=web%20animations) shows that Firefox v52+ and Chrome v49+ have partial support, but all other major browsers such as IE, Edge, and Safari lack any support at all 😢.
 
 There are some solutions to this issue. GitHub repos such as [web-animations-js](https://github.com/web-animations/web-animations-js) exist to provide polyfills that bring WAAPI features to browsers that don't support them natively.
 
-{{< h2 >}}HTML structure{{</ h2 >}}
+## HTML structure
 
 If you view the Codepen embed, or "pen" from this point on, you will see that the HTML making up the filter is _very_ simple. I'm a fan of [pug templates](https://pugjs.org/api/getting-started.html) when working in Codepen but I will outline the structure in pure HTML just for reference:
 
@@ -44,7 +44,7 @@ If you view the Codepen embed, or "pen" from this point on, you will see that th
 
 The `.filter` container holds the structure of the component. The 3 `.filter__item` elements represent each time frame. And finally the `.filter__switch` element will be an absolutely positioned "switch".
 
-{{< h2 >}}CSS{{</ h2 >}}
+## CSS
 
 I love flexbox. It's the most used CSS property in my toolbag. The `.filter` element is a flex container holding three `.filter__item` elements that are flex children, each one taking up the same width as the others. Let's take a look at the styles that make this work:
 
@@ -126,7 +126,7 @@ The final piece to the puzzle is the directional properties `top` and `left`. By
 
 If you're wondering how we got 5px, just think about it like this. We have 10px of empty space. To center the switch we put 5px on top and 5px on the left. 5 + 5 = 10. Maths.
 
-{{< h2 >}}JS: The meat and potatoes{{</ h2 >}}
+## JS: The meat and potatoes
 
 We now have a structurally and stylistically complete filter, but we're still missing the functionality. This is the most important part of the component _and_ this post. Let's get right to it.
 
@@ -177,7 +177,7 @@ document.querySelector('.filter').addEventListener('click', e => {
 
 The `filterItemData` variable contains information regarding the clicked filter item's whereabouts in the DOM. We'll also do the same for the switch, storing its data in the aptly named variable `switchData`.
 
-{{< h2 >}}The maths{{</ h2 >}}
+## The maths
 
 At the heart of this animation is a mathematical formula that calculates the new `x` coordinate for the switch. The goal is to move the switch directly behind the filter item so that the text of the filter item sits in the middle of the switch. If we can calculate the `x` coordinate that lies directly in the middle of the filter item, then we can use it to determine where to move the switch such that the two elements will line up perfectly.
 

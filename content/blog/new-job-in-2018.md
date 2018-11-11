@@ -21,15 +21,15 @@ I had no plans of jumping ship, but when I was contacted by Linio about the posi
 
 to name a few.
 
-{{< h2 >}}Full-time react{{</ h2 >}}
+## Full-time react
 
 The main reason for taking the position was the fact that I'd get to work with React full-time. It's a joy to use, and in high demand right now. In my previous job I did not have this luxury, so I would routinely feel the pressure of needing to come home after a long day at work and spend a few hours growing my skillset in this area. I don't have this feeling anymore. I get a ton of learning experiences on the job.
 
-{{< h2 >}}What I'll be working on{{</ h2 >}}
+## What I'll be working on
 
 I have a joined a team of 5 developers working on a greenfield project for internal use at the company. The challenges we aim to solve should bring a ton of value to the company. We recently finished bootstrapping the project and are now mocking up designs for the initial product.
 
-{{< h2 >}}Some thoughts on remote work{{</ h2 >}}
+## Some thoughts on remote work
 
 One of the big allures of the position was the fact that it's fully remote. We have a small office in a co-working space here in South Florida as well. The company's main headquarters are located in Mexico. 
 
@@ -41,7 +41,7 @@ Discipline is a major factor in remote work. Consider it the next time you are p
 
 And one more thing. Sometimes working remotely can get very lonely. There is the occasional Thursday afternoon when I look up from my computer and realize I haven't left my apartment in 4 days. That's why it's important to make sure you get out and avoid the vampire-like habits that some remote employees become accustomed to.
 
-{{< h2 >}}What to expect from this blog going forward{{</ h2 >}}
+## What to expect from this blog going forward
 
 I'm really excited about this new adventure of mine, and part of that excitement comes from the fact that I'll be getting a lot more exposure to awesome technologies. That means more to learn, and more to write. Expect a steady flow of content revolving around the tech I mentioned above. Cheers!
 

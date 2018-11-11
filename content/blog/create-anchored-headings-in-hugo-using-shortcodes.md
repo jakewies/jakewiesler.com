@@ -9,6 +9,9 @@ draft: false
 stylesheet: "post.css"
 ---
 
+_EDIT: A Twitter user, [@kaushalmodi](https://twitter.com/kaushalmodi), reached out to me with a helpful tip on achieving anchored headings without needing to rely on a shortcode. You can find the solution [here](https://discourse.gohugo.io/t/adding-anchor-next-to-headers/1726/9?u=kaushalmodi). If retaining full markdown syntax in your content is priority, I recommend going with this route._
+
+
 In [Hugo](https://gohugo.io/), your content is authored in markdown. This is one of the great features of the static site generator. It makes things very simple for users such as myself who spend most of their time on the platform writing blog posts. Unfortunately, that simplicitly is both a blessing and a curse. 
 
 There will inevitably come a point where your content requires a bit more complexity than markdown can handle. This usually leads authors finding themselves writing custom `html` inside of their `.md` files. Although valid, it's a forced solution. A better solution would be to use Hugo's [shortcodes](https://gohugo.io/content-management/shortcodes/).
@@ -49,7 +52,7 @@ After rummaging through Hugo's docs for a few moments, I came across a page desc
 
 Hugo comes with some [built-in shortcodes](https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes) for common use cases such as GitHub gists, syntax highlighting, Twitter posts, and more, but unfortunately there is no shortcode for anchored headers. We can circumvent this by defining a _custom_ shortcode instead. 
 
-{{< h2 >}}Defining a custom shortcode{{</ h2 >}}
+## Defining a custom shortcode
 
 In order to define a custom shortcode, you'll need to create a `layouts/shortcodes/` directory. Once that's done, create an `html` file inside the directory that has a name _equal to_ the shortcode you wish to define. For example, a shortcode named `heading` will require an `html` template at `layouts/shortcodes/heading.html`. 
 
@@ -71,7 +74,7 @@ Of course there shouldn't be any hardcoded values inside of the shortcode itself
 
 This can be done in a few ways. 
 
-{{% h2 %}}Named parameters{{% /h2 %}}
+## Named parameters
 
 [Named parameters](https://gohugo.io/templates/shortcode-templates/#positional-vs-named-parameters) can be passed to a shortcode at the time you call the shortcode in your content files. Think of them as arguments to a function. In this situation it would make sense to have two named parameters, `title` and `link`.
 
@@ -94,7 +97,7 @@ To [access](https://gohugo.io/templates/shortcode-templates/#access-parameters) 
 
 Now anytime you call the `heading` shortcode and pass it the proper parameters, you will receive the `html` above with the parameter values in place. This a perfectly adequate solution and works exactly as expected, however, I don't like how we have to add both the `title` parameter _and_ the `link` parameter. Hugo is powerful enough to generate the value of `link` for us based on the title of the heading. Let's opt for this route.
 
-{{% h2 %}}Generating the anchor link with `anchorize`{{% /h2 %}}
+## Generating the anchor link with `anchorize`
 
 Earlier in the post I described how this markdown: 
 
@@ -127,7 +130,7 @@ Let's update the `heading.html` template file to sanitize the `title` parameter:
 
 Now there is no need to pass the `heading` shortcode a `link` parameter, removing some overhead and making things cleaner. Again, this a perfectly adequate solution and you can stop here if your needs are met. However, there is one more improvement we can make to this template file.
 
-{{% h2 %}}Using the `.Inner` variable{{% /h2 %}}
+## Using the `.Inner` variable
 
 The [.Inner variable](https://gohugo.io/templates/shortcode-templates/#inner) receives a value equal to the content placed between an opening shortcode and a closing shortcode. This is different to how shortcodes that rely on named parameters work. Below is an example of how such a shortcode would be called in a content file.
 
@@ -177,7 +180,7 @@ One unfortunate downside to this is that you can't, in my knowledge, declare dyn
 
 Currently I just have a separate shortcode for each heading type, so an `h2.html` and an `h3.html`. It's not the best, but it gets the job done. If anyone knows how to render `html` tags using Go templates I'd love to know!
 
-{{% h2 %}}Wrapping up{{% /h2 %}}
+## Wrapping up
 
 That's pretty much all there is to it. By now you should have a pretty solid understanding of how shortcodes work in Hugo, and how to create an anchored heading using shortcodes and the `anchorize` function. If you have any questions, reach out to me on [Twitter](https://twitter.com/jakewies). Happy coding!
 

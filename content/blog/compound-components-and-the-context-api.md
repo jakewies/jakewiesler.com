@@ -20,7 +20,7 @@ In the [first post](https://www.jakewiesler.com/blog/compound-component-basics/)
 
 These techniques provide a unique ability to abstract away irrelevant implementation details, resulting in a clean API for the end user.
 
-{{< h2 >}}Revisiting drawbacks{{</ h2 >}}
+## Revisiting drawbacks
 
 Even though we accomplished what we set out to do in that first post, the solution was quite fickle. Here are a few inconvenient truths posed as questions that you may or may not have asked yourself while following along.
 
@@ -51,7 +51,7 @@ This isn't a long term solution. An alternative one would need to handle the fol
 
 > Does such a solution exist?
 
-{{< h2 >}}React's Context API{{</ h2 >}}
+## React's Context API
 
 Enter the [Context API](https://reactjs.org/docs/context.html), a new addition to the React library in version 16.3. The API allows a component to pass data down to any of its children, whether they are direct or indirect. The official React docs give a great description of what Context is meant for:
 
@@ -59,7 +59,7 @@ Enter the [Context API](https://reactjs.org/docs/context.html), a new addition t
 
 There are a slew of great tutorials on this topic, but the [offical docs](https://reactjs.org/docs/context.html#api) are, in my opinion, the most helpful. I recommend pausing here and brushing up on the concept before moving forward.
 
-{{< h2 >}}Getting started{{</ h2 >}}
+## Getting started
 
 I've created a [starter template](https://codesandbox.io/s/zz95n04wx4) on CodeSandbox. It starts exactly where we left off in the [last post](https://www.jakewiesler.com/blog/compound-component-basics/), with a working implementation of a basic compound component named `Chat`. If you haven't read that post it may be helpful to do so in order to gain some _context_. 😂 
 
@@ -78,7 +78,7 @@ In `src/index.js` the `Chat` component is being rendered with three children com
 Because of the nature of this example, these components don't come with a bundle of options that can be passed as props. The surface API is practically non-existent, however, it should be obvious to anyone reading the code what is happening here. 
 
 
-{{< h2 >}}Creating context{{</ h2 >}}
+## Creating context
 
 To start, open up `src/components/Chat.js` and edit the file so that you are importing the `createContext` method from the `react` library. Call the method near the top of the file and set the result equal to a new variable named `ChatContext`.
 
@@ -115,7 +115,7 @@ render() {
 
 The change above will cause the app to error, but don't sweat it. The fix will be arriving shortly.
 
-{{< h2 >}}Providing context{{</ h2 >}}
+## Providing context
 
 The `ChatContext.Provider` requires a single prop named `value`. This prop can be thought of simply as the _actual context_ being provided, and any underlying `Consumer`s will have access to it. 
 
@@ -194,7 +194,7 @@ class Chat extends Component {
 
 The first time I saw this my left eye started to twitch. It's weird. I get it. But this prevents any underlying sub-components from re-rendering unnecessarily.
 
-{{< h2 >}}Consuming context{{</ h2 >}}
+## Consuming context
 
 The last step in this refactor is to update the sub-components of `Chat` so that they consume the context created earlier instead of relying on props. In order for this to happen we'll first need to export `ChatContext.Consumer` out of `Chat.js`.
 
@@ -299,7 +299,7 @@ const Input = () => (
 
 With these changes all errors should be resolved and the application should be working properly as before!
 
-{{< h2 >}}The story so far{{</ h2 >}}
+## The story so far
 
 That wasn't too much work. I've definitely had tougher refactors. But, was it worth it? It really depends on your use case. In my opinion, constructing compound components with this strategy is almost always worth it. Especially if you do it this way the first time around. 
 
@@ -341,7 +341,7 @@ const App = () => (
 
 Yes, an ugly little error! This is a use case we haven't planned for, and the chances of this happening in the wild are quite high, especially if you're working with open source software. 
 
-{{< h2 >}}Validating consumers{{</ h2 >}}
+## Validating consumers
 
 This is a nifty trick I picked up from the [Advanced React Patterns](https://egghead.io/courses/advanced-react-component-patterns) course given by [Kent C Dodds](https://twitter.com/kentcdodds). 
 
@@ -392,7 +392,7 @@ export const ChatConsumer = ({ children }) => (
 
 `ChatConsumer` can continue to be used like normal, except now it will throw if it's rendered out of place. Much more helpful to our users don't you think? To be even more helpful you may want to craft a more appropriate error message. Something like, _Compound components of Chat should render beneath `Chat`._
 
-{{< h2 >}}Conclusion{{</ h2 >}}
+## Conclusion
 
 Hopefully this example has given you a better understanding of how compound components can work with the Context API. _Possibilities abound!_
 

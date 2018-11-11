@@ -19,7 +19,7 @@ The React community has seen a number of different state management patterns eme
 
 After a few hours of working with it I realized just _how_ simple it is. The API is relatively small, and you can get up and running with it in a matter of minutes. This is a huge positive in a world where third-party state management solutions usually take considerable time to learn.
 
-{{< h2 >}}State management primer{{</ h2 >}}
+## State management primer
 
 Before getting started, let's discuss why we're _really_ here in the first place. If you're reading this post then chances are you're either not happy with the existing solutions out there or you're looking to try something different. The former makes for much more interesting banter, so let's explore it. 
 
@@ -37,7 +37,7 @@ The code is verbose. The amount of files (depending on project structure) you ne
 
 This is what eventually led me to try `unstated`.
 
-{{< h2 >}}Getting started{{</ h2 >}}
+## Getting started
 
 You can install `unstated` with yarn via `yarn add unstated`. From there, integrating it into your React application is a breeze. Like I mentioned before, the API is very small, exposing only 3 components:
 
@@ -105,7 +105,7 @@ One interesting point to make about `Subscribe` is that the `to` prop takes an a
 </Subscribe>
 ```
 
-{{< h2 >}}An example{{</ h2 >}}
+## An example
 
 Now that we've gone over the entire API (yes, that's essentially the entire API in a nutshell), let's walk through an example together, shall we? I've gone ahead and created a sample project [here](https://github.com/jakewies/unstated-color-switcher). The project uses [create-react-app](https://github.com/facebook/create-react-app), [styled-components](https://www.styled-components.com/) 💅🏻 and [rcolor](https://github.com/sterlingwes/RandomColor) to generate new background colors out of random hexadecimal values.
 
@@ -185,7 +185,7 @@ render(
 )
 ```
 
-{{< h2 >}}Conclusion{{</ h2 >}}
+## Conclusion
 
 In my opinion, the secret sauce behind `unstated` is how integrated it feels with React itself. It feels like this is how we were _meant_ to manage state in React. Not only that, but it's footprint is so small that you can sprinkle it in here or there. You don't need to think about structuring your application to fit this massive paradigm. 
 

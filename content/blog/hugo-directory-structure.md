@@ -32,13 +32,13 @@ This post goes over what I consider to be the core of the Hugo directory:
 
 I'll explain each one in order of "most useful", which is completely subjective, but understanding a certain directory's purpose will help you understand the purpose of the next. 
 
-{{< h3 >}}A note on themes{{</ h3 >}} 
+### A note on themes
 
 Hugo allows for theme creation and they have a number of community-built themes that you can choose from if you don't feel like doing the leg work. This is apparent when going through their [Quick Start](https://gohugo.io/getting-started/quick-start/) guide. 
 
 Working with existing themes or building your own adds an additional layer to the directory structure of your project. It is not something that I will cover in this post. If you're looking to build a theme or alter an existing one then this post may not be for you. That being said, if you understand how the above directories work you'll have no issues working with themes in Hugo.
 
-{{< h2 >}}Content{{</ h2 >}} 
+## Content
 
 The `content/` directory holds all the content of your site. 
 
@@ -75,7 +75,7 @@ The about and contact pages are static and are therefore defined as `.md` files 
 
 The `_index.md` file plays an important role here. Hugo requires that an `_index.md` file be explicity defined at the root of `content/`, and it uses this file to render the homepage of your site.
 
-{{< h3 >}}Content types{{</ h3 >}} 
+### Content types
 
 All markdown files that exist inside `content/`, whether at the root or in subdirectories, have a `type` associated to them. Hugo infers a markdown file's `type` in one of two ways:
 
@@ -89,7 +89,7 @@ There are a lot of cool things you can do with front matter and I'll list a few 
 
 So if you're wondering: Yes. You _can_ have a file at `content/blog/a-blog-post.md` with a type explicitly set to `pizza`.
 
-{{< h3 >}}List pages vs single pages{{</ h3 >}} 
+### List pages vs single pages
 
 Another concept to understand about the markdown files that exist in the `content/` directory is that they can represent **list pages** or **single pages**. To illustrate this, let's continue to use the example given above.
 
@@ -109,15 +109,15 @@ This concept holds true for all subdirectories of `content/`. Each one must cont
 
 If you navigate to `www.yoursite.com/blog`, the `_index.md` file will be used as the content for that specific route. It will render a list of blog posts that exist in the blog section. Pretty neat, huh?
 
-{{< h2 >}}Layouts{{</ h2 >}} 
+## Layouts 
 
 The `layouts/` directory is nothing more than a directory of templates. Each provides a consistent _layout_ when rendering the markdown files that exist in `content/`. It is, in my opinion, the most crucial directory in a Hugo project. I feel this way because although Hugo has a set of rules as to how templates should work, the developer can implement them in a number of ways. 
 
-{{< h3 >}}List templates vs. single templates{{</ h3 >}} 
+### List templates vs. single templates
 
 Are you starting to see a trend? Lists and singles are one of the foundations of Hugo and they are at the heart of the `layouts/` directory. List templates and single templates do exactly as they sound: render list pages and single pages.
 
-{{< h3 >}}Template lookup order{{</ h3 >}} 
+### Template lookup order
 
 To understand the `layouts/` directory you must understand how Hugo resolves which template to use to render content. It does this by using a **lookup order**, or a list of filepaths to inspect, hoping to find an appropriate template.
 
@@ -136,7 +136,7 @@ If you decided to go this route it would mean that all list pages would render w
 
 This may not seem like an issue until you want to structure your `content/blog/_index.md` list page differently from your `content/work/_index.md` list page. How would you handle that?
 
-{{< h3 >}}Templates based on content type{{</ h3 >}} 
+### Templates based on content type 
 
 Since Hugo gives you a number of ways to create "different" pieces of content, it must also give you a way to uniquely template them. Take a step back and think about how the `content/` directory was structured:
 
@@ -221,7 +221,7 @@ layouts/
 
 This paradigm is really powerful and makes working with Hugo an absolute breeze.
 
-{{< h3 >}}Homepage templates{{</ h3 >}} 
+### Homepage templates
 
 There's another page inside of `content/` that we haven't discussed: The homepage. Just like the homepage gets its own markdown file inside of `content/`, it too can have its own template file: `layouts/index.html`:
 
@@ -246,7 +246,7 @@ Hugo doesn't require this, but I like to err on the side of explicit where possi
 
 It's actually a list page. In the `content/` directory the homepage is `_index.md`, sharing the same name with all other list pages in `content/` subdirectories. It _lists_ that which exists at the root of `content/`: _ipso facto_ your entire website.
 
-{{< h3 >}}Base templates{{</ h3 >}} 
+### Base templates
 
 Here's an interesting tip that took a while for me to discover in the Hugo docs: You can have a base template which all other templates inherit from. This template is the Queen Bee, and she is named `baseof.html`. 
 
@@ -256,13 +256,13 @@ This file is the master template that contains a lot of the standard html I woul
 
 I'll be writing a post specifically on the relationships between all of these templates soon so be on the lookout for it!
 
-{{< h2 >}}Archetypes {{</ h2 >}} 
+## Archetypes
 
 One of Hugo's main draws is that it gives the developer the ability to create new types of content quickly. Archetypes make this possible. The `archetypes/` directory can contain markdown files named after content types on your site. Examples of this would be: `blog.md`, `work.md`, and of course, `pizza.md`.
 
 Inside these "archetypes" are default parameters defined via front matter that every new piece of content associated with this archetype will inherit. When you first start a new Hugo project the `archetypes/` directory will only contain a `default.md` file. All new content files generated via the command line will inherit from this archetype unless an archetype exists specifically for that content type.
 
-{{< h3 >}}Generating content files with archetypes{{</ h3 >}} 
+### Generating content files with archetypes
 
 You can generate new content files using the `hugo new` command:
 
@@ -280,11 +280,11 @@ hugo new blog/a-new-post.md
 
 A file at `content/blog/a-new-post.md`  will be created that contains all pre-defined front matter.
 
-{{< h3 >}}Why would you want to do this?{{</ h3 >}} 
+### Why would you want to do this? 
 
 Maybe your blog posts have a `description` parameter and a `keywords` parameter that other content types don't have. Maybe you don't want to manually create these files by hand every single time. It comes in handy and makes your life as a developer that much easier. Automation for the win! 
 
-{{< h2 >}}Static{{</ h2 >}}
+## Static
 
 The `static/` directory is pretty straightforward. All assets are placed here and can then be used throughout the project. 
 
@@ -298,13 +298,13 @@ static/
 
 Using the structure above, you can reference both files using a filepath relative to the `static/` directory such as `/css/styles.css` or `/js/index.js`.
 
-{{< h3 >}}Managing your assets{{</ h3 >}}
+### Managing your assets
 
 One of the things Hugo lacks is an asset pipeline. It doesn't have any opinions on how you should handle your css, js, images, and fonts. All that matters is that the final assets are in this folder when you want them to be usable on the site. How they get there is up to you. 
 
 I opted for a simple Gulp workflow, writing all of my css and js in a `src/` directory, watching for changes, and compiling->outputting to `static/`. I'll be writing a post on specifics soon as well.
 
-{{< h2 >}}Wrapping up{{</ h2 >}} 
+## Wrapping up
 
 I hope this post has proved useful to you on your quest to master Hugo. It is still a very new tool for me, but I've been digging my initial experience. The directory itself is minimal and that's one of the things I enjoy about it. The less mental overhead the better, right? 
 

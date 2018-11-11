@@ -10,11 +10,11 @@ stylesheet: "post.css"
  
 Now that 2018 is upon us I think it'd be a great time to reflect on the prior year and all that came with it. 2017 was a big year for me in terms of personal growth and clarity. I started off with a few major goals in mind. 
 
-{{< h2 >}}I started a new job{{</ h2 >}}
+## I started a new job
 
 My biggest goal of last year was to move to a new company as a developer. In April I crossed that goal off the list by joining a small startup here in South Florida. It's my second role as a developer since beginning this wild and trying journey.
 
-{{< h2 >}}Read 12 books{{</ h2 >}}
+## Read 12 books
 
 This was my favorite goal of last year. I rediscovered my love for reading recently and decided to prioritize at least 30 minutes of my time each day to a given book. I found it best to spend the last 30-45 minutes of my day with a book before going to sleep. It helps calm the mind and removes any exposure to screens that may disrupt my sleeping. Here were some of my favorite reads of 2017:
 
@@ -25,7 +25,7 @@ This was my favorite goal of last year. I rediscovered my love for reading recen
 - _Ready Player One_, Ernest Cline
 - _The Big Short_, Michael Lewis
 
-{{< h2 >}}I (mostly) kept up with the front-end ecosystem{{</ h2 >}} 
+## I (mostly) kept up with the front-end ecosystem
 
 One of the more challenging things about web development is the sheer amount of information there is to learn, and how fast the landscape of the industry changes. I wanted 2017 to be about finding an efficient way to keep up-to-date with the goings on in JavaScript land, and to do so I created a nice selection of resources that always keeps me "in the loop". The 2 biggest things I did this year were join various newsletters around front-end development and follow knowledgeable humans in the realm of JavaScript, build tools, performance, and CSS on Twitter.
 
@@ -47,7 +47,7 @@ Below are some recommendations:
 - [Una Kravetz](https://twitter.com/Una)
 
 
-{{< h2 >}}I listened to a ton of podcasts{{</ h2 >}} 
+## I listened to a ton of podcasts
 
 I freakin' love podcasts. Honestly, I really believe that I turned a corner in my life when I started to spend time listening to them. There's a quote that I keep hearing on _The Tim Ferriss Show_ that goes something like:
 
@@ -75,11 +75,11 @@ My commutes used to be filled with listening to music and, although enjoyable, d
 
 As far as listening goes, I use an application called [Overcast](overcast.fm). It's seriously awesome. I can group podcasts by category, I can delete podcasts if I don't want to listen to them, I can go through a podcast's archive and download old shows to my phone for offline listening, and I can speed up the podcast to listen faster. I'm around 1.5x right now. My girlfriend thinks I'm on drugs.
 
-{{< h2 >}}I paid off my student loans{{</ h2 >}} 
+## I paid off my student loans
 
 I don't have much to say here other than, f**k yes.
 
-{{< h2 >}}What could I do to improve?{{</ h2 >}} 
+## What could I do to improve?
 
 2017 was a hell of a year, but there are some things I didn't get to accomplish, and some things that I could definitely do better.
 

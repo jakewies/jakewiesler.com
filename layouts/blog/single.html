@@ -9,7 +9,7 @@
     <time datetime="{{ .Date }}" class="post__date">{{ .Date.Format "Jan 2 2006" }}</time>
   </header>
   <article class="post__content">
-    {{ .Content }}
+    {{ partial "anchored-headings.html" .Content }}
   </article>
   {{ partial "tags.html" .}}
 

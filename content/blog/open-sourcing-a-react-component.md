@@ -15,7 +15,7 @@ Creating a library and publishing it to `npm` has been, up until this point, an 
 
 So, after a few weeks of writing code, googling, and hitting roadblocks along the way, I finally shipped v1.0.0 of [flexomatic](https://github.com/jakewies/flexomatic), a grid system built with `styled-components` and based on the methodology presented in [Solved By Flexbox](https://philipwalton.github.io/solved-by-flexbox/demos/grids/). Here are a few things I took away from the experience.
 
-{{< h2 >}}Think about the API before writing the code{{</ h2 >}}
+## Think about the API before writing the code
 
 There is one thing I wish I would have done before I wrote a single line of code, and that would be to take a pencil and some paper and write out how I, a potential user of the library, would like the API to look. 
 
@@ -30,7 +30,7 @@ React components can come with a lot of built-in functionality that, at the end 
 
 In my opinion, the more flexible the React component the more useful it becomes. Of course this comes with some tradeoffs. Flexibility in a React component is great, but too flexible and your component becomes prone to bugs and unintended use cases. These can be avoided with documentation and tests, which we'll discuss later on.
 
-{{< h2 >}}Use `npm link` to see your components in action{{</ h2 >}}
+## Use `npm link` to see your components in action
 
 This is, without a doubt, the most useful and practical lesson you can take away from this post. If you've never created a project with the intent to open source it, then you probably haven't come across the `npm link` command. So, what does it do?
 
@@ -40,13 +40,13 @@ Accomplishing this is a straightforward two-step process. Imagine you are workin
 
 I spun up a quick test project using `create-react-app` in order to test my components without needing to worry about any configuration, but you could easily link inside any existing React projects just as well. What's so powerful about this is that you can develop your React components and see them update in your test project on the fly. 
 
-{{< h2 >}}Use `jest` snapshots to test your components{{</ h2 >}}
+## Use `jest` snapshots to test your components
 
 I want to preface this section by saying I'm very new to testing JavaScript applications. In fact, `jest` is the first and only testing platform I've used. So why would I recommend it here? `jest` has an incredibly useful feature known as **snapshot testing**. The basic idea is that `jest` will take a "snapshot" of your React component at the time your tests run, and it will compare this snapshot to the last one taken. The test will fail if the two snapshots don't match.
 
 This is useful to catch any unintended UI changes to a specific component. Of course, if the change was intended, `jest` gives you a way to update your snapshots. It's a really useful tool and I highly recommend messing around with it.
 
-{{< h2 >}}Document your components early and often{{</ h2 >}}
+## Document your components early and often
 
 I found that writing documentation in tandem with building the components ended up being really useful. This seems counter-intuitive at first, but opting to document component usage during the development phase rather than pushing it to the end of the project was easier because everything was so fresh in my mind. 
 
@@ -54,7 +54,7 @@ Whenever I finished a feature or added the ability to handle some new use case, 
 
 I understand that this may contradict the first point I made in this post about designing the API before writing any code, but it's worth mentioning. I did find value here.
 
-{{< h2 >}}Learn from others by exploring their projects{{</ h2 >}}
+## Learn from others by exploring their projects
 
 I spent _a lot_ of time snooping through other projects similar to mine, trying to gauge how others handled configuration. 
 
@@ -70,6 +70,6 @@ Many times I will find something I didn't know about in another project, and aft
 
 I think that's the saying, isn't it? There is so much information out there. So many examples to learn from. If you run into roadblocks trying to setup babel, npm scripts or configure webpack, going through GitHub issues or other config files can get you on the right path.
 
-{{< h2 >}}Wrapping up{{</ h2 >}}
+## Wrapping up
 
 I hope this post has been useful to you if you're planning on jumping into the open source arena soon. I had a blast working on this project, and learned a ton from it. You can check it out [here](https://github.com/jakewies/flexomatic), and feel free to reach out to me via [Twitter](https://twitter.com/jakewies) if you have any questions. Goodluck!
