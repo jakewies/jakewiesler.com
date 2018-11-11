@@ -9,7 +9,7 @@ draft: false
 stylesheet: "post.css"
 ---
 
-_EDIT: A Twitter user, [@kaushalmodi](https://twitter.com/kaushalmodi), reached out to me with a helpful tip on achieving anchored headings without needing to rely on a shortcode. You can find the solution [here](https://discourse.gohugo.io/t/adding-anchor-next-to-headers/1726/9?u=kaushalmodi). If retaining full markdown syntax in your content is priority, I recommend going with this route._
+{{% warning %}}**Update:** A Twitter user, [@kaushalmodi](https://twitter.com/kaushalmodi), reached out to me with a helpful tip on achieving anchored headings without needing to rely on a shortcode. You can find the solution [here](https://discourse.gohugo.io/t/adding-anchor-next-to-headers/1726/9?u=kaushalmodi). If retaining full markdown syntax in your content is priority, I recommend going with this route.{{%/ warning %}}
 
 
 In [Hugo](https://gohugo.io/), your content is authored in markdown. This is one of the great features of the static site generator. It makes things very simple for users such as myself who spend most of their time on the platform writing blog posts. Unfortunately, that simplicitly is both a blessing and a curse. 
