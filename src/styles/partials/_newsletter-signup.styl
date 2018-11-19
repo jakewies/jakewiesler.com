@@ -40,20 +40,19 @@ $subscribeHeight = 32px
 
 .newsletter__subscribe-form-inputs--email
   height: $subscribeHeight
-  border: none 
-  background: #eeeeee
-  color: #777
+  color: $darkGrey
   border-radius: 24px
   margin-right: 12px
   flex-grow: 1
   padding: 0 20px
-  border: 1px solid transparent
+  border: 1px solid $grey
   font-size: 1rem
 
   &:focus
     outline: none 
-    border: 1px solid #777
-    background: #FFF
+
+  &::placeholder
+    color: $grey
   
 
   @media (max-width: 499px) 
