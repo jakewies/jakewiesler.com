@@ -44,15 +44,14 @@
 
 <body>
   {{ block "progress" . }} {{ end }}
-  <div class="container">
+  
+  {{ partial "burger.html" .}} 
 
-    {{ partial "burger.html" .}} {{ partial "nav.html" .}}
+  {{ partial "nav.html" .}}
 
-    <main>
-      {{ block "main" . }} {{ end }}
-    </main>
-
-  </div>
+  <main>
+    {{ block "main" . }} {{ end }}
+  </main>
 
   <script src="/js/index.js"></script>
   {{ block "scripts" . }} {{ end }}

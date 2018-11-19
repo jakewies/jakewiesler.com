@@ -5,8 +5,8 @@
  */
 
 function toggleMobileNavState() {
-  var container = document.querySelector('.container');
-  container.classList.toggle('nav--active');
+  var body = document.querySelector('body');
+  body.classList.toggle('nav--active');
 }
 
 /*
