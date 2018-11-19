@@ -1,21 +1,26 @@
 {{ define "progress" }}
-<div class="progress"></div>
+  <div class="progress"></div>
 {{ end }}
 
 {{ define "main" }}
-<div class="post__container">
-  <header class="post__header">
-    <h1 class="post__title">{{.Title}}</h1>
-    <time datetime="{{ .Date }}" class="post__date">{{ .Date.Format "Jan 2 2006" }}</time>
-  </header>
-  <article class="post__content">
-    {{ partial "anchored-headings.html" .Content }}
-  </article>
-  {{ partial "tags.html" .}}
+  <div class="post__container">
+    <header class="post__header">
+      <h1 class="post__title">{{.Title}}</h1>
+      <time datetime="{{ .Date }}" class="post__date">{{ .Date.Format "Jan 2 2006" }}</time>
+    </header>
+    <article class="post__content">
+      {{ partial "anchored-headings.html" .Content }}
+    </article>
+    {{ partial "tags.html" .}}
+  </div>
+{{ end }}
 
-  {{ partial "newsletter-signup.html" .}}
-</div>
-{{ partial "social-icons.html" .}}
+{{ define "footer" }}
+  <footer>
+    {{ partial "newsletter-signup.html" .}}  
+    {{ partial "social-icons.html" .}}
+    <p>{{ replace .Site.Copyright "{year}" now.Year }}</p>
+  </footer>
 {{ end }}
 
 {{ define "scripts" }}
