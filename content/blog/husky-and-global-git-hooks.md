@@ -5,7 +5,7 @@ slug: ""
 description: "Husky is an awesome JavaScript tool that gives you the power to easily run pre-defined scripts as a git hook. When you install husky, the package will install git hooks local to your project in the .git directory. This has the unfortunate downside of overriding any global git hooks you've previously defined. In this post I'll describe how to make both work in harmony."
 keywords: ["git", "hooks", "husky"]
 draft: false
-tags: ["git", "tooling"]
+tags: ["Git", "Tooling"]
 stylesheet: "post.css"
 ---
 
