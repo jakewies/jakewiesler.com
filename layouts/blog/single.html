@@ -3,7 +3,7 @@
 {{ end }}
 
 {{ define "main" }}
-  <div class="post__container">
+  <div class="post">
     <header class="post__header">
       <h1 class="post__title">{{.Title}}</h1>
       <time datetime="{{ .Date }}" class="post__date">{{ .Date.Format "Jan 2 2006" }}</time>
@@ -12,6 +12,7 @@
       {{ partial "anchored-headings.html" .Content }}
     </article>
     {{ partial "tags.html" .}}
+    {{ partial "post-pagination.html" .}}
   </div>
 {{ end }}
 

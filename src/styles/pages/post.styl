@@ -3,7 +3,7 @@
 @import '../partials/_github-syntax-highlighting'
 @import '../partials/_newsletter-signup'
 
-.post__container
+.post
   width: 100%
   max-width: 34rem
   margin: 0 auto
@@ -93,7 +93,7 @@
 
 .tags__list
   padding-right: 1.5rem
-  margin: 2rem 0 0
+  margin: 1.5rem 0 0
   list-style: none
   display: flex
   justify-content: flex-end
@@ -133,6 +133,46 @@ p.warning
 
   a
     color: #747160
+
+.pagination
+  display: flex
+  flex-direction: column
+  margin-top: 1.5rem
+
+  @media screen and (min-width: 600px)
+    flex-direction: row
+    justify-content: space-between
+
+.pagination__item
+  text-decoration: none
+  display: flex
+  flex-direction: column
+  
+  &:nth-child(2)
+    margin-top: 1.5rem
+
+  @media screen and (min-width: 600px)
+    width: 275px
+    padding: 15px
+    border-radius: 4px
+
+    &:first-of-type
+      padding-right: 15px
+
+    &:last-of-type
+      margin-top: 0
+  
+    &:hover
+      background-color: #f6f9fc
+
+.pagination__label
+  color: $grey
+  font-size: 0.8rem
+
+.pagination__title  
+  color: $black
+  font-weight: 700
+  margin-top: 0.25rem
 
 footer
   text-align: center
