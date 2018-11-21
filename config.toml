@@ -2,7 +2,7 @@ baseURL = "https://www.jakewiesler.com/"
 languageCode = "en-us"
 title = "Jake Wiesler"
 preserveTaxonomyNames = true
-copyright = '© 2017-{year} Copyright Jake Wiesler. All rights reserved.'
+copyright = "© 2017-{year} Copyright Jake Wiesler. All rights reserved."
 
 [taxonomies]
   tag = "tags"
