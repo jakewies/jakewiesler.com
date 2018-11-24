@@ -7,7 +7,7 @@
   display: flex
   justify-content: center
   align-items: center
-  font-size: 16px
+  font-size: 14px
 
   @media screen and (min-width: $medium)
     font-size: 18px
@@ -15,44 +15,35 @@
 
 
 .splash
-  text-align: right
 
   h1
-    font-size: 3.75em
-    font-weight: 800
+    font-size: 3em
     line-height: 1
-    letter-spacing: -2px
+    letter-spacing: -0.03em
+    margin: 0
 
-  p
-    font-weight: 300
-    width: 95%
-    margin-left: auto
-    line-height: 1.3em
-
-    @media screen and (min-width: 600px)
-      width: 75%
-
-    @media screen and (min-width: $medium) 
-      width: 65%
-  
-  a
-    text-decoration: none
+  h2
+    font-size: 2.25em
+    font-weight: 500
+    line-height: 1.25
+    max-width: 22em
+    letter-spacing: -0.03em
 
 .fancy
   color: $primary
 
 .handle
+  display: inline-block
+  margin-top: 0.275em
   color: $grey
   letter-spacing: 0.5px
 
-.splash__skills
-  display: flex
-  flex-direction: column
-  margin-top: 1.5rem
-  
-  span 
-    font-weight: 300
-    font-size: 1.414em
+.underline
+  text-decoration: none 
+  border-bottom: 3px solid $primary
+  color: $black
+  padding-bottom: 0.03em
+  color: $black
 
 /* overrides */
 
@@ -62,5 +53,5 @@ main
   height: 100%
 
 .social-icons
-  justify-content: flex-end
-  padding: 1.5rem 0 0
+  justify-content: flex-start
+  padding-top: 2rem
