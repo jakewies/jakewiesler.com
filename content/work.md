@@ -3,7 +3,6 @@ title: "Jake Wiesler | Work"
 linktitle: "work"
 description: "A public portfolio of Jake Wiesler's work."
 keywords: ["portfolio", "JavaScript", "CSS3", "HTML5"]
-menu: "main"
 stylesheet: "work.css"
 ---
 
