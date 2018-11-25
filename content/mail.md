@@ -1,10 +1,10 @@
 ---
-title: "Jake Wiesler | Newsletter"
+title: "Jake Wiesler | Mail"
 linktitle: "mail"
 description: "Sign up for Original Copy, a weekly newsletter about software and other assortments."
 keywords: ["Newsletter", "JavaScript", "CSS3", "HTML5"]
 menu: "main"
-stylesheet: "newsletter.css"
+stylesheet: "mail.css"
 ---
 
 {{< readfile file="/layouts/partials/newsletter-signup.html" >}}
