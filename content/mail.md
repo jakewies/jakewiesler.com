@@ -1,5 +1,5 @@
 ---
-title: "Jake Wiesler | Mail"
+title: "Newsletter"
 linktitle: "mail"
 description: "Sign up for Original Copy, a weekly newsletter about software and other assortments."
 keywords: ["Newsletter", "JavaScript", "CSS3", "HTML5"]
