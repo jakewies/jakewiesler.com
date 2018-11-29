@@ -4,6 +4,7 @@ date: 2017-11-02T20:29:52-04:00
 slug: "blogging-as-a-developer"
 description: "This post outlines why I feel junior developers should think about sharing more of their experiences through blogging."
 keywords: [blogging, writing, goals]
+tags: ["Musings"]
 draft: false
 stylesheet: "post.css"
 ---

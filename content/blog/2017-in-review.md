@@ -4,6 +4,7 @@ date: 2018-01-10T21:08:02-05:00
 slug: ""
 description: "Now that 2018 is upon us, it's a great time to reflect on 2017."
 keywords: ["2017", "Review", "JavaScript"]
+tags: ["Musings"]
 draft: false
 stylesheet: "post.css"
 ---

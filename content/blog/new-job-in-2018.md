@@ -4,6 +4,7 @@ date: 2018-04-14T14:11:26-04:00
 slug: ""
 description: "I'm excited to share that I've started a new job as a front-end engineer. Let me tell you all about it!"
 keywords: ["job", "engineer", "react"]
+tags: ["Musings"]
 draft: false
 stylesheet: "post.css"
 ---
