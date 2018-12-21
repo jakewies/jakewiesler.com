@@ -29,16 +29,23 @@
     margin: 0 auto
     font-size: 1rem
 
-  p a,
-  li a
-    font-weight: 400
-    color: $black
+    a
+      color: $darkGrey
+      text-decoration: underline
 
   img
     width: 100%
     max-width: 500px
     margin: 0 auto
     display: block
+
+.post__content a
+  font-weight: 400
+  color: #0366d6
+  text-decoration: none
+
+  &:hover
+    text-decoration: underline
 
 .post__title 
   margin-top: 0
@@ -87,9 +94,7 @@
 
   a
     color: $darkGrey
-
-  a:hover
-    color: $darkGrey
+    text-decoration: underline
 
 .tags__list
   padding-right: 1.5rem
@@ -133,6 +138,7 @@ p.warning
 
   a
     color: #747160
+    text-decoration: underline
 
 .pagination
   display: flex
