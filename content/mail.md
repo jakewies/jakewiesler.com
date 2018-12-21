@@ -35,3 +35,7 @@ Every Friday I round up my most important **code-related** learnings into a quic
   <li>Goat parkour</li>
   <li>Neil Degrasse Tyson Tweets</li>
 </ul>
+
+### Still on the fence? 
+
+Browse <a href="https://buttondown.email/jakewiesler/archive" target="_blank">the archives</a> to get your feet wet.
