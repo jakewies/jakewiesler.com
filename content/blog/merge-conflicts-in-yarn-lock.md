@@ -66,7 +66,7 @@ yarn install
 Once the process finishes you can add `yarn.lock` and continue with the rebase:
 
 ```
-yarn add yarn.lock
+git add yarn.lock
 
 git rebase --continue
 ```
