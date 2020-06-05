@@ -1,5 +1,5 @@
 ---
-title: "This Site Is Now Hugo Theme"
+title: "This Site Is Now A Hugo Theme"
 date: 2020-06-04T09:19:29-04:00
 slug: "hugo-theme-cdoex"
 description: "A few people have inquired about the design of my website, so I decided to port it over to an official hugo theme."
