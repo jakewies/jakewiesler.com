@@ -1,12 +1,8 @@
 ---
 title: "React State Management With Unstated"
-date: 2018-05-12T10:06:30-04:00
-slug: "react-state-management-with-unstated"
+date: "2018-05-12"
 description: "Unstated is a new react state management library from @jamiebuilds. It leverages the power of React's Context API to keep state management simple. This post will dive into how to get started with the library and why it's a good choice for most projects."
-keywords: ['React', 'JavaScript', 'React State', 'unstated']
 tags: ["React"]
-draft: false
-stylesheet: "post.css"
 ---
 
 _This post was originally published [here](https://www.zeolearn.com/magazine/react-state-management-with-unstated)._

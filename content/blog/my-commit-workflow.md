@@ -1,21 +1,19 @@
 ---
 title: "My Commit Workflow"
-date: 2018-12-20T11:05:52-05:00
-slug: ""
+date: "2018-12-20"
 description: "In this post I want to share a simple git commit workflow I use in most JavaScript projects to keep my commits clean and safe."
-keywords: ["git", "commit", "javascript", "react"]
-draft: false
 tags: ["Git", "Tooling"]
-stylesheet: "post.css"
 ---
 
 Committing work was never something I gave much thought. It was a necessary step from development to production. That's it. Over time I've learned that, like many things involving `git`, committing is a subtle art. In this post I want to share a simple workflow I use in most JavaScript projects to keep my commits clean and safe.
 
 At the heart of this workflow is the idea that _staged code_, or code ready to be committed, requires some analysis. How you do this depends on the language you work with, but the strategies are similar.
 
-My strategy is to lint, format, and test staged code before committing. In JavaScript land, the tools I use for this are `eslint`, `prettier`, and `jest`, respectively. 
+My strategy is to lint, format, and test staged code before committing. In JavaScript land, the tools I use for this are `eslint`, `prettier`, and `jest`, respectively.
 
-{{% warning %}}**Note**: In TypeScript projects you can substitute `tslint` in place of `eslint`.{{%/ warning %}}
+<warning>
+  In TypeScript projects you can substitute `tslint` in place of `eslint`.
+</warning>
 
 ## Analyzing staged code
 
@@ -61,19 +59,20 @@ yarn add lint-staged -D
     }
   },
   "lint-staged": {
-    "*.js": [
-      "eslint", 
-      "jest --findRelatedTests"
-    ],
-    "./**/*.{js,json,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
+    "*.js": ["eslint", "jest --findRelatedTests"],
+    "./**/*.{js,json,css,md}": ["prettier --write", "git add"]
+  }
 }
 ```
 
-{{% warning %}}**Note**: There is some nuance when using `prettier` and `eslint` together. If you're not aware of this, things can get annoying. I use [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) to prevent conflicts.{{%/ warning %}}
+<warning>
+  There is some nuance when using `prettier` and `eslint` together. If you're
+  not aware of this, things can get annoying. I use{" "}
+  <a href="https://github.com/prettier/eslint-config-prettier">
+    `eslint-config-prettier`
+  </a>{" "}
+  to prevent conflicts.
+</warning>
 
 Notice that now I'm telling `husky` to run `lint-staged` on the `pre-commit` hook. In turn, `lint-staged` will run two commands:
 
@@ -85,14 +84,3 @@ If any of the commands above result in an error, I will not be able to proceed w
 ## Conclusion
 
 The majority of projects can get by with the configuration shown here. I've created a [GitHub repo](https://github.com/jakewies/commit-workflow/tree/master) so that you can play around with the workflow. Familiarize yourself with how these tools work together. If you have any suggestions/improvements please feel free to open up a PR.
-
-
-
-
-
-
-
-
-
-
-

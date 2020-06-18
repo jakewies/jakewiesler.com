@@ -1,12 +1,8 @@
 ---
 title: "Rebasing in Git"
-date: 2017-09-27T18:08:15-04:00
-slug: "rebasing-in-git"
-description: "Using the rebase command in git can be a difficult concept to understand. This post aims to make it clearer for beginners."
-keywords: ["git", "rebase"]
+date: "2017-09-27"
+description: "Using the rebase command in git can be a difficult concept to understand. This post aims to make it clearer for beginners"
 tags: ["Git"]
-draft: false
-stylesheet: "post.css"
 ---
 
 Sometimes a feature branch contains a bunch of random commits with even more random commit messages. In order to make things clearer in the git history and aid others in deciphering what the feature branch is really doing, it is necessary to “sqaush” these little commit messages into 1 commit with a more succinct description of the branch’s changes.

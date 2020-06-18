@@ -1,12 +1,8 @@
 ---
 title: "Using Husky with Your Global Git Hooks"
-date: 2018-11-18T09:00:00-05:00
-slug: ""
+date: "2018-11-18"
 description: "Husky is an awesome JavaScript tool that gives you the power to easily run pre-defined scripts as a git hook. When you install husky, the package will install git hooks local to your project in the .git directory. This has the unfortunate downside of overriding any global git hooks you've previously defined. In this post I'll describe how to make both work in harmony."
-keywords: ["git", "hooks", "husky"]
-draft: false
 tags: ["Git", "Tooling"]
-stylesheet: "post.css"
 ---
 
 [Husky](https://github.com/typicode/husky) 🐶 is an awesome JavaScript tool that gives you the power to run pre-defined scripts as a `git` hook with minimal effort. When used together with  [`lint-staged`](https://github.com/okonet/lint-staged), you can really create a nice developer experience for yourself. I've been using both on most of my recent projects and I highly recommend them.
@@ -61,7 +57,7 @@ In order to tell `git` where to find this newly created directory, I defined its
     templateDir = /path/to/git-template-dir
 ```
 
-{{% warning %}}**Note**: I also removed the `core.hooksPath` definition inside of `.gitconfig` because I no longer need it.{{%/ warning %}}
+<warning>I also removed the `core.hooksPath` definition inside of `.gitconfig` because I no longer need it.</warning>
 
 ### Add your global hooks to the template directory
 

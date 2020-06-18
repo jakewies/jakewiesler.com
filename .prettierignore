@@ -1,2 +1,8 @@
-content
-layouts
+.cache
+package.json
+package-lock.json
+public
+node_modules
+.DS_Store
+logs
+*.log
