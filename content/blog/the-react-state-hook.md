@@ -1,12 +1,8 @@
 ---
 title: "The React State Hook"
-date: 2018-11-10T10:33:43-05:00
-slug: ""
+date: "2018-11-10"
 description: "Recently announced at ReactConf 2018, hooks are functions that expose certain React features to function components. These features were previously limited to classes only. As of writing, hooks are still an experimental proposal in React, although they are slated to become official in the v16.7.0 release. This post will explain the State Hook in-depth."
-keywords: ["React", "hooks", "JavaScript", "state"]
-draft: false
 tags: ["React"]
-stylesheet: "post.css"
 ---
 
 The [React Hooks](https://reactjs.org/docs/hooks-intro.html) proposal comes with some [built-in hooks](https://reactjs.org/docs/hooks-reference.html) that focus on doing one thing, such as providing state or context to a function component. You can also use these as building blocks to create [your own](https://reactjs.org/docs/hooks-custom.html).
@@ -23,7 +19,7 @@ If you want a stateful component in React, your only option at the moment is to 
 
 I'll convince myself that avoiding such a refactor is in my best interests. Eventually I'll find myself falling down a rabbit hole of state management strategies, libraries, and _"other solutions"_.
 
-{{< gif src="https://media.giphy.com/media/swtiK9jRfE0zS/giphy.gif" caption="Down, down, down I go." >}}
+<gif src="https://media.giphy.com/media/swtiK9jRfE0zS/giphy.gif" caption="Down, down, down I go." />
 
 If things _really_ go south, I'll start asking if the component even _needs_ state in the first place, as if it's something that should be avoided. 
 

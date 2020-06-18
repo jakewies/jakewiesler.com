@@ -1,12 +1,8 @@
 ---
 title: "Add Tags to Your Hugo Blog Using Taxonomies"
-date: 2018-11-21T10:00:05-05:00
-slug: ""
+date: "2018-11-21"
 description: "The Hugo static site generator has a feature known as taxonomies, which gives users the ability to define relationships between their content. Taxonomies can be thought of as categories for your content. In this post we'll explore taxonomies in Hugo using blog post tags as an example."
-keywords: ["Hugo", "Taxonomies", "Blog"]
-draft: false
 tags: ["Hugo"]
-stylesheet: "post.css"
 ---
 
 Since the inception of this blog, I've wanted to add "tags" to my posts. Readers could then browse a list of related posts based on a specific tag. Using Hugo's nifty **taxonomies** feature, I was able to easily built out that functionality.
@@ -17,7 +13,9 @@ Taxonomies are used to define relationships between your content. `tags` is an e
 
 Because the `tags` taxonomy is a Hugo default, the necessary site configuration is practically non-existent. You don't need to adjust your config at all. In my case, I had no plans of using the other default taxonomy, `categories`, so I took [an additional step to remove it](https://gohugo.io/content-management/taxonomies/#example-removing-default-taxonomies). This is not necessary.
 
-{{% warning %}}If you wish to define your own taxonomy rather than use one of the defaults, refer to the [Hugo docs](https://gohugo.io/content-management/taxonomies/#configuring-taxonomies).{{%/ warning %}}
+<warning>
+  If you wish to define your own taxonomy rather than use one of the defaults, refer to the <a href="https://gohugo.io/content-management/taxonomies/#configuring-taxonomies" alt="Hugo docs">Hugo docs</a>.
+</warning>
 
 ## Defining `tags` in your blog posts
 

@@ -1,12 +1,8 @@
 ---
 title: "This Site Is Now A Hugo Theme"
-date: 2020-06-04T09:19:29-04:00
-slug: "hugo-theme-cdoex"
+date: "2020-06-04"
 description: "A few people have inquired about the design of my website, so I decided to port it over to an official hugo theme."
-keywords: ["hugo", "go", "blog", "theme"]
-draft: false
-tags: ["hugo"]
-stylesheet: "post.css"
+tags: ["Hugo"]
 ---
 
 Depending on when you are reading this post, the design of this site could be anything. Who knows how long this thing will be live? You might be reading this a thousand years from now.

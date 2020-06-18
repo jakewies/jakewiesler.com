@@ -1,12 +1,8 @@
 ---
 title: "Turn Your Hugo Website Into A Theme"
-date: 2020-06-10T00:00:00-05:00
-slug: ""
+date: "2020-06-10"
 description: "Many moons ago I built my personal site using Hugo, a static site generator written in Go. I've had many people inquire about the design of my site since then. Some have even asked for permission to use it. Because of this, I've decided to turn the entire website into one Hugo theme that can be used easily. Here's how I did it."
 tags: ["Hugo"]
-keywords: ["Hugo", "Theme", "Blog", "Go"]
-draft: false
-stylesheet: "post.css"
 ---
  
 Many moons ago I built my personal site using Hugo, a static site generator written in Go. I've had some people inquire about the design of my site since then. Some have even asked for permission to use it. Because of this, I've decided to turn the entire website into one Hugo theme. [Here's a link to the theme's directory](https://github.com/jakewies/hugo-theme-codex) if you're curious.
@@ -105,7 +101,7 @@ This is a very straightforward step. The Hugo team has a repository named [hugoT
 
 Once the steps above are complete you can go to the [hugoThemes repository](https://github.com/gohugoio/hugoThemes) and file an issue for your theme, which is the standard process for submitting your theme for approval. 
 
-## Conculsion 
+## Conclusion 
 
 And that's it! The team at Hugo didn't take long to help me align my theme and get it up on the official themes list. Here are a few links that might help you with context:
 

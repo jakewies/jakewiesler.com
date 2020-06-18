@@ -1,12 +1,8 @@
 ---
 title: "Hugo's Directory Structure Explained"
-date: 2017-10-17T09:54:15-04:00
-slug: "hugo-directory-structure"
+date: "2017-10-17"
 description: "Hugo is a static site generator written in Go, and is incredibly fast. This article will introduce you to the core principles of its directory structure and will help you get started building websites quickly."
-keywords: ["hugo", "directory"]
 tags: ["Hugo"]
-draft: false
-stylesheet: "post.css"
 ---
 
 When I first started working with Hugo I had some difficulty grasping the relationships between certain directories in my project. It can feel like there is a lot of abstraction going on in the background that you're not aware of. Things like naming conventions and lookup orders that you wouldn't know about without diving headfirst into the [official documentation](https://gohugo.io/documentation/).

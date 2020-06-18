@@ -1,12 +1,8 @@
 ---
 title: "Using styled-components Without Template Literals"
-date: 2018-03-01T08:33:35-05:00
-slug: "using-styled-components-without-template-literals"
+date: "2018-03-01"
 description: "I've noticed a pattern emerge from a few different libraries that use styled-components internally when declaring a component using the styled API. What's interesting about this pattern is I haven't seen it documented much and nobody has shed light on it. In this post I will explain what it is, how it works, and why it's useful."
-keywords: ["javascript", "styled-components", "tagged template literals", "React"]
 tags: ["React"]
-draft: false
-stylesheet: "post.css"
 ---
 
 Normally, if you’ve used `styled-components` in the past, you’ve probably seen the default (according to the documentation) way of declaring a component using the `styled` API:

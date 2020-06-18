@@ -1,12 +1,8 @@
 ---
 title: "New Job in 2018"
-date: 2018-04-14T14:11:26-04:00
-slug: ""
+date: "2018-04-14"
 description: "I'm excited to share that I've started a new job as a front-end engineer. Let me tell you all about it!"
-keywords: ["job", "engineer", "react"]
 tags: ["Musings"]
-draft: false
-stylesheet: "post.css"
 ---
 
 This time last year I secured a position at a small startup here in South Florida as a front-end developer. It was an awesome position and I learned a ton in my time at the company. 

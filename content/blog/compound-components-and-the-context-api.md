@@ -1,12 +1,8 @@
 ---
 title: "Compound Components in React: Using the Context API"
-date: 2018-10-10T19:50:06-04:00
-slug: ""
+date: "2018-10-10"
 description: "In the first post of this series we discussed the basics of compound components in React. They are a group of components that work in tandem to produce some functionality. Unfortunately, there are some constraints when authoring components in this way. In this post we'll combine the flexibilty of compound components with the powerful React Context Api."
-keywords: ["React", "Component", "Compound Components", "Context", "JavaScript"]
 tags: ["React"]
-draft: false
-stylesheet: "post.css"
 ---
 
 > This post is meant to guide you through a working example on [CodeSandbox](https://codesandbox.io/s/zz95n04wx4). I recommend following along on a desktop. 👾

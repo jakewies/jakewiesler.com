@@ -1,12 +1,8 @@
 ---
 title: "On Prioritizing"
-date: 2018-11-29T11:20:08-05:00
-slug: ""
+date: "2018-11-29"
 description: "We all have obligations that we're bound to. Commitments to uphold. And life has this funny way of throwing curveballs at you when you least expect it. This all makes it incredibly easy to lose sight your goals."
-keywords: ["priorities", "discipline", "productivity", "focus"]
-draft: false
 tags: ["Musings", "Productivity"]
-stylesheet: "post.css"
 ---
 
 I own one of those portable stick vacuums. I keep it tucked away in a corner, out of sight. I'll reach for it every other day or so. Usually after I step on some tiny particle of insignificance that sets off my OCD. Working from home has turned me into a neat freak.
@@ -31,7 +27,7 @@ The funny thing is that the rug happens to be one of my favorite parts of my hom
 
 We all have obligations that we're bound to. Commitments to uphold. And life has this funny way of throwing curveballs at you when you least expect it. 
 
-{{< gif src="https://media.giphy.com/media/VHW0X0GEQQjiU/giphy.gif" caption="Dr. Ian Malcolm" >}}
+<gif src="https://media.giphy.com/media/VHW0X0GEQQjiU/giphy.gif" caption="Dr. Ian Malcom" />
 
 Your battery may be stronger than others, but it will run out of juice. At the end of the day you may find your own light blinking red, pushing your mind to the charging station. 
 

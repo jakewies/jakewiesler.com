@@ -1,12 +1,8 @@
 ---
 title: "On The Importance of Blogging as a Developer"
-date: 2017-11-02T20:29:52-04:00
-slug: "blogging-as-a-developer"
+date: "2017-11-02"
 description: "This post outlines why I feel junior developers should think about sharing more of their experiences through blogging."
-keywords: [blogging, writing, goals]
 tags: ["Musings"]
-draft: false
-stylesheet: "post.css"
 ---
 
 I don't even know how it feels to "write". I did it in high school and college, although the outcome of those assignments were mostly bullshit anyway. As in, I bullshit 5 pages worth of _'Why Marketing is Crucial for Small Businesses'_. 

@@ -1,12 +1,8 @@
 ---
 title: "Messing with the Web Animations API"
-date: 2017-11-21T20:24:37-05:00
-slug: "messing-with-the-web-animations-api"
+date: "2017-11-21"
 description: "The Web Animations API is an experimental technology that allows developers to take advantage of the browser animation engine. This post walks through a real world example of the Web Animations API in action."
-keywords: ["Web Animations API", "keyframes"]
 tags: ["Animation"]
-draft: false
-stylesheet: "post.css"
 ---
 
 The [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API#Browser_compatibility) is still a very "experimental" technology that I've been trying to find an excuse to play with for some time. It's not something I can really use in my day job because of browser compatibility and general project requirements. 
@@ -17,9 +13,7 @@ One of the app's main functions is to filter these statistics by a certain time 
 
 I decided that I'd like to have a filter switch that would allow the user to move between different filter states. This is where the Web Animation API (WAAPI) idea started to come through. 
 
-Here's the end result:
-
-{{% pen id="gXvqMo" title="Slide Filter" caption="Open it up in a new tab and poke around. There isn't all that much too it, ~40 lines of JavaScript." %}}
+[Here's the end result](https://codepen.io/jakewies/pen/gXvqMo). Open it up in a new tab and poke around. There isn't all that much too it, ~40 lines of JavaScript.
 
 I didn't dive too far into the WAAPI, but what I learned definitely warrants a small post about it. So let's jump in!
 

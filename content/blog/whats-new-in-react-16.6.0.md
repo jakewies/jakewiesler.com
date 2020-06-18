@@ -1,12 +1,8 @@
 ---
 title: "What's New in React v16.6.0"
-date: 2018-11-01T09:19:29-04:00
-slug: ""
+date: "2018-11-01"
 description: "The React core team recently released v16.6.0 of the library, which includes some long anticipated features such as native support for dynamic imports and memoization for function components. Let's dive in and talk about these new additions."
-keywords: ["React", "JavaScript", "Front-end"]
-draft: false
 tags: ["React"]
-stylesheet: "post.css"
 ---
 
 The `v16.6.0` release of React includes some highly anticipated features such as native support for dynamic imports and memoization for function components. This is a big release for the library and community at large. Some of these features will have a major impact on how we compose UI moving forward. 
@@ -55,8 +51,6 @@ When `App` renders, `LazyComponent` will be loaded in a separate bundle. But wha
 ```
 Error: An update was suspended, but no placeholder UI was provided.
 ```
-
-{{< note >}}Oops!{{</ note >}}
 
 That happens. Not ideal. Luckily, there is a simple solution in the form of `React.Suspense`.
 

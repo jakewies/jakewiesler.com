@@ -1,12 +1,8 @@
 ---
 title: "2017 In Review"
-date: 2018-01-10T21:08:02-05:00
-slug: ""
+date: "2018-01-10"
 description: "Now that 2018 is upon us, it's a great time to reflect on 2017."
-keywords: ["2017", "Review", "JavaScript"]
 tags: ["Musings"]
-draft: false
-stylesheet: "post.css"
 ---
  
 Now that 2018 is upon us I think it'd be a great time to reflect on the prior year and all that came with it. 2017 was a big year for me in terms of personal growth and clarity. I started off with a few major goals in mind. 
@@ -93,7 +89,6 @@ I'd like to see myself improve my time management. Increasing my productivity an
 The last thing I'd like to improve upon is writing. I want to fill this blog up to the brim in 2018 about everything that I'm learning, issues that I'm having, or life lessons that smack me in the face. I will be spending a lot of time trying to push my skills to the next level this year, experimenting with new technologies and building out some ideas that I've been contimplating recently. I fully plan to document everything here along the way.
 
 👾
-
 
 
 

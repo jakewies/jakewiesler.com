@@ -1,12 +1,8 @@
 ---
 title: "On Contributing to Open Source"
-date: 2019-01-04T09:02:58-05:00
-slug: ""
+date: "2019-01-04"
 description: "Contributing to open source projects can be a daunting task for developers, regardless of experience level. It's an intimidating process. In this post I want to discuss a way a more natural approach to open source contributions."
-keywords: ["Programming", "Software Development", "Open Source"]
-draft: false
 tags: ["Musings", "Open Source"]
-stylesheet: "post.css"
 ---
 
 I used to believe that contributing to open source would be the stamp of approval I’d need to be taken seriously as a developer. I would look for a project to contribute to, pour over the issue list, find one marked “good first contribution”, and dig in.

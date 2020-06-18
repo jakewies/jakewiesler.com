@@ -1,12 +1,8 @@
 ---
 title: "Introducing Flexomatic"
-date: 2018-04-26T11:10:00-05:00
-slug: "introducing-flexomatic"
+date: "2018-04-26"
 description: "I've been working hard on my first open source React component library. After a few weeks I just released the first version of flexomatic. Let me tell you all about it."
-keywords: ["javascript", "react", "components", "styled-components"]
-tags: ["React", "Open source"]
-draft: false
-stylesheet: "post.css"
+tags: ["React", "Open Source"]
 ---
 
 I'm really excited to announce my first open source library, [flexomatic](https://github.com/jakewies/flexomatic), a flexbox-based grid system for React built with `styled-components`. It follows the methodology proposed by Philip Walton's [Solved By Flexbox](https://philipwalton.github.io/solved-by-flexbox/) grid system. Version 1.0.0 has been officially released on `npm`.
@@ -15,7 +11,7 @@ _UPDATE: As of writing this Version 1.1.0 has been released along with a [shiny 
 
 ## Backstory
 
-I had been working on a small side-project when I ran into a situation where I wanted to have a grid system. I mulled over a few existing implementations before deciding to roll my own. There were two main reasons for this:
+I had been working on a small side-project when I ran into a situation where I wanted to have a grid system. I mulled over a few existing implementations before deciding to roll my own. There were two main reasons for this
 
 ### I have never _truly_ open sourced anything
 

@@ -1,12 +1,8 @@
 ---
 title: "On React Hooks"
-date: 2018-11-08T17:55:30-05:00
-slug: ""
+date: "2018-11-08"
 description: "React hooks are functions that expose certain features previously unavailable to function components such as state and lifecycle. They were announced at ReactConf 2018 and are an experimental proposal as of writing this. React hooks are slated to become official in the v16.7.0 release. In this post I outline some of my initial thoughts."
-keywords: ["React", "hooks", "JavaScript"]
-draft: false
 tags: ["React"]
-stylesheet: "post.css"
 ---
 
 On the afternoon of October 25th I hastily shuffled my work to the side and fired up YouTube, knowing that the ReactConf 2018 keynote was minutes away from starting. This would be the first conference keynote I watch live, and I wanted no interruptions. As the next two hours began to unfold I realized I was witnessing a significant moment for React. An evolution of the library. 
@@ -17,7 +13,7 @@ You can view the entire keynote along with a follow up talk from [Ryan Florence]
 
 Still here?
 
-{{< gif src="https://media.giphy.com/media/1034EEGrn91SrS/giphy.gif" caption="Cool beans, man." >}}
+<gif src="https://media.giphy.com/media/1034EEGrn91SrS/giphy.gif" caption="Cool beans, man." />
 
 Hooks are an **experimental proposal**. Nothing you see or hear on the topic should be considered final. There is currently an [open RFC](https://github.com/reactjs/rfcs/pull/68) where you can stay current on the proposal, and even voice your concerns if you have any.
 
