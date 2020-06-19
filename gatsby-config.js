@@ -1,12 +1,12 @@
-const remarkSlug = require("remark-slug")
+const remarkSlug = require('remark-slug')
 
 module.exports = {
   siteMetadata: {
     siteUrl: `https://jakewiesler.com`,
     social: {
-      github: "jakewies",
-      twitter: "jakewies",
-      instagram: "jakewies",
+      github: 'jakewies',
+      twitter: 'jakewies',
+      instagram: 'jakewies',
     },
   },
   plugins: [
@@ -26,7 +26,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [".md", ".mdx"],
+        extensions: ['.md', '.mdx'],
         remarkPlugins: [remarkSlug],
       },
     },
@@ -66,7 +66,7 @@ module.exports = {
       `,
         feeds: [
           {
-            serialize: ({ query: { site, allMdx } }) => {
+            serialize: ({query: {site, allMdx}}) => {
               return allMdx.edges.map(edge => ({
                 guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                 url: site.siteMetadata.siteUrl + edge.node.fields.slug,
@@ -74,7 +74,7 @@ module.exports = {
                 title: edge.node.fields.title,
                 description:
                   edge.node.frontmatter.description || edge.node.excerpt,
-                custom_elements: [{ "content:encoded": edge.node.html }],
+                custom_elements: [{'content:encoded': edge.node.html}],
               }))
             },
             query: `
@@ -94,7 +94,7 @@ module.exports = {
             }
           }
           `,
-            output: "/blog/rss.xml",
+            output: '/blog/rss.xml',
             title: `Jake Wiesler's Blog RSS Feed`,
           },
         ],

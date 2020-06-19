@@ -1,16 +1,16 @@
-import prism from "@theme-ui/prism/presets/theme-ui"
-import colorModes from "../color-modes"
+import prism from '@theme-ui/prism/presets/theme-ui'
+import colorModes from '../color-modes'
 
-const { light, ...alternateColorModes } = colorModes
+const {light, ...alternateColorModes} = colorModes
 
 export default {
-  breakpoints: ["700px"],
+  breakpoints: ['700px'],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: [12, 14, 16, 18, 24, 32, 48, 64, 72],
   fonts: {
-    body: "system-ui, sans-serif",
-    heading: "system-ui, sans-serif",
-    monospace: "Menlo, monospace",
+    body: 'system-ui, sans-serif',
+    heading: 'system-ui, sans-serif',
+    monospace: 'Menlo, monospace',
   },
   fontWeights: {
     body: 400,
@@ -33,18 +33,18 @@ export default {
   },
   buttons: {
     primary: {
-      color: "background",
-      bg: "text",
-      cursor: "pointer",
+      color: 'background',
+      bg: 'text',
+      cursor: 'pointer',
       fontSize: 2,
     },
   },
   forms: {
     input: {
-      bg: "transparent",
-      borderColor: "lightgray",
-      color: "text",
-      outlineColor: "text",
+      bg: 'transparent',
+      borderColor: 'lightgray',
+      color: 'text',
+      outlineColor: 'text',
     },
   },
   layout: {
@@ -60,96 +60,96 @@ export default {
   },
   text: {
     heading: {
-      fontFamily: "heading",
-      fontWeight: "heading",
-      lineHeight: "heading",
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
       mt: 4,
     },
   },
   styles: {
     root: {
-      fontFamily: "body",
-      fontSize: "18px",
-      fontWeight: "body",
-      lineHeight: "30px",
+      fontFamily: 'body',
+      fontSize: '18px',
+      fontWeight: 'body',
+      lineHeight: '30px',
     },
     h1: {
-      variant: "text.heading",
-      fontSize: "29px",
-      lineHeight: "46px",
+      variant: 'text.heading',
+      fontSize: '29px',
+      lineHeight: '46px',
       mt: 0,
     },
     h2: {
-      variant: "text.heading",
-      fontSize: "23px",
-      lineHeight: "37px",
+      variant: 'text.heading',
+      fontSize: '23px',
+      lineHeight: '37px',
     },
     h3: {
-      variant: "text.heading",
-      fontSize: "18px",
-      lineHeight: "30px",
+      variant: 'text.heading',
+      fontSize: '18px',
+      lineHeight: '30px',
     },
     p: {
       mt: 4,
     },
     a: {
-      color: "primary",
+      color: 'primary',
     },
     ul: {
-      variant: "layout.list",
-      listStyle: "none",
+      variant: 'layout.list',
+      listStyle: 'none',
       li: {
         mb: 2,
-        "::before": {
+        '::before': {
           content: '"-"',
-          color: "lightgray",
-          display: "inline-block",
-          position: "absolute",
+          color: 'lightgray',
+          display: 'inline-block',
+          position: 'absolute',
           ml: theme => `-${theme.space[3]}px`,
         },
-        "ul &": {
+        'ul &': {
           mb: 0,
         },
       },
     },
     ol: {
-      variant: "layout.list",
+      variant: 'layout.list',
       li: {
         mb: 2,
       },
     },
     blockquote: {
-      lineHeight: "body",
-      color: "gray",
-      fontStyle: "italic",
-      width: "95%",
-      m: "0 auto",
+      lineHeight: 'body',
+      color: 'gray',
+      fontStyle: 'italic',
+      width: '95%',
+      m: '0 auto',
       mt: 4,
     },
     img: {
-      display: "block",
-      width: "100%",
+      display: 'block',
+      width: '100%',
       maxWidth: 500,
-      m: "0 auto",
+      m: '0 auto',
       mt: 4,
     },
     code: {
       ...prism,
-      bg: "muted",
+      bg: 'muted',
       fontSize: 2,
-      fontFamily: "SFMono-Regular,Consolas,Menlo,monospace",
+      fontFamily: 'SFMono-Regular,Consolas,Menlo,monospace',
       mt: 4,
       p: 3,
-      wordWrap: "normal",
-      overflow: "auto",
+      wordWrap: 'normal',
+      overflow: 'auto',
       borderRadius: 3,
     },
     inlineCode: {
       fontSize: 2,
-      fontFamily: "SFMono-Regular,Consolas,Menlo,monospace",
+      fontFamily: 'SFMono-Regular,Consolas,Menlo,monospace',
       p: 1,
       m: 0,
-      bg: "muted",
+      bg: 'muted',
       borderRadius: 3,
     },
   },

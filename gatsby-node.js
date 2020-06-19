@@ -1,21 +1,21 @@
 const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
-const slugify = require("@sindresorhus/slugify")
+const {createFilePath} = require(`gatsby-source-filesystem`)
+const slugify = require('@sindresorhus/slugify')
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+exports.onCreateWebpackConfig = ({actions}) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: [path.resolve(__dirname, "src"), "node_modules"],
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     },
   })
 }
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-  const { data, errors } = await graphql(`
+exports.createPages = async ({graphql, actions}) => {
+  const {createPage} = actions
+  const {data, errors} = await graphql(`
     {
       blogPosts: allMdx(
-        filter: { fileAbsolutePath: { regex: "//content/blog//" } }
+        filter: {fileAbsolutePath: {regex: "//content/blog//"}}
       ) {
         edges {
           node {
@@ -49,14 +49,14 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 }
 
-function createBlogPostPages({ data, actions }) {
-  const { createPage } = actions
+function createBlogPostPages({data, actions}) {
+  const {createPage} = actions
 
   if (!data.length) {
-    throw new Error("There are no blog posts!")
+    throw new Error('There are no blog posts!')
   }
 
-  data.forEach(({ node }, i) => {
+  data.forEach(({node}, i) => {
     createPage({
       path: node.fields.slug,
       component: path.resolve(`./src/templates/blog-post.js`),
@@ -68,17 +68,17 @@ function createBlogPostPages({ data, actions }) {
   return null
 }
 
-function createTagPages({ data, actions }) {
-  const { createPage } = actions
+function createTagPages({data, actions}) {
+  const {createPage} = actions
 
   if (!data.length) {
-    throw new Error("There are no tags!")
+    throw new Error('There are no tags!')
   }
 
   data.forEach((tag, i) => {
     createPage({
       path: `/tags/${slugify(tag.fieldValue)}`,
-      component: path.resolve("./src/templates/tag.js"),
+      component: path.resolve('./src/templates/tag.js'),
       context: {
         tag: tag.fieldValue,
       },
@@ -92,18 +92,18 @@ exports.onCreateNode = (...args) => {
   }
 }
 
-function onCreateMdxNode({ node, actions, getNode }) {
-  const { createNodeField } = actions
+function onCreateMdxNode({node, actions, getNode}) {
+  const {createNodeField} = actions
 
   createNodeField({
-    name: "id",
+    name: 'id',
     node,
     value: node.id,
   })
 
-  if (node.fileAbsolutePath.includes("content/blog/")) {
+  if (node.fileAbsolutePath.includes('content/blog/')) {
     createNodeField({
-      name: "slug",
+      name: 'slug',
       node,
       value: `/blog${createFilePath({
         node,
@@ -113,19 +113,19 @@ function onCreateMdxNode({ node, actions, getNode }) {
     })
 
     createNodeField({
-      name: "title",
+      name: 'title',
       node,
       value: node.frontmatter.title,
     })
 
     createNodeField({
-      name: "date",
+      name: 'date',
       node,
       value: node.frontmatter.date,
     })
 
     createNodeField({
-      name: "tags",
+      name: 'tags',
       node,
       value: node.frontmatter.tags,
     })

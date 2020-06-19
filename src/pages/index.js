@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { Link } from "gatsby"
-import Layout from "components/layout"
-import Seo from "components/seo"
+import {jsx} from 'theme-ui'
+import {Link} from 'gatsby'
+import Layout from 'components/layout'
+import Seo from 'components/seo'
 
 export default function IndexPage() {
   return (
@@ -12,14 +12,12 @@ export default function IndexPage() {
         description="Front-end developer exploring human movement."
       />
       <section>
-        <p sx={{ m: 0, fontSize: 3, color: "text" }}>
+        <p sx={{m: 0, fontSize: 3, color: 'text'}}>
           Front-end developer based in Orlando FL
         </p>
-        <p sx={{ m: 0, fontSize: 3, color: "text" }}>
-          Exploring human movement
-        </p>
+        <p sx={{m: 0, fontSize: 3, color: 'text'}}>Exploring human movement</p>
       </section>
-      <nav sx={{ display: "inline-flex", flexDirection: "column", pt: 4 }}>
+      <nav sx={{display: 'inline-flex', flexDirection: 'column', pt: 4}}>
         <Link sx={linkStyles} to="/blog">
           /Blog
         </Link>
@@ -53,11 +51,11 @@ export default function IndexPage() {
 }
 
 const linkStyles = {
-  textDecoration: "none",
-  color: "primary",
-  fontFamily: "menlo",
+  textDecoration: 'none',
+  color: 'primary',
+  fontFamily: 'menlo',
   fontSize: 2,
-  fontWeight: "body",
-  textTransform: "lowercase",
+  fontWeight: 'body',
+  textTransform: 'lowercase',
   mb: 3,
 }

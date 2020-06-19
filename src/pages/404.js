@@ -1,8 +1,8 @@
-import React from "react"
-import Layout from "components/layout"
-import Seo from "components/seo"
+import React from 'react'
+import Layout from 'components/layout'
+import Seo from 'components/seo'
 
-export default function NotFoundPage({ location }) {
+export default function NotFoundPage({location}) {
   return (
     <Layout location={location}>
       <Seo title="404: Not Found" description="Oops! This page doesn't exist" />

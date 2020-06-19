@@ -1,14 +1,14 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import PropTypes from "prop-types"
-import { graphql, Link } from "gatsby"
-import Layout from "components/layout"
-import PostLink from "components/post-link"
-import Seo from "components/seo"
+import {jsx} from 'theme-ui'
+import PropTypes from 'prop-types'
+import {graphql, Link} from 'gatsby'
+import Layout from 'components/layout'
+import PostLink from 'components/post-link'
+import Seo from 'components/seo'
 
-export default function TagPage({ pageContext, data }) {
-  const { tag } = pageContext
-  const { edges } = data.allMdx
+export default function TagPage({pageContext, data}) {
+  const {tag} = pageContext
+  const {edges} = data.allMdx
 
   return (
     <Layout breadcrumb="/tags">
@@ -20,19 +20,19 @@ export default function TagPage({ pageContext, data }) {
       <h1
         sx={{
           fontSize: 3,
-          fontWeight: "body",
-          lineHeight: "heading",
+          fontWeight: 'body',
+          lineHeight: 'heading',
           m: 0,
           mb: 4,
         }}
       >
-        Posts tagged with{" "}
-        <span sx={{ fontWeight: "bold", fontStyle: "italic" }}>{tag}</span>
+        Posts tagged with{' '}
+        <span sx={{fontWeight: 'bold', fontStyle: 'italic'}}>{tag}</span>
       </h1>
-      {edges.map(({ node }) => (
+      {edges.map(({node}) => (
         <PostLink key={node.fields.id} {...node.fields} />
       ))}
-      <Link to="/tags" sx={{ color: "primary", fontSize: 2 }}>
+      <Link to="/tags" sx={{color: 'primary', fontSize: 2}}>
         See All Tags
       </Link>
     </Layout>
@@ -55,7 +55,7 @@ TagPage.propTypes = {
               date: PropTypes.string.isRequired,
             }),
           }),
-        }).isRequired
+        }).isRequired,
       ),
     }),
   }),
@@ -67,8 +67,8 @@ TagPage.propTypes = {
 export const pageQuery = graphql`
   query($tag: String) {
     allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
+      sort: {fields: [frontmatter___date], order: DESC}
+      filter: {frontmatter: {tags: {in: [$tag]}}}
     ) {
       totalCount
       edges {

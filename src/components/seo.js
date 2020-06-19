@@ -5,13 +5,13 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import {useStaticQuery, graphql} from 'gatsby'
 
-function SEO({ title, description, pageUrl, isBlogPost }) {
-  const { site } = useStaticQuery(
+function SEO({title, description, pageUrl, isBlogPost}) {
+  const {site} = useStaticQuery(
     graphql`
       query {
         site {
@@ -20,7 +20,7 @@ function SEO({ title, description, pageUrl, isBlogPost }) {
           }
         }
       }
-    `
+    `,
   )
 
   return (
@@ -49,7 +49,7 @@ function SEO({ title, description, pageUrl, isBlogPost }) {
 }
 
 SEO.defaultProps = {
-  pageUrl: "",
+  pageUrl: '',
   isBlogPost: false,
 }
 

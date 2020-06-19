@@ -1,29 +1,29 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
-import React from "react"
-import { graphql, Link } from "gatsby"
-import { MDXRenderer } from "gatsby-plugin-mdx"
-import PropTypes from "prop-types"
-import slugify from "@sindresorhus/slugify"
-import { AiOutlineTwitter } from "react-icons/ai"
-import { TwitterShareButton } from "react-share"
-import Layout from "components/layout"
-import Seo from "components/seo"
-import NewsletterForm from "components/newsletter-form"
+import {jsx, Styled} from 'theme-ui'
+import React from 'react'
+import {graphql, Link} from 'gatsby'
+import {MDXRenderer} from 'gatsby-plugin-mdx'
+import PropTypes from 'prop-types'
+import slugify from '@sindresorhus/slugify'
+import {AiOutlineTwitter} from 'react-icons/ai'
+import {TwitterShareButton} from 'react-share'
+import Layout from 'components/layout'
+import Seo from 'components/seo'
+import NewsletterForm from 'components/newsletter-form'
 
-export default function BlogPostTemplate({ data }) {
-  const { body, excerpt, fields, frontmatter } = data.mdx
-  const { title, date, slug, tags } = fields
+export default function BlogPostTemplate({data}) {
+  const {body, excerpt, fields, frontmatter} = data.mdx
+  const {title, date, slug, tags} = fields
   const description = frontmatter.description || excerpt
-  const { siteUrl, social } = data.site.siteMetadata
+  const {siteUrl, social} = data.site.siteMetadata
 
   return (
     <Layout breadcrumb="/blog">
       <Seo title={title} description={description} pageUrl={slug} isBlogPost />
       <article
         sx={{
-          borderBottom: "1px solid",
-          borderColor: "lightgray",
+          borderBottom: '1px solid',
+          borderColor: 'lightgray',
           pb: 4,
         }}
       >
@@ -32,8 +32,8 @@ export default function BlogPostTemplate({ data }) {
           <time
             dateTime={date}
             sx={{
-              color: "lightgray",
-              display: "inline-block",
+              color: 'lightgray',
+              display: 'inline-block',
               fontSize: 2,
             }}
           >
@@ -44,9 +44,9 @@ export default function BlogPostTemplate({ data }) {
       </article>
       <section
         sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
           pt: 3,
         }}
       >
@@ -62,8 +62,8 @@ export default function BlogPostTemplate({ data }) {
           mt: 5,
           px: [4, 5],
           py: 4,
-          bg: "muted",
-          color: "text",
+          bg: 'muted',
+          color: 'text',
           borderRadius: 4,
         }}
       >
@@ -74,8 +74,8 @@ export default function BlogPostTemplate({ data }) {
           mt: 4,
           px: [4, 5],
           py: 4,
-          bg: "highlight",
-          color: "text",
+          bg: 'highlight',
+          color: 'text',
           borderRadius: 4,
         }}
       >
@@ -95,7 +95,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    mdx(fields: { id: { eq: $id } }) {
+    mdx(fields: {id: {eq: $id}}) {
       excerpt
       frontmatter {
         description
@@ -111,13 +111,13 @@ export const pageQuery = graphql`
   }
 `
 
-function Tags({ tags }) {
+function Tags({tags}) {
   return (
-    <div sx={{ display: "flex", flexDirection: "column" }}>
+    <div sx={{display: 'flex', flexDirection: 'column'}}>
       <span
         sx={{
-          color: "lightgray",
-          display: "inline-block",
+          color: 'lightgray',
+          display: 'inline-block',
           fontSize: 0,
         }}
       >
@@ -129,13 +129,13 @@ function Tags({ tags }) {
             key={tag}
             to={`/tags/${slugify(tag)}`}
             sx={{
-              textDecoration: "none",
-              color: "primary",
+              textDecoration: 'none',
+              color: 'primary',
               fontSize: 1,
-              border: "1px solid",
-              borderColor: "primary",
+              border: '1px solid',
+              borderColor: 'primary',
               borderRadius: 4,
-              p: "4px 8px",
+              p: '4px 8px',
               mr: 2,
             }}
           >
@@ -151,15 +151,15 @@ Tags.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
-function Share({ title, url, twitterHandle }) {
+function Share({title, url, twitterHandle}) {
   return (
     <div
-      sx={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}
+      sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-end'}}
     >
       <span
         sx={{
-          color: "lightgray",
-          display: "inline-block",
+          color: 'lightgray',
+          display: 'inline-block',
           fontSize: 0,
         }}
       >
@@ -171,14 +171,14 @@ function Share({ title, url, twitterHandle }) {
           title={title}
           via={twitterHandle}
           sx={{
-            "&:focus": { outline: "none" },
+            '&:focus': {outline: 'none'},
           }}
         >
           <AiOutlineTwitter
             sx={{
               fontSize: 4,
-              "&:hover": {
-                color: "primary",
+              '&:hover': {
+                color: 'primary',
               },
             }}
           />
@@ -197,39 +197,39 @@ function AboutMeCTA() {
   return (
     <div
       sx={{
-        display: "flex",
-        flexDirection: ["column", "row"],
-        alignItems: "center",
+        display: 'flex',
+        flexDirection: ['column', 'row'],
+        alignItems: 'center',
       }}
     >
-      <div sx={{ mr: [0, 4], mb: [3, 0] }}>
+      <div sx={{mr: [0, 4], mb: [3, 0]}}>
         <img
           src="/avatar.jpg"
           alt="Avatar"
           sx={{
             width: 100,
             height: 100,
-            borderRadius: "100%",
+            borderRadius: '100%',
           }}
         />
       </div>
-      <div sx={{ textAlign: ["center", "initial"] }}>
-        <Styled.h3 sx={{ mt: 0 }}>
+      <div sx={{textAlign: ['center', 'initial']}}>
+        <Styled.h3 sx={{mt: 0}}>
           Hey, I'm Jake!
           <span
-            sx={{ display: "inline-block", pl: 2 }}
+            sx={{display: 'inline-block', pl: 2}}
             role="img"
             aria-label="Wave"
           >
             👋
           </span>
         </Styled.h3>
-        <Styled.p sx={{ mt: 2, fontSize: 2, lineHeight: "27px" }}>
+        <Styled.p sx={{mt: 2, fontSize: 2, lineHeight: '27px'}}>
           I write about coding, the creative pursuit and becoming a better
-          human.{" "}
-          <Link to="/blog" sx={{ color: "primary" }}>
+          human.{' '}
+          <Link to="/blog" sx={{color: 'primary'}}>
             Check out the blog
-          </Link>{" "}
+          </Link>{' '}
           for more of my words and sentences.
         </Styled.p>
       </div>
@@ -242,9 +242,9 @@ function NewsletterCTA() {
 
   if (showConfirmMessage) {
     return (
-      <div sx={{ textAlign: ["center", "initial"] }}>
-        <Styled.h3 sx={{ mt: 0 }}>You're almost subscribed!</Styled.h3>
-        <Styled.p sx={{ mt: 2, fontSize: 2, lineHeight: "27px" }}>
+      <div sx={{textAlign: ['center', 'initial']}}>
+        <Styled.h3 sx={{mt: 0}}>You're almost subscribed!</Styled.h3>
+        <Styled.p sx={{mt: 2, fontSize: 2, lineHeight: '27px'}}>
           I sent you an email to confirm your address. Click it and you're in!
         </Styled.p>
       </div>
@@ -252,27 +252,27 @@ function NewsletterCTA() {
   }
 
   return (
-    <div sx={{ textAlign: ["center", "initial"] }}>
-      <Styled.h3 sx={{ mt: 0 }}>Looking for more?</Styled.h3>
-      <Styled.p sx={{ mt: 2, fontSize: 2, lineHeight: "27px" }}>
+    <div sx={{textAlign: ['center', 'initial']}}>
+      <Styled.h3 sx={{mt: 0}}>Looking for more?</Styled.h3>
+      <Styled.p sx={{mt: 2, fontSize: 2, lineHeight: '27px'}}>
         Considering joining my private email list. No spam, ever. Even if
         there's a fire.
         <span
-          sx={{ display: "inline-block", px: 1 }}
+          sx={{display: 'inline-block', px: 1}}
           role="img"
           aria-label="Fire"
         >
           🔥
         </span>
       </Styled.p>
-      <div sx={{ mt: 3 }}>
+      <div sx={{mt: 3}}>
         <NewsletterForm
           onSubscribe={() => {
             setShowConfirmMessage(true)
           }}
         />
-        <Styled.p sx={{ fontSize: 0, color: "primary", mt: 2 }}>
-          <Link to="/mail" sx={{ fontSize: 0, color: "primary", mt: 2 }}>
+        <Styled.p sx={{fontSize: 0, color: 'primary', mt: 2}}>
+          <Link to="/mail" sx={{fontSize: 0, color: 'primary', mt: 2}}>
             What's all this about?
           </Link>
         </Styled.p>

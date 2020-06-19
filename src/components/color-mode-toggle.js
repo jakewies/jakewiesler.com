@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Button, useColorMode } from "theme-ui"
-import colorModes from "../color-modes"
+import {jsx, Button, useColorMode} from 'theme-ui'
+import colorModes from '../color-modes'
 
 export default function ColorModeToggle() {
   const [colorMode, setColorMode] = useColorMode()
@@ -15,13 +15,13 @@ export default function ColorModeToggle() {
       onClick={handleSetColorMode}
       sx={{
         fontSize: 1,
-        fontWeight: "bold",
+        fontWeight: 'bold',
         px: 2,
         py: 1,
-        bg: "muted",
-        color: "primary",
-        "&:focus": {
-          outlineColor: "primary",
+        bg: 'muted',
+        color: 'primary',
+        '&:focus': {
+          outlineColor: 'primary',
         },
       }}
     >
@@ -37,7 +37,7 @@ const getNextColorMode = prevColorMode => {
 
   // go back to beginning
   if (nextIndex > modes.length - 1) {
-    return "light"
+    return 'light'
   }
 
   return modes[nextIndex]
