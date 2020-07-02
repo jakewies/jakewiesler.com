@@ -15,6 +15,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.5.5",
     "@mdx-js/react": "^1.5.5",
+    "@n8tb1t/use-scroll-position": "^1.0.43",
     "@sindresorhus/slugify": "^1.0.0",
     "@theme-ui/prism": "^0.3.0",
     "formik": "^2.1.4",

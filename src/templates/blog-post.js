@@ -5,8 +5,9 @@ import {graphql, Link} from 'gatsby'
 import {MDXRenderer} from 'gatsby-plugin-mdx'
 import PropTypes from 'prop-types'
 import slugify from '@sindresorhus/slugify'
-import {AiOutlineTwitter} from 'react-icons/ai'
+import {AiOutlineTwitter, AiOutlineClose} from 'react-icons/ai'
 import {TwitterShareButton} from 'react-share'
+import {useScrollPosition} from '@n8tb1t/use-scroll-position'
 import Layout from 'components/layout'
 import Seo from 'components/seo'
 import NewsletterForm from 'components/newsletter-form'
@@ -16,6 +17,18 @@ export default function BlogPostTemplate({data}) {
   const {title, date, slug, tags} = fields
   const description = frontmatter.description || excerpt
   const {siteUrl, social} = data.site.siteMetadata
+
+  const [showForHire, setShowForHire] = React.useState(false)
+
+  useScrollPosition(
+    ({prevPos, currPos}) => {
+      const belowThreshold = currPos.y < -1500
+      if (belowThreshold && !showForHire) {
+        setShowForHire(true)
+      }
+    },
+    [showForHire],
+  )
 
   return (
     <Layout breadcrumb="/blog">
@@ -81,6 +94,7 @@ export default function BlogPostTemplate({data}) {
       >
         <NewsletterCTA />
       </section>
+      <ForHireCTA visible={showForHire} onClose={() => setShowForHire(false)} />
     </Layout>
   )
 }
@@ -276,6 +290,70 @@ function NewsletterCTA() {
             What's all this about?
           </Link>
         </Styled.p>
+      </div>
+    </div>
+  )
+}
+
+function ForHireCTA({visible}) {
+  const [show, setShow] = React.useState(undefined)
+
+  React.useEffect(() => {
+    if (visible) {
+      setShow(true)
+    }
+  }, [visible])
+
+  return (
+    <div
+      sx={{
+        display: 'none',
+        position: 'fixed',
+        bottom: show ? 4 : '-400px',
+        right: 4,
+        backgroundColor: 'muted',
+        p: 4,
+        borderRadius: 4,
+        transition: 'all 300ms ease-out',
+        '@media screen and (min-width: 1330px)': {
+          display: 'flex',
+        },
+      }}
+    >
+      <button
+        sx={{
+          position: 'absolute',
+          top: '10px',
+          left: '10px',
+          lineHeight: 1,
+          color: 'gray',
+          cursor: 'pointer',
+          '&:hover': {
+            color: 'text',
+          },
+          backgroundColor: 'transparent',
+          fill: 'none',
+          border: 'none',
+        }}
+        onClick={() => setShow(false)}
+      >
+        <AiOutlineClose />
+      </button>
+      <span sx={{pr: 3}} role="img" aria-label="rocketship">
+        🚀
+      </span>
+      <div>
+        <Styled.p
+          sx={{fontWeight: 'heading', fontSize: 1, mt: 0, lineHeight: 1}}
+        >
+          I'm Available For Remote Work!
+        </Styled.p>
+        <Styled.a
+          sx={{fontSize: 1}}
+          href="mailto:jakewiesler@gmail.com?subject=Remote Work Inquiry"
+        >
+          Hire me
+        </Styled.a>
       </div>
     </div>
   )
