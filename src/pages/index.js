@@ -53,7 +53,7 @@ export default function IndexPage() {
 const linkStyles = {
   textDecoration: 'none',
   color: 'primary',
-  fontFamily: 'menlo',
+  fontFamily: 'menlo, monospace',
   fontSize: 2,
   fontWeight: 'body',
   textTransform: 'lowercase',
