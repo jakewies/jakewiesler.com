@@ -33,17 +33,8 @@ export default function IndexPage() {
         <a href="https://github.com/jakewies" sx={linkStyles}>
           /GitHub
         </a>
-        <a
-          href="https://www.youtube.com/channel/UCQPW7EPRHF4Eb1Ei9I5Gf6A"
-          sx={linkStyles}
-        >
-          /YouTube
-        </a>
         <a href="https://twitter.com/jakewies" sx={linkStyles}>
           /Twitter
-        </a>
-        <a href="https://soundcloud.com/if_else" sx={linkStyles}>
-          /SoundCloud
         </a>
       </nav>
     </Layout>
