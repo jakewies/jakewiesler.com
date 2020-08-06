@@ -3,7 +3,6 @@ import {jsx, Container} from 'theme-ui'
 import {Link} from 'gatsby'
 import {
   AiFillInstagram,
-  AiFillYoutube,
   AiOutlineTwitter,
   AiOutlineGithub,
 } from 'react-icons/ai'
