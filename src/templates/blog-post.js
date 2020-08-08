@@ -31,7 +31,7 @@ export default function BlogPostTemplate({data}) {
   )
 
   return (
-    <Layout breadcrumb="/blog">
+    <Layout>
       <Seo title={title} description={description} pageUrl={slug} isBlogPost />
       <article
         sx={{

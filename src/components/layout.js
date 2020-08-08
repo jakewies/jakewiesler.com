@@ -25,11 +25,11 @@ const GlobalStyles = () => (
   />
 )
 
-export default function Layout({breadcrumb, children, showFooter = true}) {
+export default function Layout({children, showFooter = true}) {
   return (
     <React.Fragment>
       <GlobalStyles />
-      <Header breadcrumb={breadcrumb} />
+      <Header />
       <main
         sx={{
           flexGrow: 1,
@@ -45,6 +45,5 @@ export default function Layout({breadcrumb, children, showFooter = true}) {
 }
 
 Layout.propTypes = {
-  breadcrumb: PropTypes.string.isRequired,
   showFooter: PropTypes.bool,
 }

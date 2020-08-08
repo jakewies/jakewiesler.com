@@ -11,7 +11,7 @@ export default function TagPage({pageContext, data}) {
   const {edges} = data.allMdx
 
   return (
-    <Layout breadcrumb="/tags">
+    <Layout>
       <Seo
         title={`${tag} | Jake Wiesler`}
         description={`An index of content with the tag ${tag}.`}
