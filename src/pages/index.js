@@ -13,7 +13,7 @@ export default function IndexPage() {
       />
       <section>
         <p sx={{m: 0, fontSize: 3, color: 'text'}}>
-          Front-end developer based in Orlando FL
+          Software developer based in Orlando FL
         </p>
         <p sx={{m: 0, fontSize: 3, color: 'text'}}>Exploring human movement</p>
       </section>
