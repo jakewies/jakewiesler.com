@@ -9,7 +9,6 @@ export default function PostLink({date, slug, title}) {
       sx={{
         display: 'flex',
         flexDirection: ['column', 'row'],
-        alignItems: ['initial', 'center'],
         mb: 4,
       }}
     >
