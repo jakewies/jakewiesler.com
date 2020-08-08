@@ -10,7 +10,7 @@ export default function TagsPage({data}) {
   const tags = data.tags.group
 
   return (
-    <Layout breadcrumb="/tags">
+    <Layout>
       <Seo
         title="Jake Wiesler"
         description="An index of all content by topic."

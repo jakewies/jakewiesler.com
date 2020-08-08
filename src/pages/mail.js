@@ -9,7 +9,7 @@ export default function MailPage() {
   const [showConfirmMessage, setShowConfirmMessage] = React.useState(false)
 
   return (
-    <Layout breadcrumb="/mail">
+    <Layout>
       <Seo
         title="Jake Wiesler"
         description="Sign up for my private email list."

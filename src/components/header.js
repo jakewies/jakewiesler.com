@@ -1,10 +1,8 @@
 /** @jsx jsx */
 import {jsx, Container} from 'theme-ui'
 import {Link} from 'gatsby'
-import PropTypes from 'prop-types'
-import ColorModeToggle from 'components/color-mode-toggle'
 
-export default function Header({breadcrumb}) {
+export default function Header() {
   return (
     <header>
       <Container
@@ -16,26 +14,46 @@ export default function Header({breadcrumb}) {
           justifyContent: 'space-between',
         }}
       >
-        <h3
-          sx={{
-            margin: 0,
-            fontSize: 3,
-            fontWeight: 'heading',
-            letterSpacing: 0,
-            color: 'text',
-          }}
-        >
-          <Link to="/" sx={{color: 'text', textDecoration: 'none'}}>
-            jakewies
-            <span sx={{color: 'lightgray'}}>{breadcrumb}</span>
+        <Link to="/" sx={{color: 'text', textDecoration: 'none'}}>
+          <span
+            sx={{
+              margin: 0,
+              fontSize: 3,
+              fontWeight: 'heading',
+              color: 'text',
+            }}
+          >
+            Jake Wiesler
+          </span>
+        </Link>
+        <nav>
+          <Link to="/blog" sx={navLinkStyles} activeClassName="active">
+            Blog
           </Link>
-        </h3>
-        <ColorModeToggle />
+          <Link to="/mail" sx={navLinkStyles} activeClassName="active">
+            Mail
+          </Link>
+        </nav>
       </Container>
     </header>
   )
 }
 
-Header.propTypes = {
-  breadcrumb: PropTypes.string.isRequired,
+const navLinkStyles = {
+  color: 'text',
+  textDecoration: 'none',
+  fontSize: 2,
+  mr: 1,
+  px: 3,
+  py: 2,
+  borderRadius: 3,
+  '&:hover': {
+    bg: 'muted',
+  },
+  '&.active': {
+    bg: 'muted',
+  },
+  '&:last-child': {
+    mr: 0,
+  },
 }

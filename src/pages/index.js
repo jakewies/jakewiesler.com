@@ -6,7 +6,7 @@ import Seo from 'components/seo'
 
 export default function IndexPage() {
   return (
-    <Layout breadcrumb=".com" showFooter={false}>
+    <Layout showFooter={false}>
       <Seo
         title="Jake Wiesler"
         description="Front-end developer exploring human movement."

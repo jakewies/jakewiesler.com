@@ -10,7 +10,7 @@ export default function BlogPage({data}) {
   const posts = data.posts.edges
 
   return (
-    <Layout breadcrumb="/blog">
+    <Layout>
       <Seo
         title="Blog | Jake Wiesler"
         description="An index of blog posts written by Jake Wiesler."
