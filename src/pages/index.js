@@ -24,9 +24,6 @@ export default function IndexPage() {
         <Link sx={linkStyles} to="/now">
           /now
         </Link>
-        <Link sx={linkStyles} to="/contact">
-          /contact
-        </Link>
         <a href="https://github.com/jakewies" sx={linkStyles}>
           /GitHub
         </a>
