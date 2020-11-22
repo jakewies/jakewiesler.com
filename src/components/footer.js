@@ -23,9 +23,6 @@ export default function Footer() {
             <Link to="/blog" sx={linkStyles}>
               Blog
             </Link>
-            <Link to="/mail" sx={linkStyles}>
-              Mail
-            </Link>
           </div>
           <div>
             <a href="https://github.com/jakewies" sx={{mr: 3}}>

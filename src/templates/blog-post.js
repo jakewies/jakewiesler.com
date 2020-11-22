@@ -285,11 +285,6 @@ function NewsletterCTA() {
             setShowConfirmMessage(true)
           }}
         />
-        <Styled.p sx={{fontSize: 0, color: 'primary', mt: 2}}>
-          <Link to="/mail" sx={{fontSize: 0, color: 'primary', mt: 2}}>
-            What's all this about?
-          </Link>
-        </Styled.p>
       </div>
     </div>
   )

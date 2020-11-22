@@ -30,9 +30,6 @@ export default function Header() {
           <Link to="/blog" sx={navLinkStyles} activeClassName="active">
             Blog
           </Link>
-          <Link to="/mail" sx={navLinkStyles} activeClassName="active">
-            Mail
-          </Link>
         </nav>
       </Container>
     </header>
