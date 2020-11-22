@@ -2,7 +2,7 @@
   "name": "jakewiesler.com",
   "private": true,
   "description": "Personal website of Jake Wiesler.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Jake Wiesler <jakewiesler@gmail.com> (https://jakewiesler.com)",
   "homepage": "https://github.com/jakewies/jakewiesler.com",
   "scripts": {
