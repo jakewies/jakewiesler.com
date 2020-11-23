@@ -3,28 +3,32 @@ import {jsx} from 'theme-ui'
 import {Link} from 'gatsby'
 import PropTypes from 'prop-types'
 
-export default function PostLink({date, slug, title}) {
+export function PostLink({date, slug, title}) {
   return (
     <div
       sx={{
         display: 'flex',
-        flexDirection: ['column', 'row'],
-        mb: 4,
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        mt: '24px',
+        '&:first-of-type': {
+          mt: '0',
+        },
       }}
     >
-      <span sx={{color: 'lightgray', mr: 4, fontSize: 1}}>{date}</span>
       <Link
         to={slug}
         sx={{
+          fontWeight: '600',
+          fontSize: '24px',
+          margin: '0',
+          color: '#000',
           textDecoration: 'none',
-          color: 'text',
-          display: 'inline-block',
-          fontSize: 3,
-          maxWidth: 450,
         }}
       >
         {title}
       </Link>
+      <time>{date}</time>
     </div>
   )
 }

@@ -1,75 +1,67 @@
 /** @jsx jsx */
-import {jsx, Container} from 'theme-ui'
+import {jsx} from 'theme-ui'
 import {Link} from 'gatsby'
-import {
-  AiFillInstagram,
-  AiOutlineTwitter,
-  AiOutlineGithub,
-} from 'react-icons/ai'
+import {FaTwitter, FaGithub, FaInstagram, FaRss} from 'react-icons/fa'
 
-export default function Footer() {
+export function Footer() {
   return (
-    <footer
-      sx={{
-        bg: 'muted',
-      }}
-    >
-      <Container pt={5} pb={5}>
-        <div sx={{display: 'flex', justifyContent: 'space-between'}}>
-          <div sx={{display: 'flex', flexDirection: 'column'}}>
-            <Link to="/" sx={linkStyles}>
-              Home
-            </Link>
-            <Link to="/blog" sx={linkStyles}>
-              Blog
-            </Link>
-          </div>
-          <div>
-            <a href="https://github.com/jakewies" sx={{mr: 3}}>
-              <AiOutlineGithub sx={iconStyles} />
-            </a>
-            <a href="https://twitter.com/jakewies" sx={{mr: 3}}>
-              <AiOutlineTwitter sx={iconStyles} />
-            </a>
-            <a href="https://instagram.com/jakewies">
-              <AiFillInstagram sx={iconStyles} />
-            </a>
-          </div>
+    <footer sx={{padding: '128px 0 32px'}}>
+      <div sx={{display: 'flex', justifyContent: 'flex-end'}}>
+        <FooterLink to="/">Home</FooterLink>
+        <FooterLink to="/blog">Blog</FooterLink>
+        <FooterLink to="/about">About</FooterLink>
+        <FooterLink to="/newsletter">Newsletter</FooterLink>
+      </div>
+      <div
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          marginTop: '36px',
+        }}
+      >
+        <span sx={{fontSize: '14px'}}>
+          © {new Date().getFullYear()} Jake Wiesler. All Rights Reserved.
+        </span>
+        <div>
+          <a href="https://twitter.com/jakewies" sx={iconStyles}>
+            <FaTwitter />
+          </a>
+          <a href="https://github.com/jakewies" sx={iconStyles}>
+            <FaGithub sx={iconStyles} />
+          </a>
+          <a href="https://instagram.com/jakewies" sx={iconStyles}>
+            <FaInstagram sx={iconStyles} />
+          </a>
+          <Link to="/blog/rss.xml" sx={iconStyles}>
+            <FaRss sx={iconStyles} />
+          </Link>
         </div>
-        <div
-          sx={{
-            mt: 4,
-            color: 'gray',
-            fontSize: 0,
-          }}
-        >
-          © {new Date().getFullYear()} Jake Wiesler
-        </div>
-      </Container>
+      </div>
     </footer>
   )
 }
 
-const linkStyles = {
-  textDecoration: 'none',
-  color: 'gray',
-  fontSize: 1,
-  fontWeight: 'body',
-  letterSpacing: 1,
-  textTransform: 'uppercase',
-  mb: 1,
-  '&:last-of-type': {
-    mb: 0,
-  },
-  '&:hover': {
-    color: 'primary',
-  },
-}
+const FooterLink = ({to, children}) => (
+  <Link
+    to={to}
+    sx={{
+      color: '#555',
+      fontSize: '18px',
+      marginRight: '24px',
+      textDecoration: 'none',
+      '&:last-of-type': {marginRight: 0},
+    }}
+  >
+    {children}
+  </Link>
+)
 
 const iconStyles = {
-  color: 'gray',
-  fontSize: 4,
-  '&:hover': {
-    color: 'primary',
+  color: '#000',
+  fontSize: '18px',
+  marginRight: '24px',
+  '&:last-of-type': {
+    marginRight: 0,
   },
 }

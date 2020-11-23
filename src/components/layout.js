@@ -1,10 +1,34 @@
 /** @jsx jsx */
-import {jsx, Container} from 'theme-ui'
-import React from 'react'
-import PropTypes from 'prop-types'
-import {Global} from '@emotion/core'
-import Header from 'components/header'
-import Footer from 'components/footer'
+import { jsx } from 'theme-ui'
+import { Global } from '@emotion/core'
+import { Header } from './header'
+import { Footer } from './footer'
+
+export function Layout({ children }) {
+  return (
+    <div
+      sx={{
+        minHeight: '100%',
+        maxWidth: 1024,
+        margin: '0 auto',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      <GlobalStyles />
+      <Header />
+      <main
+        sx={{
+          flexGrow: 1,
+          padding: '64px 0',
+        }}
+      >
+        {children}
+      </main>
+      <Footer />
+    </div>
+  )
+}
 
 const GlobalStyles = () => (
   <Global
@@ -13,10 +37,6 @@ const GlobalStyles = () => (
         height: '100%',
         margin: 0,
       },
-      '#gatsby-focus-wrapper': {
-        display: 'flex',
-        flexDirection: 'column',
-      },
       '*': {
         margin: 0,
         padding: 0,
@@ -24,26 +44,3 @@ const GlobalStyles = () => (
     })}
   />
 )
-
-export default function Layout({children, showFooter = true}) {
-  return (
-    <React.Fragment>
-      <GlobalStyles />
-      <Header />
-      <main
-        sx={{
-          flexGrow: 1,
-        }}
-      >
-        <Container pt={4} pb={5}>
-          {children}
-        </Container>
-      </main>
-      {showFooter ? <Footer /> : null}
-    </React.Fragment>
-  )
-}
-
-Layout.propTypes = {
-  showFooter: PropTypes.bool,
-}

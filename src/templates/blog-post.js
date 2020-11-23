@@ -1,34 +1,18 @@
 /** @jsx jsx */
-import {jsx, Styled} from 'theme-ui'
-import React from 'react'
-import {graphql, Link} from 'gatsby'
-import {MDXRenderer} from 'gatsby-plugin-mdx'
-import PropTypes from 'prop-types'
+import { jsx, Styled } from 'theme-ui'
+import { graphql, Link } from 'gatsby'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import slugify from '@sindresorhus/slugify'
-import {AiOutlineTwitter, AiOutlineClose} from 'react-icons/ai'
-import {TwitterShareButton} from 'react-share'
-import {useScrollPosition} from '@n8tb1t/use-scroll-position'
-import Layout from 'components/layout'
+import { AiOutlineTwitter } from 'react-icons/ai'
+import { TwitterShareButton } from 'react-share'
+import { Layout } from 'components/layout'
 import Seo from 'components/seo'
-import NewsletterForm from 'components/newsletter-form'
 
-export default function BlogPostTemplate({data}) {
-  const {body, excerpt, fields, frontmatter} = data.mdx
-  const {title, date, slug, tags} = fields
+export default function BlogPostTemplate({ data }) {
+  const { body, excerpt, fields, frontmatter } = data.mdx
+  const { title, date, slug, tags } = fields
   const description = frontmatter.description || excerpt
-  const {siteUrl, social} = data.site.siteMetadata
-
-  const [showForHire, setShowForHire] = React.useState(false)
-
-  useScrollPosition(
-    ({prevPos, currPos}) => {
-      const belowThreshold = currPos.y < -1500
-      if (belowThreshold && !showForHire) {
-        setShowForHire(true)
-      }
-    },
-    [showForHire],
-  )
+  const { siteUrl, social } = data.site.siteMetadata
 
   return (
     <Layout>
@@ -82,24 +66,11 @@ export default function BlogPostTemplate({data}) {
       >
         <AboutMeCTA />
       </section>
-      <section
-        sx={{
-          mt: 4,
-          px: [4, 5],
-          py: 4,
-          bg: 'highlight',
-          color: 'text',
-          borderRadius: 4,
-        }}
-      >
-        <NewsletterCTA />
-      </section>
-      <ForHireCTA visible={showForHire} onClose={() => setShowForHire(false)} />
     </Layout>
   )
 }
 
-export const pageQuery = graphql`
+export const query = graphql`
   query($id: String!) {
     site {
       siteMetadata {
@@ -109,7 +80,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    mdx(fields: {id: {eq: $id}}) {
+    mdx(fields: { id: { eq: $id } }) {
       excerpt
       frontmatter {
         description
@@ -125,9 +96,9 @@ export const pageQuery = graphql`
   }
 `
 
-function Tags({tags}) {
+function Tags({ tags }) {
   return (
-    <div sx={{display: 'flex', flexDirection: 'column'}}>
+    <div sx={{ display: 'flex', flexDirection: 'column' }}>
       <span
         sx={{
           color: 'lightgray',
@@ -161,14 +132,10 @@ function Tags({tags}) {
   )
 }
 
-Tags.propTypes = {
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-}
-
-function Share({title, url, twitterHandle}) {
+function Share({ title, url, twitterHandle }) {
   return (
     <div
-      sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-end'}}
+      sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}
     >
       <span
         sx={{
@@ -185,7 +152,7 @@ function Share({title, url, twitterHandle}) {
           title={title}
           via={twitterHandle}
           sx={{
-            '&:focus': {outline: 'none'},
+            '&:focus': { outline: 'none' },
           }}
         >
           <AiOutlineTwitter
@@ -202,11 +169,6 @@ function Share({title, url, twitterHandle}) {
   )
 }
 
-Share.propTypes = {
-  title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-}
-
 function AboutMeCTA() {
   return (
     <div
@@ -216,7 +178,7 @@ function AboutMeCTA() {
         alignItems: 'center',
       }}
     >
-      <div sx={{mr: [0, 4], mb: [3, 0]}}>
+      <div sx={{ mr: [0, 4], mb: [3, 0] }}>
         <img
           src="/avatar.jpg"
           alt="Avatar"
@@ -227,128 +189,25 @@ function AboutMeCTA() {
           }}
         />
       </div>
-      <div sx={{textAlign: ['center', 'initial']}}>
-        <Styled.h3 sx={{mt: 0}}>
+      <div sx={{ textAlign: ['center', 'initial'] }}>
+        <Styled.h3 sx={{ mt: 0 }}>
           Hey, I'm Jake!
           <span
-            sx={{display: 'inline-block', pl: 2}}
+            sx={{ display: 'inline-block', pl: 2 }}
             role="img"
             aria-label="Wave"
           >
             👋
           </span>
         </Styled.h3>
-        <Styled.p sx={{mt: 2, fontSize: 2, lineHeight: '27px'}}>
+        <Styled.p sx={{ mt: 2, fontSize: 2, lineHeight: '27px' }}>
           I write about coding, the creative pursuit and becoming a better
           human.{' '}
-          <Link to="/blog" sx={{color: 'primary'}}>
+          <Link to="/blog" sx={{ color: 'primary' }}>
             Check out the blog
           </Link>{' '}
           for more of my words and sentences.
         </Styled.p>
-      </div>
-    </div>
-  )
-}
-
-function NewsletterCTA() {
-  const [showConfirmMessage, setShowConfirmMessage] = React.useState(false)
-
-  if (showConfirmMessage) {
-    return (
-      <div sx={{textAlign: ['center', 'initial']}}>
-        <Styled.h3 sx={{mt: 0}}>You're almost subscribed!</Styled.h3>
-        <Styled.p sx={{mt: 2, fontSize: 2, lineHeight: '27px'}}>
-          I sent you an email to confirm your address. Click it and you're in!
-        </Styled.p>
-      </div>
-    )
-  }
-
-  return (
-    <div sx={{textAlign: ['center', 'initial']}}>
-      <Styled.h3 sx={{mt: 0}}>Looking for more?</Styled.h3>
-      <Styled.p sx={{mt: 2, fontSize: 2, lineHeight: '27px'}}>
-        Considering joining my private email list. No spam, ever. Even if
-        there's a fire.
-        <span
-          sx={{display: 'inline-block', px: 1}}
-          role="img"
-          aria-label="Fire"
-        >
-          🔥
-        </span>
-      </Styled.p>
-      <div sx={{mt: 3}}>
-        <NewsletterForm
-          onSubscribe={() => {
-            setShowConfirmMessage(true)
-          }}
-        />
-      </div>
-    </div>
-  )
-}
-
-function ForHireCTA({visible}) {
-  const [show, setShow] = React.useState(undefined)
-
-  React.useEffect(() => {
-    if (visible) {
-      setShow(true)
-    }
-  }, [visible])
-
-  return (
-    <div
-      sx={{
-        display: 'none',
-        position: 'fixed',
-        bottom: show ? 4 : '-400px',
-        right: 4,
-        backgroundColor: 'muted',
-        p: 4,
-        borderRadius: 4,
-        transition: 'all 300ms ease-out',
-        '@media screen and (min-width: 1330px)': {
-          display: 'flex',
-        },
-      }}
-    >
-      <button
-        sx={{
-          position: 'absolute',
-          top: '10px',
-          left: '10px',
-          lineHeight: 1,
-          color: 'gray',
-          cursor: 'pointer',
-          '&:hover': {
-            color: 'text',
-          },
-          backgroundColor: 'transparent',
-          fill: 'none',
-          border: 'none',
-        }}
-        onClick={() => setShow(false)}
-      >
-        <AiOutlineClose />
-      </button>
-      <span sx={{pr: 3}} role="img" aria-label="rocketship">
-        🚀
-      </span>
-      <div>
-        <Styled.p
-          sx={{fontWeight: 'heading', fontSize: 1, mt: 0, lineHeight: 1}}
-        >
-          I'm Available For Remote Work!
-        </Styled.p>
-        <Styled.a
-          sx={{fontSize: 1}}
-          href="mailto:jakewiesler@gmail.com?subject=Remote Work Inquiry"
-        >
-          Hire me
-        </Styled.a>
       </div>
     </div>
   )

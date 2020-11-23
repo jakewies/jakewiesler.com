@@ -1,12 +1,11 @@
 /** @jsx jsx */
-import {jsx} from 'theme-ui'
-import {graphql} from 'gatsby'
-import PropTypes from 'prop-types'
-import Layout from 'components/layout'
-import PostLink from 'components/post-link'
+import { jsx } from 'theme-ui'
+import { graphql } from 'gatsby'
+import { Layout } from 'components/layout'
+import { PostLink } from 'components/post-link'
 import Seo from 'components/seo'
 
-export default function BlogPage({data}) {
+export default function BlogPage({ data }) {
   const posts = data.posts.edges
 
   return (
@@ -16,37 +15,18 @@ export default function BlogPage({data}) {
         description="An index of blog posts written by Jake Wiesler."
         pageUrl="/blog"
       ></Seo>
-      {posts.map(({node}) => (
+      {posts.map(({ node }) => (
         <PostLink key={node.fields.id} {...node.fields} />
       ))}
     </Layout>
   )
 }
 
-BlogPage.propTypes = {
-  data: PropTypes.shape({
-    posts: PropTypes.shape({
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            fields: PropTypes.shape({
-              id: PropTypes.string.isRequired,
-              slug: PropTypes.string.isRequired,
-              title: PropTypes.string.isRequired,
-              date: PropTypes.string.isRequired,
-            }),
-          }),
-        }).isRequired,
-      ),
-    }),
-  }),
-}
-
-export const pageQuery = graphql`
+export const query = graphql`
   query {
     posts: allMdx(
-      sort: {fields: frontmatter___date, order: DESC}
-      filter: {fileAbsolutePath: {regex: "//content/blog//"}}
+      sort: { fields: frontmatter___date, order: DESC }
+      filter: { fileAbsolutePath: { regex: "//content/blog//" } }
     ) {
       edges {
         node {

@@ -8,8 +8,8 @@ export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: [12, 14, 16, 18, 24, 32, 48, 64, 72],
   fonts: {
-    body: 'system-ui, sans-serif',
-    heading: 'system-ui, sans-serif',
+    body: 'Inter, system-ui, sans-serif',
+    heading: 'Inter, system-ui, sans-serif',
     monospace: 'Menlo, monospace',
   },
   fontWeights: {
