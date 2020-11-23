@@ -2,9 +2,9 @@
 import {jsx} from 'theme-ui'
 import PropTypes from 'prop-types'
 import {graphql, Link} from 'gatsby'
-import Layout from 'components/layout'
+import { Layout } from 'components/layout'
 import {PostLink} from 'components/post-link'
-import Seo from 'components/seo'
+import { Seo } from 'components/seo'
 
 export default function TagPage({pageContext, data}) {
   const {tag} = pageContext
@@ -64,7 +64,7 @@ TagPage.propTypes = {
 // this supports mdx content other than blog posts
 // in the future i might want other content types that support
 // tags.
-export const pageQuery = graphql`
+export const query = graphql`
   query($tag: String) {
     allMdx(
       sort: {fields: [frontmatter___date], order: DESC}

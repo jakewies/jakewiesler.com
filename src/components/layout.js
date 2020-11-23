@@ -8,11 +8,12 @@ export function Layout({ children }) {
   return (
     <div
       sx={{
-        minHeight: '100%',
-        maxWidth: 1024,
-        margin: '0 auto',
         display: 'flex',
         flexDirection: 'column',
+        minHeight: '100%',
+        maxWidth: '1024px',
+        my: 0,
+        mx: 'auto',
       }}
     >
       <GlobalStyles />
@@ -20,7 +21,7 @@ export function Layout({ children }) {
       <main
         sx={{
           flexGrow: 1,
-          padding: '64px 0',
+          py: 5,
         }}
       >
         {children}
@@ -32,7 +33,7 @@ export function Layout({ children }) {
 
 const GlobalStyles = () => (
   <Global
-    styles={theme => ({
+    styles={{
       'html, body, #___gatsby, #gatsby-focus-wrapper': {
         height: '100%',
         margin: 0,
@@ -41,6 +42,6 @@ const GlobalStyles = () => (
         margin: 0,
         padding: 0,
       },
-    })}
+    }}
   />
 )

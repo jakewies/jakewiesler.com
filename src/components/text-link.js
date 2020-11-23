@@ -7,11 +7,13 @@ export function TextLink({to, children}) {
     <Link
       to={to}
       sx={{
-        color: '#000',
-        borderBottom: '1px solid #000',
+        color: 'text',
+        borderBottom: '1px solid',
+        borderColor: 'text',
         paddingBottom: '1px',
-        fontSize: '18px',
+        fontSize: 2,
         textDecoration: 'none',
+        fontWeight: 'heading'
       }}
     >
       {children}

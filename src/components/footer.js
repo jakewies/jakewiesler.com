@@ -5,7 +5,7 @@ import {FaTwitter, FaGithub, FaInstagram, FaRss} from 'react-icons/fa'
 
 export function Footer() {
   return (
-    <footer sx={{padding: '128px 0 32px'}}>
+    <footer sx={{mt: 7, mb: 5}}>
       <div sx={{display: 'flex', justifyContent: 'flex-end'}}>
         <FooterLink to="/">Home</FooterLink>
         <FooterLink to="/blog">Blog</FooterLink>
@@ -17,10 +17,10 @@ export function Footer() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          marginTop: '36px',
+          mt: 5,
         }}
       >
-        <span sx={{fontSize: '14px'}}>
+        <span sx={{fontSize: 0}}>
           © {new Date().getFullYear()} Jake Wiesler. All Rights Reserved.
         </span>
         <div>
@@ -46,11 +46,11 @@ const FooterLink = ({to, children}) => (
   <Link
     to={to}
     sx={{
-      color: '#555',
-      fontSize: '18px',
-      marginRight: '24px',
+      color: 'gray',
+      fontSize: 2,
+      mr: 4,
       textDecoration: 'none',
-      '&:last-of-type': {marginRight: 0},
+      '&:last-of-type': {mr: 0},
     }}
   >
     {children}
@@ -58,10 +58,10 @@ const FooterLink = ({to, children}) => (
 )
 
 const iconStyles = {
-  color: '#000',
-  fontSize: '18px',
-  marginRight: '24px',
+  color: 'text',
+  fontSize: 3,
+  mr: 4,
   '&:last-of-type': {
-    marginRight: 0,
+    mr: 0,
   },
 }

@@ -2,10 +2,10 @@
 import { jsx } from 'theme-ui'
 import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
-import Seo from 'components/seo'
 import { ButtonLink } from 'components/button-link'
 import { Layout } from 'components/layout'
 import { PostLink } from 'components/post-link'
+import { Seo } from 'components/seo'
 import { TextLink } from 'components/text-link'
 
 export default function IndexPage({ data }) {
@@ -34,10 +34,10 @@ const JumbotronSection = ({ avatar }) => (
       <div>
         <h1
           sx={{
-            fontWeight: '400',
-            fontSize: '36px',
-            lineHeight: '1.5',
-            margin: 0,
+            fontWeight: 'body',
+            fontSize: 5,
+            lineHeight: 'heading',
+            m: 0,
           }}
         >
           Hello!{' '}
@@ -48,10 +48,10 @@ const JumbotronSection = ({ avatar }) => (
         </h1>
         <h2
           sx={{
-            fontWeight: '400',
-            fontSize: '32px',
-            lineHeight: '1.5',
-            marginTop: '24px',
+            fontWeight: 'body',
+            fontSize: 5, 
+            lineHeight: 'heading',
+            mt: 4,
           }}
         >
           I'm a Software Engineer with a deep interest in Health & Wellness.
@@ -72,9 +72,9 @@ const JumbotronSection = ({ avatar }) => (
 )
 
 const LatestPostsSection = ({ latestPosts }) => (
-  <section sx={{ mt: '128px' }}>
+  <section sx={{ mt: 7 }}>
     <h3 sx={sectionTitleStyles}>Latest Posts</h3>
-    <div sx={{ padding: '36px 0' }}>
+    <div sx={{ py: 5 }}>
       {latestPosts.edges.map(({ node: post }) => (
         <PostLink key={post.fields.id} {...post.fields} />
       ))}
@@ -86,15 +86,15 @@ const LatestPostsSection = ({ latestPosts }) => (
 const NewsletterSection = () => (
   <section
     sx={{
-      mt: '128px',
+      mt: 7,
     }}
   >
     <h3 sx={sectionTitleStyles}>The Newsletter</h3>
     <p
       sx={{
-        fontSize: '24px',
-        lineHeight: 1.6,
-        mt: '36px',
+        fontSize: 4,
+        lineHeight: 'body',
+        mt: 5,
       }}
     >
       A weekly email covering human movement, physical training and maintaing an
@@ -102,10 +102,10 @@ const NewsletterSection = () => (
     </p>
     <div
       sx={{
-        mt: '18px',
+        mt: 5,
       }}
     >
-      <span sx={{ mr: '36px' }}>
+      <span sx={{ mr: 5 }}>
         <ButtonLink to="#">Subscribe</ButtonLink>
       </span>
       <TextLink to="#">Learn More</TextLink>
@@ -114,19 +114,19 @@ const NewsletterSection = () => (
 )
 
 const sectionTitleStyles = {
-  fontWeight: '400',
-  color: '#777',
+  fontWeight: 'body',
+  color: 'gray',
   letterSpacing: '2px',
-  fontSize: '18px',
+  fontSize: 3,
   textTransform: 'uppercase',
-  margin: '0',
+  m: 0,
 }
 
 export const query = graphql`
   query {
     avatar: file(relativePath: { eq: "avatar.png" }) {
       childImageSharp {
-        fixed(width: 275, height: 275) {
+        fixed(width: 250, height: 250) {
           ...GatsbyImageSharpFixed
         }
       }

@@ -1,11 +1,11 @@
 import prism from '@theme-ui/prism/presets/theme-ui'
 import colorModes from '../color-modes'
 
-const {light, ...alternateColorModes} = colorModes
+const { light, ...alternateColorModes } = colorModes
 
 export default {
   breakpoints: ['700px'],
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  space: [0, 4, 8, 16, 24, 32, 64, 128, 256, 512, 1024],
   fontSizes: [12, 14, 16, 18, 24, 32, 48, 64, 72],
   fonts: {
     body: 'Inter, system-ui, sans-serif',
@@ -15,15 +15,15 @@ export default {
   fontWeights: {
     body: 400,
     heading: 500,
-    bold: 700,
+    bold: 600,
   },
   lineHeights: {
     body: 1.65,
     heading: 1.5,
   },
-  sizes: {
-    container: 600,
-  },
+  // sizes: {
+  //   container: 600,
+  // },
   useColorSchemeMediaQuery: true,
   colors: {
     ...light,
@@ -39,14 +39,14 @@ export default {
       fontSize: 2,
     },
   },
-  forms: {
-    input: {
-      bg: 'transparent',
-      borderColor: 'lightgray',
-      color: 'text',
-      outlineColor: 'text',
-    },
-  },
+  // forms: {
+  //   input: {
+  //     bg: 'transparent',
+  //     borderColor: 'lightgray',
+  //     color: 'text',
+  //     outlineColor: 'text',
+  //   },
+  // },
   layout: {
     container: {
       paddingLeft: [3, 0],

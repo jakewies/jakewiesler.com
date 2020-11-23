@@ -10,25 +10,25 @@ export function PostLink({date, slug, title}) {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        mt: '24px',
+        mt: 4,
         '&:first-of-type': {
-          mt: '0',
+          mt: 0,
         },
       }}
     >
       <Link
         to={slug}
         sx={{
-          fontWeight: '600',
-          fontSize: '24px',
-          margin: '0',
-          color: '#000',
+          fontWeight: 'bold',
+          fontSize: 4,
+          m: 0,
+          color: 'text',
           textDecoration: 'none',
         }}
       >
         {title}
       </Link>
-      <time>{date}</time>
+      <time sx={{ color: 'gray'}}>{date}</time>
     </div>
   )
 }

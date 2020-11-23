@@ -4,7 +4,7 @@ import {Link} from 'gatsby'
 
 export function Header() {
   return (
-    <header sx={{padding: '64px 0'}}>
+    <header sx={{my: 6}}>
       <nav
         sx={{
           display: 'flex',
@@ -26,12 +26,13 @@ function NavLink({to, children}) {
       to={to}
       activeClassName="active"
       sx={{
-        color: '#555',
-        fontSize: '18px',
-        marginRight: '24px',
+        color: 'gray',
+        fontSize: 2,
+        mr: 4,
         textDecoration: 'none',
-        '&:last-of-type': {marginRight: 0},
-        '&.active': {color: '#000'},
+        '&:last-of-type': {mr: 0},
+        '&:hover': {color: 'text'},
+        '&.active': {color: 'text'},
       }}
     >
       {children}

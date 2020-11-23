@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 import { graphql, Link } from 'gatsby'
 import slugify from '@sindresorhus/slugify'
 import { Layout } from 'components/layout'
-import Seo from 'components/seo'
+import { Seo } from 'components/seo'
 
 export default function TagsPage({ data }) {
   const tags = data.tags.group

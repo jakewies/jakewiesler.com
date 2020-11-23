@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 import { graphql } from 'gatsby'
 import { Layout } from 'components/layout'
 import { PostLink } from 'components/post-link'
-import Seo from 'components/seo'
+import { Seo } from 'components/seo'
 
 export default function BlogPage({ data }) {
   const posts = data.posts.edges

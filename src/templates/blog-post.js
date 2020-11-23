@@ -6,7 +6,7 @@ import slugify from '@sindresorhus/slugify'
 import { AiOutlineTwitter } from 'react-icons/ai'
 import { TwitterShareButton } from 'react-share'
 import { Layout } from 'components/layout'
-import Seo from 'components/seo'
+import { Seo } from 'components/seo'
 
 export default function BlogPostTemplate({ data }) {
   const { body, excerpt, fields, frontmatter } = data.mdx

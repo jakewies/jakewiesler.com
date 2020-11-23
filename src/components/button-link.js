@@ -8,14 +8,17 @@ export function ButtonLink({to, children}) {
       to={to}
       sx={{
         display: 'inline-block',
-        color: '#fff',
-        backgroundColor: '#000',
-        padding: '14px 28px',
-        fontSize: '18px',
-        letterSpacing: '1px',
+        color: 'muted',
+        backgroundColor: 'primary',
+        py: 2,
+        px: 3, 
+        fontSize: 2,
+        fontWeight: 'heading',
         cursor: 'pointer',
         textDecoration: 'none',
-        lineHeight: 1,
+        lineHeight: 'body',
+        // letterSpacing: '1px',
+        // textTransform: 'uppercase'
       }}
     >
       {children}
