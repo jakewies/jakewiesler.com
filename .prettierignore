@@ -1,6 +1,6 @@
 .cache
 package.json
-package-lock.json
+yarn.lock
 public
 node_modules
 .DS_Store
