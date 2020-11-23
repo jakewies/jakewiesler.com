@@ -1,8 +1,8 @@
 const path = require(`path`)
-const {createFilePath} = require(`gatsby-source-filesystem`)
+const { createFilePath } = require(`gatsby-source-filesystem`)
 const slugify = require('@sindresorhus/slugify')
 
-exports.onCreateWebpackConfig = ({actions}) => {
+exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
@@ -10,12 +10,11 @@ exports.onCreateWebpackConfig = ({actions}) => {
   })
 }
 
-exports.createPages = async ({graphql, actions}) => {
-  const {createPage} = actions
-  const {data, errors} = await graphql(`
+exports.createPages = async ({ graphql, actions }) => {
+  const { data, errors } = await graphql(`
     {
       blogPosts: allMdx(
-        filter: {fileAbsolutePath: {regex: "//content/blog//"}}
+        filter: { fileAbsolutePath: { regex: "//content/blog//" } }
       ) {
         edges {
           node {
@@ -49,14 +48,14 @@ exports.createPages = async ({graphql, actions}) => {
   })
 }
 
-function createBlogPostPages({data, actions}) {
-  const {createPage} = actions
+function createBlogPostPages({ data, actions }) {
+  const { createPage } = actions
 
   if (!data.length) {
     throw new Error('There are no blog posts!')
   }
 
-  data.forEach(({node}, i) => {
+  data.forEach(({ node }, i) => {
     createPage({
       path: node.fields.slug,
       component: path.resolve(`./src/templates/blog-post.js`),
@@ -68,8 +67,8 @@ function createBlogPostPages({data, actions}) {
   return null
 }
 
-function createTagPages({data, actions}) {
-  const {createPage} = actions
+function createTagPages({ data, actions }) {
+  const { createPage } = actions
 
   if (!data.length) {
     throw new Error('There are no tags!')
@@ -92,8 +91,8 @@ exports.onCreateNode = (...args) => {
   }
 }
 
-function onCreateMdxNode({node, actions, getNode}) {
-  const {createNodeField} = actions
+function onCreateMdxNode({ node, actions, getNode }) {
+  const { createNodeField } = actions
 
   createNodeField({
     name: 'id',

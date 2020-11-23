@@ -3,11 +3,6 @@ const remarkSlug = require('remark-slug')
 module.exports = {
   siteMetadata: {
     siteUrl: `https://jakewiesler.com`,
-    social: {
-      github: 'jakewies',
-      twitter: 'jakewies',
-      instagram: 'jakewies',
-    },
   },
   plugins: [
     {
@@ -73,7 +68,7 @@ module.exports = {
       `,
         feeds: [
           {
-            serialize: ({query: {site, allMdx}}) => {
+            serialize: ({ query: { site, allMdx } }) => {
               return allMdx.edges.map(edge => ({
                 guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                 url: site.siteMetadata.siteUrl + edge.node.fields.slug,
@@ -81,7 +76,7 @@ module.exports = {
                 title: edge.node.fields.title,
                 description:
                   edge.node.frontmatter.description || edge.node.excerpt,
-                custom_elements: [{'content:encoded': edge.node.html}],
+                custom_elements: [{ 'content:encoded': edge.node.html }],
               }))
             },
             query: `

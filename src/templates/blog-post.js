@@ -12,7 +12,7 @@ export default function BlogPostTemplate({ data }) {
   const { body, excerpt, fields, frontmatter } = data.mdx
   const { title, date, slug, tags } = fields
   const description = frontmatter.description || excerpt
-  const { siteUrl, social } = data.site.siteMetadata
+  const { siteUrl } = data.site.siteMetadata
 
   return (
     <Layout>
@@ -51,7 +51,7 @@ export default function BlogPostTemplate({ data }) {
         <Share
           title={title}
           url={`${siteUrl}${slug}`}
-          twitterHandle={social.twitter}
+          twitterHandle="jakewies"
         />
       </section>
       <section
@@ -75,9 +75,6 @@ export const query = graphql`
     site {
       siteMetadata {
         siteUrl
-        social {
-          twitter
-        }
       }
     }
     mdx(fields: { id: { eq: $id } }) {
